@@ -1628,6 +1628,138 @@
         "kaynak": "Google Places",
         "eklenme": "2026-07-24"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0300121,
+          40.987945
+        ]
+      },
+      "properties": {
+        "id": "v0075",
+        "ad": "Veganarsist (Kadıköy)",
+        "tur": "vegan",
+        "il": "İstanbul",
+        "ilce": "Kadıköy",
+        "adres": "Osmanağa, Canan Sk. 20/A, Kadıköy/İstanbul",
+        "telefon": "+90 216 418 78 53",
+        "not": "Geleneksel Türk mutfağının vegan yorumları, kendi kaju ayranını üretiyor",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9464949,
+          41.0337432
+        ]
+      },
+      "properties": {
+        "id": "v0076",
+        "ad": "Veganarsist (Balat)",
+        "tur": "vegan",
+        "il": "İstanbul",
+        "ilce": "Fatih",
+        "adres": "Ayvansaray, Leblebiciler Sk. No:18, Fatih/İstanbul",
+        "telefon": "+90 212 999 56 20",
+        "not": "Tam vegan restoran, geniş menü (mantı, lahmacun, tatlılar), Balat manzaralı teras",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.042227,
+          41.027408
+        ]
+      },
+      "properties": {
+        "id": "v0077",
+        "ad": "Telezzüz",
+        "tur": "vegan",
+        "il": "İstanbul",
+        "ilce": "Üsküdar",
+        "adres": "Koç Group Sports Club, Kuzguncuk, Kuşbakışı Cd. No:16, Üsküdar/İstanbul",
+        "telefon": "+90 216 576 76 71",
+        "not": "Vegan fine-dining, tadım menüsü ve şarap eşleştirmesi, koru içinde konumlu",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0029576,
+          41.0438184
+        ]
+      },
+      "properties": {
+        "id": "v0078",
+        "ad": "The Vegan Regime",
+        "tur": "vegan",
+        "il": "İstanbul",
+        "ilce": "Beşiktaş",
+        "adres": "Sinanpaşa, Şair Veysi Sk. No:9 D:11A, Beşiktaş/İstanbul",
+        "telefon": "+90 538 652 92 01",
+        "not": "Vegan burger, iskender ve wrap çeşitleri, glutensiz seçenekler mevcut",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.8292796,
+          40.9920079
+        ]
+      },
+      "properties": {
+        "id": "v0079",
+        "ad": "Tatlı Fırın (Ataköy)",
+        "tur": "vegan",
+        "il": "İstanbul",
+        "ilce": "Bakırköy",
+        "adres": "Ataköy 7-8-9-10. Kısım, Ayamama Sok., Bakırköy/İstanbul",
+        "telefon": "+90 212 801 38 38",
+        "not": "Glutensiz, şekersiz ve vegan pastane/fırın; lahmacun ve pizza gibi vegan atıştırmalıklar da sunuyor",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.6937611,
+          41.2442711
+        ]
+      },
+      "properties": {
+        "id": "v0080",
+        "ad": "Safranbolu Zencefil Yöresel Lezzetler",
+        "tur": "vegan dostu",
+        "il": "Karabük",
+        "ilce": "Safranbolu",
+        "adres": "Musalla, Safranbolu/Karabük",
+        "telefon": "+90 541 194 98 33",
+        "not": "Yöresel ev yemekleri lokantası, vegan/vejetaryen seçenekler de sunuyor",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-24"
+      }
     }
   ]
 }
