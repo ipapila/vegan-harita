@@ -314,12 +314,20 @@ function matches(p) {
 function popupHtml(p) {
   const color = TUR_COLORS[p.tur];
   const phone = p.telefon ? `<div class="popup-line">📞 ${p.telefon}</div>` : '';
+  let webLine = '';
+  if (p.web) {
+    const isInstagram = p.web.includes('instagram.com');
+    const icon = isInstagram ? '📷' : '🌐';
+    const label = isInstagram ? 'Instagram' : 'Web sitesi';
+    webLine = `<div class="popup-line"><a href="${p.web}" target="_blank" rel="noopener">${icon} ${label}</a></div>`;
+  }
   return `
     <div class="popup-title">${p.ad}</div>
     <span class="popup-tur" style="background:${color}">${TUR_LABELS[p.tur]}</span>
     <div class="popup-line">📍 ${p.ilce} / ${p.il}</div>
     <div class="popup-line" style="color:#777">${p.adres}</div>
     ${phone}
+    ${webLine}
     <div class="popup-note">${p.not || ''}</div>
   `;
 }
