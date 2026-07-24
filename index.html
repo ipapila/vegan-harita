@@ -174,6 +174,177 @@
     #sidebar { width: 100%; height: 46%; border-right: none; border-bottom: 1px solid var(--border); }
     #map { height: 54%; }
   }
+
+  /* --- Mekan öner butonu --- */
+  #suggest-btn-wrap {
+    padding: 12px 18px 4px;
+  }
+  #suggest-btn {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--vegan);
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: background .15s ease;
+  }
+  #suggest-btn:hover { background: #1b5e20; }
+
+  /* --- Modal --- */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 30, 22, 0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
+  .modal-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-radius: 14px 14px 0 0;
+  }
+  .modal-header h3 {
+    margin: 0 0 3px;
+    font-size: 16px;
+    color: #1b3a1e;
+  }
+  .modal-header p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 380px;
+  }
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 6px;
+  }
+  .modal-close:hover { background: #f0f3f1; }
+  .modal-body { padding: 16px 22px 6px; }
+  .form-row { margin-bottom: 13px; }
+  .form-row.two-col {
+    display: flex;
+    gap: 10px;
+  }
+  .form-row.two-col > div { flex: 1; }
+  .form-row label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2c332e;
+    margin-bottom: 5px;
+  }
+  .form-row label .opt {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .form-row input[type="text"],
+  .form-row input[type="tel"],
+  .form-row input[type="url"],
+  .form-row input[type="number"],
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    background: #fff;
+    color: var(--text);
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    border-color: var(--vegan);
+  }
+  .form-row textarea { resize: vertical; min-height: 46px; }
+  .form-hint {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .form-error {
+    font-size: 11.5px;
+    color: #c62828;
+    margin-top: 4px;
+    display: none;
+  }
+  .form-row.invalid input,
+  .form-row.invalid select,
+  .form-row.invalid textarea {
+    border-color: #c62828;
+  }
+  .form-row.invalid .form-error { display: block; }
+  .modal-footer {
+    padding: 14px 22px 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+  }
+  .btn-secondary, .btn-primary {
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-secondary {
+    background: #f0f3f1;
+    color: #333;
+  }
+  .btn-secondary:hover { background: #e4e9e6; }
+  .btn-primary {
+    background: var(--vegan);
+    color: #fff;
+  }
+  .btn-primary:hover { background: #1b5e20; }
+  .modal-success {
+    display: none;
+    padding: 30px 22px 26px;
+    text-align: center;
+  }
+  .modal-success.open { display: block; }
+  .modal-success .big-emoji { font-size: 34px; margin-bottom: 10px; }
+  .modal-success h3 { margin: 0 0 8px; color: #1b3a1e; }
+  .modal-success p { margin: 0 0 18px; font-size: 13px; color: var(--muted); line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -199,9 +370,110 @@
     </div>
     <div id="il-list"></div>
     <div id="load-status" style="display:none;"></div>
+    <div id="suggest-btn-wrap">
+      <button id="suggest-btn" type="button">➕ Yeni Mekan Öner</button>
+    </div>
     <div id="results-footer"><span id="result-count">0</span> mekan gösteriliyor</div>
   </div>
   <div id="map"></div>
+</div>
+
+<!-- Mekan Öner Modal -->
+<div class="modal-overlay" id="suggest-overlay">
+  <div class="modal-box">
+    <div id="suggest-form-view">
+      <div class="modal-header">
+        <div>
+          <h3>Yeni Mekan Öner</h3>
+          <p>Bildiğiniz bir vegan/vejetaryen mekanı ekleyin, gönderdiğinizde e-posta uygulamanız açılacak.</p>
+        </div>
+        <button class="modal-close" id="suggest-close-1" type="button" aria-label="Kapat">✕</button>
+      </div>
+      <form id="suggest-form" novalidate>
+        <div class="modal-body">
+          <div class="form-row" id="row-ad">
+            <label for="f-ad">Mekan Adı</label>
+            <input type="text" id="f-ad" placeholder="Örn: Vegan Masa">
+            <div class="form-error">Lütfen mekan adını girin.</div>
+          </div>
+
+          <div class="form-row" id="row-tur">
+            <label for="f-tur">Tür</label>
+            <select id="f-tur">
+              <option value="">Seçin...</option>
+              <option value="vegan">Vegan</option>
+              <option value="vejetaryen">Vejetaryen</option>
+              <option value="vegan dostu">Vegan Dostu</option>
+            </select>
+            <div class="form-error">Lütfen bir tür seçin.</div>
+          </div>
+
+          <div class="form-row two-col">
+            <div class="form-row" id="row-il" style="margin-bottom:0;">
+              <label for="f-il">İl</label>
+              <input type="text" id="f-il" placeholder="Örn: İstanbul">
+              <div class="form-error">İl gerekli.</div>
+            </div>
+            <div class="form-row" id="row-ilce" style="margin-bottom:0;">
+              <label for="f-ilce">İlçe</label>
+              <input type="text" id="f-ilce" placeholder="Örn: Kadıköy">
+              <div class="form-error">İlçe gerekli.</div>
+            </div>
+          </div>
+
+          <div class="form-row" id="row-adres" style="margin-top:13px;">
+            <label for="f-adres">Adres</label>
+            <textarea id="f-adres" placeholder="Açık adres"></textarea>
+            <div class="form-error">Adres gerekli.</div>
+          </div>
+
+          <div class="form-row two-col">
+            <div style="margin-bottom:0;">
+              <label for="f-lat">Enlem (lat) <span class="opt">opsiyonel</span></label>
+              <input type="number" step="any" id="f-lat" placeholder="Örn: 41.0449907">
+            </div>
+            <div style="margin-bottom:0;">
+              <label for="f-lng">Boylam (lng) <span class="opt">opsiyonel</span></label>
+              <input type="number" step="any" id="f-lng" placeholder="Örn: 29.0025483">
+            </div>
+          </div>
+          <div class="form-hint" style="margin-bottom:13px;">Google Haritalar'da mekana sağ tıklayıp koordinatları kopyalayabilirsiniz.</div>
+
+          <div class="form-row">
+            <label for="f-telefon">Telefon <span class="opt">opsiyonel</span></label>
+            <input type="tel" id="f-telefon" placeholder="+90 5xx xxx xx xx">
+          </div>
+
+          <div class="form-row">
+            <label for="f-web">Web sitesi / Instagram <span class="opt">opsiyonel</span></label>
+            <input type="url" id="f-web" placeholder="https://...">
+          </div>
+
+          <div class="form-row">
+            <label for="f-not">Not <span class="opt">opsiyonel</span></label>
+            <textarea id="f-not" placeholder="Öne çıkan yemekler, ipuçları vb."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="f-oneren">Adınız / e-postanız <span class="opt">opsiyonel</span></label>
+            <input type="text" id="f-oneren" placeholder="Geri bildirim için (opsiyonel)">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="suggest-cancel">Vazgeç</button>
+          <button type="submit" class="btn-primary" id="suggest-submit">Mail ile Gönder</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal-success" id="suggest-success-view">
+      <div class="big-emoji">📬</div>
+      <h3>E-posta uygulamanız açılıyor</h3>
+      <p>ipapila@gmail.com adresine gönderilecek şekilde hazırlanan e-postayı<br>
+         kontrol edip gönder butonuna basmanız yeterli.</p>
+      <button type="button" class="btn-primary" id="suggest-done">Tamam</button>
+    </div>
+  </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -369,6 +641,116 @@ fetch('data/vegan_mekanlar.json')
       'üzerinden (GitHub Pages, veya "python3 -m http.server") açtığınızdan emin olun — ' +
       'tarayıcılar dosyayı doğrudan çift tıklayınca (file://) fetch() isteğini engelleyebilir.';
   });
+
+// ================= Mekan Öner Modal =================
+const SUGGEST_EMAIL = 'ipapila@gmail.com';
+
+const overlay = document.getElementById('suggest-overlay');
+const formView = document.getElementById('suggest-form-view');
+const successView = document.getElementById('suggest-success-view');
+const suggestForm = document.getElementById('suggest-form');
+
+function openSuggestModal() {
+  formView.style.display = '';
+  successView.classList.remove('open');
+  overlay.classList.add('open');
+}
+function closeSuggestModal() {
+  overlay.classList.remove('open');
+  suggestForm.reset();
+  document.querySelectorAll('#suggest-form .form-row').forEach(r => r.classList.remove('invalid'));
+}
+
+document.getElementById('suggest-btn').addEventListener('click', openSuggestModal);
+document.getElementById('suggest-close-1').addEventListener('click', closeSuggestModal);
+document.getElementById('suggest-cancel').addEventListener('click', closeSuggestModal);
+document.getElementById('suggest-done').addEventListener('click', closeSuggestModal);
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) closeSuggestModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && overlay.classList.contains('open')) closeSuggestModal();
+});
+
+function markInvalid(rowId, invalid) {
+  const row = document.getElementById(rowId);
+  if (!row) return;
+  row.classList.toggle('invalid', !!invalid);
+}
+
+suggestForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const ad = document.getElementById('f-ad').value.trim();
+  const tur = document.getElementById('f-tur').value;
+  const il = document.getElementById('f-il').value.trim();
+  const ilce = document.getElementById('f-ilce').value.trim();
+  const adres = document.getElementById('f-adres').value.trim();
+  const lat = document.getElementById('f-lat').value.trim();
+  const lng = document.getElementById('f-lng').value.trim();
+  const telefon = document.getElementById('f-telefon').value.trim();
+  const web = document.getElementById('f-web').value.trim();
+  const not = document.getElementById('f-not').value.trim();
+  const oneren = document.getElementById('f-oneren').value.trim();
+
+  let valid = true;
+  markInvalid('row-ad', !ad); if (!ad) valid = false;
+  markInvalid('row-tur', !tur); if (!tur) valid = false;
+  markInvalid('row-il', !il); if (!il) valid = false;
+  markInvalid('row-ilce', !ilce); if (!ilce) valid = false;
+  markInvalid('row-adres', !adres); if (!adres) valid = false;
+  if (!valid) return;
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  // JSON dosyasındaki alan başlıklarıyla uyumlu obje
+  const entry = {
+    ad: ad,
+    il: il,
+    ilce: ilce,
+    tur: tur,
+    adres: adres,
+    lat: lat ? Number(lat) : null,
+    lng: lng ? Number(lng) : null,
+    telefon: telefon || null,
+    not: not || null,
+    id: null,
+    kaynak: 'Kullanıcı Önerisi',
+    eklenme: today,
+    web: web || null
+  };
+
+  const bodyLines = [
+    'Türkiye Vegan/Vejetaryen Mekan Haritası için yeni bir mekan öneriliyor:',
+    '',
+    'Mekan Adı: ' + ad,
+    'Tür: ' + tur,
+    'İl: ' + il,
+    'İlçe: ' + ilce,
+    'Adres: ' + adres,
+    'Enlem (lat): ' + (lat || '-'),
+    'Boylam (lng): ' + (lng || '-'),
+    'Telefon: ' + (telefon || '-'),
+    'Web/Instagram: ' + (web || '-'),
+    'Not: ' + (not || '-'),
+    'Öneren: ' + (oneren || '-'),
+    '',
+    '--- JSON formatı (vegan_mekanlar.json alanlarıyla uyumlu) ---',
+    JSON.stringify(entry, null, 2)
+  ];
+
+  const subject = 'Yeni Mekan Önerisi: ' + ad;
+  const body = bodyLines.join('\n');
+
+  const mailtoUrl = 'mailto:' + encodeURIComponent(SUGGEST_EMAIL) +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+
+  window.location.href = mailtoUrl;
+
+  formView.style.display = 'none';
+  successView.classList.add('open');
+});
 </script>
 </body>
 </html>
