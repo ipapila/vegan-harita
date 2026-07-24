@@ -13,6 +13,20 @@
     "kaynak": "Google Places",
     "eklenme": "2026-07-24"
   },
+    {
+    "ad": "Alâka Cafe Restaurant (Muratpaşa/Antalya)",
+    "il": "Antalya",
+    "ilce": "Muratpaşa",
+    "tur": "vegan",
+    "adres": "Meydankavağı şehitler caddesi fırtına sitesi B blok 17 A, 07100 Muratpaşa/Antalya",
+    "lat": 36.8771886,
+    "lng": 30.7321065,
+    "telefon": "+90 543 109 07 00",
+    "not": "Antalya'da yer alan vegan wrap, falafel, burger, pasta gibi seçeneklerin mevcut olduğu cafe, hatta pasta satışıyla beraber siparişi de alıyorlar.",
+    "id": "v0105",
+    "kaynak": "Seyhan",
+    "eklenme": "2026-07-24"
+  },
   {
     "ad": "Vegan Istanbul",
     "il": "İstanbul",
