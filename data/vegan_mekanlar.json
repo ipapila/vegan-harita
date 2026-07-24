@@ -11,7 +11,8 @@
     "not": "Geleneksel Türk mutfağının vegan versiyonları (pide, lahmacun, künefe)",
     "id": "v0001",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/veganmasa/"
   },
   {
     "ad": "Vegan Istanbul",
@@ -25,7 +26,8 @@
     "not": "Uygun fiyatlı büfe usulü vegan lokanta, aynı zamanda market[reference:25]",
     "id": "v0002",
     "kaynak": "Google Places, HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://veganistanbul34.com/"
   },
   {
     "ad": "Vegan Dükkan Lokanta",
@@ -39,7 +41,8 @@
     "not": "Geleneksel Türk yemeklerinin vegan yorumu (kebap, mantı)",
     "id": "v0003",
     "kaynak": "Google Places, HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://vegandukkanlokanta.com/"
   },
   {
     "ad": "Vegan Masa (Kadıköy)",
@@ -53,7 +56,8 @@
     "not": "Tamamen vegan Türk restoranı (pide, lahmacun, çorba, kadayıf)[reference:26]",
     "id": "v0004",
     "kaynak": "Google Places, HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/veganmasa/"
   },
   {
     "ad": "Arch Bistro",
@@ -67,7 +71,8 @@
     "not": "Geniş vegan seçenekli şarap barı/bistro",
     "id": "v0005",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://archbistro.com/"
   },
   {
     "ad": "Vacilando",
@@ -81,7 +86,8 @@
     "not": "Vegan kafe, galet ve tatlı ağırlıklı",
     "id": "v0006",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://vacilandoistanbul.com/"
   },
   {
     "ad": "GRINGO - Vegan Street Food",
@@ -95,7 +101,8 @@
     "not": "Vegan sokak lezzetleri (seitan wrap, döner)",
     "id": "v0007",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/_gringomoda/"
   },
   {
     "ad": "Salve Cafe",
@@ -109,7 +116,8 @@
     "not": "Vegan burger ve tatlı ağırlıklı kafe",
     "id": "v0008",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/salvekadikoy/"
   },
   {
     "ad": "Bi Nevi Deli",
@@ -123,7 +131,8 @@
     "not": "Vegan deli, glutensiz seçenekler mevcut",
     "id": "v0009",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://binevideli.com/"
   },
   {
     "ad": "Turp Vegan Sokak Lezzetleri",
@@ -1047,7 +1056,8 @@
     "not": "Geleneksel Türk mutfağının vegan yorumları, kendi kaju ayranını üretiyor",
     "id": "v0075",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://veganarsist.com/"
   },
   {
     "ad": "Veganarsist (Balat)",
@@ -1061,7 +1071,8 @@
     "not": "Tam vegan restoran, geniş menü (mantı, lahmacun, tatlılar), Balat manzaralı teras",
     "id": "v0076",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://veganarsistbalat.com/"
   },
   {
     "ad": "Telezzüz",
@@ -1075,7 +1086,8 @@
     "not": "Vegan fine-dining, tadım menüsü ve şarap eşleştirmesi, koru içinde konumlu",
     "id": "v0077",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.telezzuz.com/en/"
   },
   {
     "ad": "The Vegan Regime",
@@ -1089,7 +1101,8 @@
     "not": "Vegan burger, iskender ve wrap çeşitleri, glutensiz seçenekler mevcut",
     "id": "v0078",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.veganfoodcartel.com/"
   },
   {
     "ad": "Tatlı Fırın (Ataköy)",
@@ -1215,7 +1228,8 @@
     "not": "Ev yapımı vegan mantı, kebap ve ravioli sunan küçük mekan",
     "id": "v0087",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/community_kitchen/"
   },
   {
     "ad": "No 19 Dining",
@@ -1509,7 +1523,8 @@
     "not": "Türk klasiklerinin vegan versiyonlarını sunan mekan (farklı adres kaydı)",
     "id": "v0108",
     "kaynak": "PlumeMag, Placera",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/community_kitchen/"
   },
   {
     "ad": "Zencefil",
@@ -1523,7 +1538,8 @@
     "not": "Şehrin köklü vejetaryen restoranlarından biri",
     "id": "v0109",
     "kaynak": "Yelp, Filgezi",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/zencefilbeyoglu/"
   },
   {
     "ad": "Mahatma Cafe",
@@ -1593,7 +1609,8 @@
     "not": "Türkiye'nin ilk vegan ürün marketi",
     "id": "v0114",
     "kaynak": "HappyCow, vegandukkan.com",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://vegandukkanlokanta.com/"
   },
   {
     "ad": "Telezzüz (HappyCow)",
@@ -1607,7 +1624,8 @@
     "not": "Michelin Rehberi'nde yer alan, sürdürülebilir vegan fine-dining",
     "id": "v0115",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.telezzuz.com/en/"
   },
   {
     "ad": "Bi Nevi Deli (HappyCow)",
@@ -1621,7 +1639,8 @@
     "not": "2014'ten beri hizmet veren yaratıcı bitki bazlı yemekler",
     "id": "v0116",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://binevideli.com/"
   },
   {
     "ad": "Vegan Istanbul (HappyCow)",
@@ -1635,7 +1654,8 @@
     "not": "Tamamen vegan kafe, restoran ve market",
     "id": "v0117",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://veganistanbul34.com/"
   },
   {
     "ad": "Junk Vegan (HappyCow)",
@@ -1677,7 +1697,8 @@
     "not": "Türk klasiklerinin vegan versiyonları",
     "id": "v0120",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/community_kitchen/"
   },
   {
     "ad": "Zencefil (HappyCow)",
@@ -1691,7 +1712,8 @@
     "not": "Şehrin köklü vejetaryen restoranlarından biri",
     "id": "v0121",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/zencefilbeyoglu/"
   },
   {
     "ad": "Mahatma Cafe (HappyCow)",
@@ -1747,7 +1769,8 @@
     "not": "Türkiye'nin ilk vegan ürün marketi",
     "id": "v0125",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://vegandukkanlokanta.com/"
   },
   {
     "ad": "Ballad Restaurant",
@@ -1971,7 +1994,8 @@
     "not": "Tamamen vegan Türk restoranı",
     "id": "v0141",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": "https://www.instagram.com/veganmasa/"
   },
   {
     "ad": "Gabo Kitchen (HappyCow)",
