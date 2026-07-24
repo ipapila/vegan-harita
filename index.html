@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Türkiye Vegan / Vejetaryen Mekan Haritası</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root{
+    --vegan: #2e7d32;
+    --vejetaryen: #1565c0;
+    --dostu: #e65100;
+    --bg: #f4f6f5;
+    --panel: #ffffff;
+    --border: #dde3e0;
+    --text: #202524;
+    --muted: #667069;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  #app {
+    display: flex;
+    height: 100vh;
+    min-height: 560px;
+  }
+  #sidebar {
+    width: 340px;
+    min-width: 300px;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #sidebar-header {
+    padding: 18px 18px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  #sidebar-header h1 {
+    font-size: 17px;
+    margin: 0 0 2px;
+    color: #1b3a1e;
+  }
+  #sidebar-header p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  #search-box {
+    margin: 14px 18px 0;
+    position: relative;
+  }
+  #search-box input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13.5px;
+    outline: none;
+  }
+  #search-box input:focus {
+    border-color: var(--vegan);
+  }
+  .filter-section {
+    padding: 14px 18px 4px;
+  }
+  .filter-section h2 {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tur-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    font-size: 12.5px;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    transition: all .15s ease;
+  }
+  .tur-chip .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .tur-chip.active[data-tur="vegan"] { background: #e8f5e9; border-color: var(--vegan); color: #1b5e20; }
+  .tur-chip.active[data-tur="vejetaryen"] { background: #e3f0fc; border-color: var(--vejetaryen); color: #0d47a1; }
+  .tur-chip.active[data-tur="vegan dostu"] { background: #fdeee0; border-color: var(--dostu); color: #a34b00; }
+  .tur-chip:not(.active) { opacity: 0.45; }
+
+  #il-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 10px 14px;
+  }
+  .il-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13.5px;
+  }
+  .il-item:hover { background: #f0f3f1; }
+  .il-item.selected { background: #e8f5e9; color: #1b5e20; font-weight: 600; }
+  .il-item .count {
+    font-size: 11.5px;
+    color: var(--muted);
+    background: #f0f3f1;
+    border-radius: 10px;
+    padding: 1px 8px;
+  }
+  .il-item.selected .count { background: #c8e6c9; color: #1b5e20; }
+
+  #results-footer {
+    padding: 10px 18px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    background: #fafbfa;
+  }
+  #load-status {
+    padding: 10px 18px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  #map { flex: 1; }
+
+  .popup-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .popup-tur {
+    display: inline-block;
+    font-size: 10.5px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .popup-line { font-size: 12.5px; color: #444; margin: 2px 0; }
+  .popup-note { font-size: 12px; color: #666; margin-top: 6px; font-style: italic; }
+
+  .marker-pin {
+    width: 22px; height: 22px; border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+
+  @media (max-width: 760px) {
+    #app { flex-direction: column; }
+    #sidebar { width: 100%; height: 46%; border-right: none; border-bottom: 1px solid var(--border); }
+    #map { height: 54%; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <div id="sidebar-header">
+      <h1>🌱 Türkiye Vegan Mekan Haritası</h1>
+      <p>Vegan, vejetaryen ve vegan dostu mekanlar — il bazlı</p>
+    </div>
+    <div id="search-box">
+      <input type="text" id="search-input" placeholder="Mekan adı, ilçe ara..." />
+    </div>
+    <div class="filter-section">
+      <h2>Kategori</h2>
+      <div class="chip-row" id="tur-filters">
+        <div class="tur-chip active" data-tur="vegan"><span class="dot" style="background:#2e7d32"></span>Vegan</div>
+        <div class="tur-chip active" data-tur="vejetaryen"><span class="dot" style="background:#1565c0"></span>Vejetaryen</div>
+        <div class="tur-chip active" data-tur="vegan dostu"><span class="dot" style="background:#e65100"></span>Vegan Dostu</div>
+      </div>
+    </div>
+    <div class="filter-section" style="padding-bottom:0;">
+      <h2>İller <span id="il-clear" style="float:right; cursor:pointer; text-transform:none; color:#2e7d32; font-size:11.5px;">Tümü</span></h2>
+    </div>
+    <div id="il-list"></div>
+    <div id="load-status" style="display:none;"></div>
+    <div id="results-footer"><span id="result-count">0</span> mekan gösteriliyor</div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const TUR_COLORS = {
+  "vegan": "#2e7d32",
+  "vejetaryen": "#1565c0",
+  "vegan dostu": "#e65100"
+};
+const TUR_LABELS = {
+  "vegan": "Vegan",
+  "vejetaryen": "Vejetaryen",
+  "vegan dostu": "Vegan Dostu"
+};
+
+let PLACES = [];
+let state = {
+  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu"]),
+  activeIl: null,
+  query: ""
+};
+
+const map = L.map('map', { zoomControl: true }).setView([39.0, 35.0], 6);
+
+// CARTO Voyager: OSM tabanlı, dosyadan (file://) veya GitHub Pages'ten
+// açıldığında referrer/CORS kısıtı koymayan, 403 vermeyen bir altlık.
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıda bulunanlar &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 20
+}).addTo(map);
+
+let markersLayer = L.layerGroup().addTo(map);
+
+function makeIcon(tur) {
+  const color = TUR_COLORS[tur] || "#555";
+  return L.divIcon({
+    className: '',
+    html: `<div class="marker-pin" style="background:${color};"></div>`,
+    iconSize: [22, 22],
+    iconAnchor: [11, 22],
+    popupAnchor: [0, -20]
+  });
+}
+
+function buildIlCounts(places) {
+  const counts = {};
+  places.forEach(p => { counts[p.il] = (counts[p.il] || 0) + 1; });
+  return counts;
+}
+
+function renderIlList() {
+  const counts = buildIlCounts(PLACES);
+  const ilNames = Object.keys(counts).sort((a,b) => counts[b]-counts[a]);
+  const container = document.getElementById('il-list');
+  container.innerHTML = '';
+  ilNames.forEach(il => {
+    const item = document.createElement('div');
+    item.className = 'il-item' + (state.activeIl === il ? ' selected' : '');
+    item.innerHTML = `<span>${il}</span><span class="count">${counts[il]}</span>`;
+    item.onclick = () => {
+      state.activeIl = (state.activeIl === il) ? null : il;
+      renderIlList();
+      applyFilters();
+    };
+    container.appendChild(item);
+  });
+}
+
+document.getElementById('il-clear').onclick = () => {
+  state.activeIl = null;
+  renderIlList();
+  applyFilters();
+};
+
+document.querySelectorAll('.tur-chip').forEach(chip => {
+  chip.onclick = () => {
+    const tur = chip.getAttribute('data-tur');
+    if (state.activeTur.has(tur)) {
+      state.activeTur.delete(tur);
+      chip.classList.remove('active');
+    } else {
+      state.activeTur.add(tur);
+      chip.classList.add('active');
+    }
+    applyFilters();
+  };
+});
+
+document.getElementById('search-input').addEventListener('input', (e) => {
+  state.query = e.target.value.trim().toLocaleLowerCase('tr');
+  applyFilters();
+});
+
+function matches(p) {
+  if (!state.activeTur.has(p.tur)) return false;
+  if (state.activeIl && p.il !== state.activeIl) return false;
+  if (state.query) {
+    const hay = (p.ad + ' ' + p.ilce + ' ' + p.il).toLocaleLowerCase('tr');
+    if (!hay.includes(state.query)) return false;
+  }
+  return true;
+}
+
+function popupHtml(p) {
+  const color = TUR_COLORS[p.tur];
+  const phone = p.telefon ? `<div class="popup-line">📞 ${p.telefon}</div>` : '';
+  return `
+    <div class="popup-title">${p.ad}</div>
+    <span class="popup-tur" style="background:${color}">${TUR_LABELS[p.tur]}</span>
+    <div class="popup-line">📍 ${p.ilce} / ${p.il}</div>
+    <div class="popup-line" style="color:#777">${p.adres}</div>
+    ${phone}
+    <div class="popup-note">${p.not || ''}</div>
+  `;
+}
+
+function applyFilters() {
+  markersLayer.clearLayers();
+  const filtered = PLACES.filter(matches);
+  filtered.forEach(p => {
+    const marker = L.marker([p.lat, p.lng], { icon: makeIcon(p.tur) });
+    marker.bindPopup(popupHtml(p));
+    marker.addTo(markersLayer);
+  });
+  document.getElementById('result-count').textContent = filtered.length;
+
+  if (filtered.length > 0 && (state.activeIl || state.query)) {
+    const bounds = L.latLngBounds(filtered.map(p => [p.lat, p.lng]));
+    map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
+  } else if (!state.activeIl && !state.query) {
+    map.setView([39.0, 35.0], 6);
+  }
+}
+
+const statusEl = document.getElementById('load-status');
+
+fetch('data/vegan_mekanlar.json')
+  .then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  })
+  .then(data => {
+    PLACES = data;
+    renderIlList();
+    applyFilters();
+  })
+  .catch(err => {
+    statusEl.style.display = 'block';
+    statusEl.style.color = '#b71c1c';
+    statusEl.textContent = 'Veri yüklenemedi (' + err.message + '). Bu sayfayı bir web sunucusu ' +
+      'üzerinden (GitHub Pages, veya "python3 -m http.server") açtığınızdan emin olun — ' +
+      'tarayıcılar dosyayı doğrudan çift tıklayınca (file://) fetch() isteğini engelleyebilir.';
+  });
+</script>
+</body>
+</html>
