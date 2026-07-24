@@ -161,6 +161,22 @@
   }
   .popup-line { font-size: 12.5px; color: #444; margin: 2px 0; }
   .popup-note { font-size: 12px; color: #666; margin-top: 6px; font-style: italic; }
+  .popup-directions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 7px 10px;
+    background: var(--vegan);
+    color: #fff !important;
+    border-radius: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+  }
+  .popup-directions:hover { background: #1b5e20; }
 
   .marker-pin {
     width: 22px; height: 22px; border-radius: 50% 50% 50% 0;
@@ -427,6 +443,11 @@
             <div class="form-error">Adres gerekli.</div>
           </div>
 
+          <div class="form-row" style="margin-bottom:8px;">
+            <label>Konum <span class="opt">opsiyonel</span></label>
+            <button type="button" class="btn-secondary" id="use-location-btn" style="width:100%;">📍 Mevcut Konumumu Kullan</button>
+            <div class="form-hint" id="location-status"></div>
+          </div>
           <div class="form-row two-col">
             <div style="margin-bottom:0;">
               <label for="f-lat">Enlem (lat) <span class="opt">opsiyonel</span></label>
@@ -437,7 +458,7 @@
               <input type="number" step="any" id="f-lng" placeholder="Örn: 29.0025483">
             </div>
           </div>
-          <div class="form-hint" style="margin-bottom:13px;">Google Haritalar'da mekana sağ tıklayıp koordinatları kopyalayabilirsiniz.</div>
+          <div class="form-hint" style="margin-bottom:13px;">Mekanın yanındaysanız yukarıdaki butonla otomatik doldurabilir, ya da Google Haritalar'da mekana sağ tıklayıp koordinatları kopyalayabilirsiniz.</div>
 
           <div class="form-row">
             <label for="f-telefon">Telefon <span class="opt">opsiyonel</span></label>
@@ -593,6 +614,11 @@ function popupHtml(p) {
     const label = isInstagram ? 'Instagram' : 'Web sitesi';
     webLine = `<div class="popup-line"><a href="${p.web}" target="_blank" rel="noopener">${icon} ${label}</a></div>`;
   }
+  let directionsBtn = '';
+  if (p.lat && p.lng) {
+    const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
+    directionsBtn = `<a class="popup-directions" href="${dirUrl}" target="_blank" rel="noopener">🧭 Yol Tarifi Al</a>`;
+  }
   return `
     <div class="popup-title">${p.ad}</div>
     <span class="popup-tur" style="background:${color}">${TUR_LABELS[p.tur]}</span>
@@ -601,6 +627,7 @@ function popupHtml(p) {
     ${phone}
     ${webLine}
     <div class="popup-note">${p.not || ''}</div>
+    ${directionsBtn}
   `;
 }
 
@@ -659,6 +686,7 @@ function closeSuggestModal() {
   overlay.classList.remove('open');
   suggestForm.reset();
   document.querySelectorAll('#suggest-form .form-row').forEach(r => r.classList.remove('invalid'));
+  document.getElementById('location-status').textContent = '';
 }
 
 document.getElementById('suggest-btn').addEventListener('click', openSuggestModal);
@@ -677,6 +705,34 @@ function markInvalid(rowId, invalid) {
   if (!row) return;
   row.classList.toggle('invalid', !!invalid);
 }
+
+const locBtn = document.getElementById('use-location-btn');
+const locStatus = document.getElementById('location-status');
+locBtn.addEventListener('click', () => {
+  if (!navigator.geolocation) {
+    locStatus.textContent = 'Tarayıcınız konum özelliğini desteklemiyor. Koordinatları elle girebilirsiniz.';
+    locStatus.style.color = '#c62828';
+    return;
+  }
+  locStatus.textContent = 'Konum alınıyor...';
+  locStatus.style.color = '';
+  locBtn.disabled = true;
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      document.getElementById('f-lat').value = pos.coords.latitude;
+      document.getElementById('f-lng').value = pos.coords.longitude;
+      locStatus.textContent = '✓ Konum alındı (± ' + Math.round(pos.coords.accuracy) + ' m doğruluk).';
+      locStatus.style.color = '#1b5e20';
+      locBtn.disabled = false;
+    },
+    (err) => {
+      locStatus.textContent = 'Konum alınamadı: ' + err.message + '. Koordinatları elle girebilirsiniz.';
+      locStatus.style.color = '#c62828';
+      locBtn.disabled = false;
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+});
 
 suggestForm.addEventListener('submit', (e) => {
   e.preventDefault();
