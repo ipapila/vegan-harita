@@ -349,6 +349,15 @@
     color: var(--muted);
     margin-top: 4px;
   }
+  .pick-map-wrap { margin-top: 8px; }
+  .pick-map {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .pick-map .leaflet-marker-icon { cursor: grab; }
   .form-error {
     font-size: 11.5px;
     color: #c62828;
@@ -488,6 +497,10 @@
             <label>Konum <span class="opt">opsiyonel</span></label>
             <button type="button" class="btn-secondary" id="use-location-btn" style="width:100%;">📍 Mevcut Konumumu Kullan</button>
             <div class="form-hint" id="location-status"></div>
+            <div class="pick-map-wrap">
+              <div class="pick-map" id="pick-map"></div>
+              <div class="form-hint">Haritada mekanın yerine tıklayın ya da işaretçiyi sürükleyin — enlem/boylam alanları otomatik dolar.</div>
+            </div>
           </div>
           <div class="form-row two-col">
             <div style="margin-bottom:0;">
@@ -499,7 +512,7 @@
               <input type="number" step="any" id="f-lng" placeholder="Örn: 29.0025483">
             </div>
           </div>
-          <div class="form-hint" style="margin-bottom:13px;">Mekanın yanındaysanız yukarıdaki butonla otomatik doldurabilir, ya da Google Haritalar'da mekana sağ tıklayıp koordinatları kopyalayabilirsiniz.</div>
+          <div class="form-hint" style="margin-bottom:13px;">Mekanın yanındaysanız "Mevcut Konumumu Kullan" ile otomatik doldurabilir, haritadan seçebilir ya da koordinatları elle girebilirsiniz.</div>
 
           <div class="form-row">
             <label for="f-telefon">Telefon <span class="opt">opsiyonel</span></label>
@@ -777,6 +790,55 @@ const suggestForm = document.getElementById('suggest-form');
 
 let editingOriginal = null;
 
+// ---- Haritadan konum seçme (mini harita) ----
+let pickMap = null;
+let pickMarker = null;
+
+function ensurePickMap() {
+  if (pickMap) return;
+  pickMap = L.map('pick-map', { zoomControl: true, attributionControl: false }).setView([39.0, 35.0], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(pickMap);
+  pickMap.on('click', (e) => setPickedLocation(e.latlng.lat, e.latlng.lng, { zoom: Math.max(pickMap.getZoom(), 14) }));
+}
+
+function setPickedLocation(lat, lng, opts) {
+  opts = opts || {};
+  document.getElementById('f-lat').value = lat;
+  document.getElementById('f-lng').value = lng;
+  if (!pickMarker) {
+    pickMarker = L.marker([lat, lng], { draggable: true }).addTo(pickMap);
+    pickMarker.on('dragend', () => {
+      const p = pickMarker.getLatLng();
+      document.getElementById('f-lat').value = p.lat;
+      document.getElementById('f-lng').value = p.lng;
+    });
+  } else {
+    pickMarker.setLatLng([lat, lng]);
+  }
+  if (opts.recenter !== false) {
+    pickMap.setView([lat, lng], opts.zoom || pickMap.getZoom());
+  }
+}
+
+function clearPickMarker() {
+  if (pickMarker) { pickMap.removeLayer(pickMarker); pickMarker = null; }
+}
+
+// Enlem/boylam kutularına elle yazılırsa işaretçiyi de güncelle
+['f-lat', 'f-lng'].forEach((id) => {
+  document.getElementById(id).addEventListener('change', () => {
+    const lat = Number(document.getElementById('f-lat').value);
+    const lng = Number(document.getElementById('f-lng').value);
+    if (Number.isFinite(lat) && Number.isFinite(lng) && document.getElementById('f-lat').value !== '' && document.getElementById('f-lng').value !== '') {
+      ensurePickMap();
+      setPickedLocation(lat, lng, { zoom: Math.max(pickMap.getZoom(), 14) });
+    }
+  });
+});
+
 function openSuggestModal(place) {
   formView.style.display = '';
   successView.classList.remove('open');
@@ -811,6 +873,19 @@ function openSuggestModal(place) {
     descEl.textContent = 'Bildiğiniz bir vegan/vejetaryen mekanı ekleyin, gönderdiğinizde e-posta uygulamanız açılacak.';
     submitBtn.textContent = 'Mail ile Gönder';
   }
+
+  // Mini haritayı modal görünür olduktan sonra kur/boyutlandır ve
+  // varsa mevcut lat/lng'ye göre işaretçiyi yerleştir.
+  setTimeout(() => {
+    ensurePickMap();
+    pickMap.invalidateSize();
+    if (place && place.lat != null && place.lng != null) {
+      setPickedLocation(place.lat, place.lng, { zoom: 15 });
+    } else {
+      clearPickMarker();
+      pickMap.setView([39.0, 35.0], 6);
+    }
+  }, 50);
 }
 
 function openEditModal(id) {
@@ -827,6 +902,7 @@ function closeSuggestModal() {
   document.getElementById('location-status').textContent = '';
   document.getElementById('f-edit-id').value = '';
   editingOriginal = null;
+  clearPickMarker();
 }
 
 document.getElementById('suggest-btn').addEventListener('click', () => openSuggestModal());
@@ -859,8 +935,8 @@ locBtn.addEventListener('click', () => {
   locBtn.disabled = true;
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      document.getElementById('f-lat').value = pos.coords.latitude;
-      document.getElementById('f-lng').value = pos.coords.longitude;
+      ensurePickMap();
+      setPickedLocation(pos.coords.latitude, pos.coords.longitude, { zoom: 16 });
       locStatus.textContent = '✓ Konum alındı (± ' + Math.round(pos.coords.accuracy) + ' m doğruluk).';
       locStatus.style.color = '#1b5e20';
       locBtn.disabled = false;
