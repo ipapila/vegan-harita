@@ -11,6 +11,7 @@
     --vejetaryen: #1565c0;
     --dostu: #e65100;
     --market: #8e24aa;
+    --urunlu: #00838f;
     --bg: #f4f6f5;
     --panel: #ffffff;
     --border: #dde3e0;
@@ -41,17 +42,33 @@
   #sidebar-header {
     padding: 18px 18px 12px;
     border-bottom: 1px solid var(--border);
+    position: relative;
   }
   #sidebar-header h1 {
     font-size: 17px;
     margin: 0 0 2px;
     color: #1b3a1e;
+    padding-right: 78px;
   }
   #sidebar-header p {
     margin: 0;
     font-size: 12.5px;
     color: var(--muted);
   }
+  #admin-toggle-link {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    background: #f0f3f1;
+    padding: 5px 9px;
+    border-radius: 7px;
+    white-space: nowrap;
+  }
+  #admin-toggle-link:hover { color: var(--text); background: #e4e9e6; }
   #search-box {
     margin: 14px 18px 0;
     position: relative;
@@ -103,6 +120,7 @@
   .tur-chip.active[data-tur="vejetaryen"] { background: #e3f0fc; border-color: var(--vejetaryen); color: #0d47a1; }
   .tur-chip.active[data-tur="vegan dostu"] { background: #fdeee0; border-color: var(--dostu); color: #a34b00; }
   .tur-chip.active[data-tur="vegan market"] { background: #f3e5f5; border-color: var(--market); color: #4a148c; }
+  .tur-chip.active[data-tur="vegan ürünlü"] { background: #e0f4f6; border-color: var(--urunlu); color: #004d54; }
   .tur-chip:not(.active) { opacity: 0.45; }
 
   #il-list {
@@ -161,13 +179,6 @@
     color: var(--vegan);
     font-weight: 600;
   }
-  #admin-toggle-link {
-    margin-left: auto;
-    font-size: 11px;
-    color: var(--muted);
-    text-decoration: none;
-  }
-  #admin-toggle-link:hover { color: var(--text); text-decoration: underline; }
 
   #map { flex: 1; }
 
@@ -426,6 +437,7 @@
     <div id="sidebar-header">
       <h1>🌱 Türkiye Vegan Mekan Haritası</h1>
       <p>Vegan, vejetaryen ve vegan dostu mekanlar — il bazlı</p>
+      <a href="#" id="admin-toggle-link">🔐 Admin</a>
     </div>
     <div id="search-box">
       <input type="text" id="search-input" placeholder="Mekan adı, ilçe ara..." />
@@ -437,6 +449,7 @@
         <div class="tur-chip active" data-tur="vejetaryen"><span class="dot" style="background:#1565c0"></span>Vejetaryen</div>
         <div class="tur-chip active" data-tur="vegan dostu"><span class="dot" style="background:#e65100"></span>Vegan Dostu</div>
         <div class="tur-chip active" data-tur="vegan market"><span class="dot" style="background:#8e24aa"></span>Vegan Market</div>
+        <div class="tur-chip active" data-tur="vegan ürünlü"><span class="dot" style="background:#00838f"></span>Vegan Ürünlü</div>
       </div>
     </div>
     <div class="filter-section" style="padding-bottom:0;">
@@ -450,7 +463,6 @@
     <div id="results-footer">
       <span id="result-count">0</span> mekan gösteriliyor
       <span id="admin-status"></span>
-      <a href="#" id="admin-toggle-link">🔐 Admin</a>
     </div>
   </div>
   <div id="map"></div>
@@ -484,6 +496,7 @@
               <option value="vejetaryen">Vejetaryen</option>
               <option value="vegan dostu">Vegan Dostu</option>
               <option value="vegan market">Vegan Market</option>
+              <option value="vegan ürünlü">Vegan Ürünlü (market/zincir mağaza)</option>
             </select>
             <div class="form-error">Lütfen bir tür seçin.</div>
           </div>
@@ -571,18 +584,20 @@ const TUR_COLORS = {
   "vegan": "#2e7d32",
   "vejetaryen": "#1565c0",
   "vegan dostu": "#e65100",
-  "vegan market": "#8e24aa"
+  "vegan market": "#8e24aa",
+  "vegan ürünlü": "#00838f"
 };
 const TUR_LABELS = {
   "vegan": "Vegan",
   "vejetaryen": "Vejetaryen",
   "vegan dostu": "Vegan Dostu",
-  "vegan market": "Vegan Market"
+  "vegan market": "Vegan Market",
+  "vegan ürünlü": "Vegan Ürünlü"
 };
 
 let PLACES = [];
 let state = {
-  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market"]),
+  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market", "vegan ürünlü"]),
   activeIl: null,
   query: ""
 };
@@ -841,7 +856,7 @@ fetch('data/vegan_mekanlar.json')
 // (sayfa kaynağını inceleyen biri bu korumayı aşabilir). Kendi şifreni ayarlamak için
 // tarayıcı konsolunda şunu çalıştırıp çıkan değeri aşağıdaki ADMIN_PASSWORD_HASH ile değiştir:
 // crypto.subtle.digest('SHA-256', new TextEncoder().encode('YeniSifreniz')).then(b => console.log([...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('')))
-const ADMIN_PASSWORD_HASH = '31d9a19c191204e4a683c53706da388e3293574e4367a83ee242e57a998dc25e'; // varsayılan: "ekoloji2026"
+const ADMIN_PASSWORD_HASH = '6f133a449539df0d2f89db1e663ea777d0eca52990a97af162284acbc3962ce7'; // varsayılan: "veganceyda"
 const ADMIN_SESSION_KEY = 'eiAdminSession';
 
 function isAdminMode() {
