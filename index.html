@@ -148,6 +148,25 @@
     color: var(--muted);
   }
 
+  #results-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  #result-count { font-weight: 600; }
+  #admin-status {
+    font-size: 11px;
+    color: var(--vegan);
+    font-weight: 600;
+  }
+  #admin-toggle-link {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  #admin-toggle-link:hover { color: var(--text); text-decoration: underline; }
+
   #map { flex: 1; }
 
   .popup-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
@@ -177,6 +196,23 @@
     text-align: center;
   }
   .popup-directions:hover { background: #1b5e20; }
+  .popup-edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px 10px;
+    background: #455a64;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .popup-edit-btn:hover { background: #37474f; }
 
   .marker-pin {
     width: 22px; height: 22px; border-radius: 50% 50% 50% 0;
@@ -389,7 +425,11 @@
     <div id="suggest-btn-wrap">
       <button id="suggest-btn" type="button">➕ Yeni Mekan Öner</button>
     </div>
-    <div id="results-footer"><span id="result-count">0</span> mekan gösteriliyor</div>
+    <div id="results-footer">
+      <span id="result-count">0</span> mekan gösteriliyor
+      <span id="admin-status"></span>
+      <a href="#" id="admin-toggle-link">🔐 Admin</a>
+    </div>
   </div>
   <div id="map"></div>
 </div>
@@ -406,6 +446,7 @@
         <button class="modal-close" id="suggest-close-1" type="button" aria-label="Kapat">✕</button>
       </div>
       <form id="suggest-form" novalidate>
+        <input type="hidden" id="f-edit-id" value="">
         <div class="modal-body">
           <div class="form-row" id="row-ad">
             <label for="f-ad">Mekan Adı</label>
@@ -619,6 +660,10 @@ function popupHtml(p) {
     const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`;
     directionsBtn = `<a class="popup-directions" href="${dirUrl}" target="_blank" rel="noopener">🧭 Yol Tarifi Al</a>`;
   }
+  let editBtn = '';
+  if (isAdminMode()) {
+    editBtn = `<button type="button" class="popup-edit-btn" onclick="openEditModal('${p.id}')">✏️ Düzenle</button>`;
+  }
   return `
     <div class="popup-title">${p.ad}</div>
     <span class="popup-tur" style="background:${color}">${TUR_LABELS[p.tur]}</span>
@@ -628,6 +673,7 @@ function popupHtml(p) {
     ${webLine}
     <div class="popup-note">${p.not || ''}</div>
     ${directionsBtn}
+    ${editBtn}
   `;
 }
 
@@ -669,7 +715,59 @@ fetch('data/vegan_mekanlar.json')
       'tarayıcılar dosyayı doğrudan çift tıklayınca (file://) fetch() isteğini engelleyebilir.';
   });
 
-// ================= Mekan Öner Modal =================
+// ================= Admin Girişi =================
+// NOT: Bu, sadece sıradan ziyaretçilerin "Düzenle" butonunu görmesini engelleyen
+// basit bir istemci-taraflı kontroldür — gerçek bir güvenlik katmanı değildir
+// (sayfa kaynağını inceleyen biri bu korumayı aşabilir). Kendi şifreni ayarlamak için
+// tarayıcı konsolunda şunu çalıştırıp çıkan değeri aşağıdaki ADMIN_PASSWORD_HASH ile değiştir:
+// crypto.subtle.digest('SHA-256', new TextEncoder().encode('YeniSifreniz')).then(b => console.log([...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('')))
+const ADMIN_PASSWORD_HASH = '31d9a19c191204e4a683c53706da388e3293574e4367a83ee242e57a998dc25e'; // varsayılan: "ekoloji2026"
+const ADMIN_SESSION_KEY = 'eiAdminSession';
+
+function isAdminMode() {
+  return sessionStorage.getItem(ADMIN_SESSION_KEY) === '1';
+}
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function updateAdminUI() {
+  const link = document.getElementById('admin-toggle-link');
+  const status = document.getElementById('admin-status');
+  if (isAdminMode()) {
+    link.textContent = '🔓 Admin Çıkışı';
+    status.textContent = '👤 Admin modu aktif';
+  } else {
+    link.textContent = '🔐 Admin';
+    status.textContent = '';
+  }
+}
+
+document.getElementById('admin-toggle-link').addEventListener('click', async (e) => {
+  e.preventDefault();
+  if (isAdminMode()) {
+    sessionStorage.removeItem(ADMIN_SESSION_KEY);
+    updateAdminUI();
+    if (PLACES.length) applyFilters();
+    return;
+  }
+  const pw = window.prompt('Admin şifresini girin:');
+  if (pw === null) return;
+  const hash = await sha256Hex(pw);
+  if (hash === ADMIN_PASSWORD_HASH) {
+    sessionStorage.setItem(ADMIN_SESSION_KEY, '1');
+    updateAdminUI();
+    if (PLACES.length) applyFilters();
+  } else {
+    alert('Şifre yanlış.');
+  }
+});
+
+updateAdminUI();
+
+// ================= Mekan Öner / Düzenle Modal =================
 const SUGGEST_EMAIL = 'ipapila@gmail.com';
 
 const overlay = document.getElementById('suggest-overlay');
@@ -677,19 +775,61 @@ const formView = document.getElementById('suggest-form-view');
 const successView = document.getElementById('suggest-success-view');
 const suggestForm = document.getElementById('suggest-form');
 
-function openSuggestModal() {
+let editingOriginal = null;
+
+function openSuggestModal(place) {
   formView.style.display = '';
   successView.classList.remove('open');
   overlay.classList.add('open');
+
+  const titleEl = document.getElementById('modal-title');
+  const descEl = document.getElementById('modal-desc');
+  const submitBtn = document.getElementById('suggest-submit');
+
+  if (place) {
+    editingOriginal = place;
+    document.getElementById('f-edit-id').value = place.id;
+    document.getElementById('f-ad').value = place.ad || '';
+    document.getElementById('f-tur').value = place.tur || '';
+    document.getElementById('f-il').value = place.il || '';
+    document.getElementById('f-ilce').value = place.ilce || '';
+    document.getElementById('f-adres').value = place.adres || '';
+    document.getElementById('f-lat').value = place.lat != null ? place.lat : '';
+    document.getElementById('f-lng').value = place.lng != null ? place.lng : '';
+    document.getElementById('f-telefon').value = place.telefon || '';
+    document.getElementById('f-web').value = place.web || '';
+    document.getElementById('f-not').value = place.not || '';
+    document.getElementById('f-oneren').value = '';
+
+    titleEl.textContent = 'Mekanı Düzenle';
+    descEl.textContent = 'Hatalı bilgileri düzeltin, gönderdiğinizde e-posta uygulamanız açılacak.';
+    submitBtn.textContent = 'Düzeltmeyi Gönder';
+  } else {
+    editingOriginal = null;
+    document.getElementById('f-edit-id').value = '';
+    titleEl.textContent = 'Yeni Mekan Öner';
+    descEl.textContent = 'Bildiğiniz bir vegan/vejetaryen mekanı ekleyin, gönderdiğinizde e-posta uygulamanız açılacak.';
+    submitBtn.textContent = 'Mail ile Gönder';
+  }
 }
+
+function openEditModal(id) {
+  const place = PLACES.find(p => p.id === id);
+  if (!place) { alert('Mekan bulunamadı.'); return; }
+  map.closePopup();
+  openSuggestModal(place);
+}
+
 function closeSuggestModal() {
   overlay.classList.remove('open');
   suggestForm.reset();
   document.querySelectorAll('#suggest-form .form-row').forEach(r => r.classList.remove('invalid'));
   document.getElementById('location-status').textContent = '';
+  document.getElementById('f-edit-id').value = '';
+  editingOriginal = null;
 }
 
-document.getElementById('suggest-btn').addEventListener('click', openSuggestModal);
+document.getElementById('suggest-btn').addEventListener('click', () => openSuggestModal());
 document.getElementById('suggest-close-1').addEventListener('click', closeSuggestModal);
 document.getElementById('suggest-cancel').addEventListener('click', closeSuggestModal);
 document.getElementById('suggest-done').addEventListener('click', closeSuggestModal);
@@ -758,6 +898,8 @@ suggestForm.addEventListener('submit', (e) => {
   if (!valid) return;
 
   const today = new Date().toISOString().slice(0, 10);
+  const editId = document.getElementById('f-edit-id').value;
+  const isEdit = !!editId;
 
   // JSON dosyasındaki alan başlıklarıyla uyumlu obje
   const entry = {
@@ -770,32 +912,52 @@ suggestForm.addEventListener('submit', (e) => {
     lng: lng ? Number(lng) : null,
     telefon: telefon || null,
     not: not || null,
-    id: null,
-    kaynak: 'Kullanıcı Önerisi',
-    eklenme: today,
+    id: isEdit ? editId : null,
+    kaynak: isEdit ? (editingOriginal ? editingOriginal.kaynak : 'Kullanıcı Önerisi') : 'Kullanıcı Önerisi',
+    eklenme: isEdit ? (editingOriginal ? editingOriginal.eklenme : today) : today,
     web: web || null
   };
+  if (isEdit) entry.duzenlenme = today;
 
-  const bodyLines = [
-    'Türkiye Vegan/Vejetaryen Mekan Haritası için yeni bir mekan öneriliyor:',
-    '',
-    'Mekan Adı: ' + ad,
-    'Tür: ' + tur,
-    'İl: ' + il,
-    'İlçe: ' + ilce,
-    'Adres: ' + adres,
-    'Enlem (lat): ' + (lat || '-'),
-    'Boylam (lng): ' + (lng || '-'),
-    'Telefon: ' + (telefon || '-'),
-    'Web/Instagram: ' + (web || '-'),
-    'Not: ' + (not || '-'),
-    'Öneren: ' + (oneren || '-'),
-    '',
-    '--- JSON formatı (vegan_mekanlar.json alanlarıyla uyumlu) ---',
-    JSON.stringify(entry, null, 2)
-  ];
+  let bodyLines;
+  let subject;
 
-  const subject = 'Yeni Mekan Önerisi: ' + ad;
+  if (isEdit) {
+    subject = 'Mekan Düzeltmesi: ' + ad + ' (id: ' + editId + ')';
+    bodyLines = [
+      'Türkiye Vegan/Vejetaryen Mekan Haritası — mevcut bir kayıt için düzeltme öneriliyor.',
+      'Kayıt id: ' + editId,
+      '',
+      '--- MEVCUT (eski) KAYIT ---',
+      JSON.stringify(editingOriginal || {}, null, 2),
+      '',
+      '--- ÖNERİLEN (yeni) KAYIT ---',
+      JSON.stringify(entry, null, 2),
+      '',
+      'Düzeltmeyi öneren: ' + (oneren || '-')
+    ];
+  } else {
+    subject = 'Yeni Mekan Önerisi: ' + ad;
+    bodyLines = [
+      'Türkiye Vegan/Vejetaryen Mekan Haritası için yeni bir mekan öneriliyor:',
+      '',
+      'Mekan Adı: ' + ad,
+      'Tür: ' + tur,
+      'İl: ' + il,
+      'İlçe: ' + ilce,
+      'Adres: ' + adres,
+      'Enlem (lat): ' + (lat || '-'),
+      'Boylam (lng): ' + (lng || '-'),
+      'Telefon: ' + (telefon || '-'),
+      'Web/Instagram: ' + (web || '-'),
+      'Not: ' + (not || '-'),
+      'Öneren: ' + (oneren || '-'),
+      '',
+      '--- JSON formatı (vegan_mekanlar.json alanlarıyla uyumlu) ---',
+      JSON.stringify(entry, null, 2)
+    ];
+  }
+
   const body = bodyLines.join('\n');
 
   const mailtoUrl = 'mailto:' + encodeURIComponent(SUGGEST_EMAIL) +
