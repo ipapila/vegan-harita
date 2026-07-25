@@ -230,26 +230,7 @@
     font-size: 13px; font-weight: 700;
     border: 3px solid #fff;
     box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-  }
-  .cluster-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
-  .cluster-hint { font-size: 12px; color: #777; margin-bottom: 6px; }
-  .cluster-list { max-height: 190px; overflow-y: auto; }
-  .cluster-item {
-    display: flex; align-items: center; gap: 8px;
-    padding: 7px 4px; border-bottom: 1px solid #eee;
-    cursor: pointer; font-size: 12.5px; color: #2c332e;
-  }
-  .cluster-item:last-child { border-bottom: none; }
-  .cluster-item:hover { background: #f4f7f4; }
-  .cluster-item-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-  .cluster-item-name { flex: 1; }
-  .cluster-back {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 12px;
-    color: var(--vegan);
     cursor: pointer;
-    text-decoration: underline;
   }
 
   @media (max-width: 760px) {
@@ -617,7 +598,9 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 }).addTo(map);
 
 let markersLayer = L.layerGroup().addTo(map);
-let clusterMarkers = {}; // clusterId -> { marker, group } — aynı koordinattaki farklı mekanlar
+let spiderLayer = L.layerGroup().addTo(map);
+let clusterMarkers = {}; // clusterId -> { marker, group, latlng } — aynı koordinattaki farklı mekanlar
+let activeSpider = null; // { clusterId, legs: [], markers: [] }
 
 function makeIcon(tur) {
   const color = TUR_COLORS[tur] || "#555";
@@ -643,6 +626,58 @@ function makeClusterIcon(count) {
 function coordKey(p) {
   return p.lat.toFixed(5) + ',' + p.lng.toFixed(5);
 }
+
+// ---- Küme "açılımı" (spiderfy): tıklanan kümedeki mekanlar merkezden
+// ince çizgilerle bağlı şekilde etrafa yayılır; her biri normal bir pindir
+// ve tıklanınca kendi detay popup'ını açar. ----
+function collapseSpider() {
+  if (!activeSpider) return;
+  spiderLayer.clearLayers();
+  activeSpider = null;
+}
+
+function spiderfyCluster(clusterId) {
+  const entry = clusterMarkers[clusterId];
+  if (!entry) return;
+
+  if (activeSpider && activeSpider.clusterId === clusterId) {
+    collapseSpider();
+    return;
+  }
+  collapseSpider();
+
+  const { group, latlng } = entry;
+  const centerPoint = map.project(latlng, map.getZoom());
+  const n = group.length;
+  const radius = Math.max(42, 26 + n * 5);
+  const legs = [];
+  const markers = [];
+
+  group.forEach((p, i) => {
+    const angle = (2 * Math.PI * i / n) - Math.PI / 2;
+    const targetPoint = L.point(
+      centerPoint.x + radius * Math.cos(angle),
+      centerPoint.y + radius * Math.sin(angle)
+    );
+    const targetLatLng = map.unproject(targetPoint, map.getZoom());
+
+    const leg = L.polyline([latlng, targetLatLng], {
+      color: '#555',
+      weight: 2,
+      opacity: 0.85
+    }).addTo(spiderLayer);
+    legs.push(leg);
+
+    const marker = L.marker(targetLatLng, { icon: makeIcon(p.tur) });
+    marker.bindPopup(popupHtml(p));
+    marker.addTo(spiderLayer);
+    markers.push(marker);
+  });
+
+  activeSpider = { clusterId, legs, markers };
+}
+
+map.on('zoomstart movestart click', collapseSpider);
 
 function buildIlCounts(places) {
   const counts = {};
@@ -740,36 +775,9 @@ function popupHtml(p) {
   `;
 }
 
-function clusterListHtml(clusterId, group) {
-  const items = group.map(p => `
-    <div class="cluster-item" onclick="showClusterDetail('${clusterId}','${p.id}')">
-      <span class="cluster-item-dot" style="background:${TUR_COLORS[p.tur] || '#555'}"></span>
-      <span class="cluster-item-name">${p.ad}</span>
-    </div>`).join('');
-  return `
-    <div class="cluster-title">${group.length} mekan bu noktada</div>
-    <div class="cluster-hint">Aynı konuma denk gelen kayıtlar — görmek istediğinize tıklayın:</div>
-    <div class="cluster-list">${items}</div>
-  `;
-}
-
-function showClusterDetail(clusterId, placeId) {
-  const entry = clusterMarkers[clusterId];
-  if (!entry) return;
-  const place = entry.group.find(p => p.id === placeId);
-  if (!place) return;
-  const backLink = `<div class="cluster-back" onclick="showClusterList('${clusterId}')">◀ Listeye dön (${entry.group.length})</div>`;
-  entry.marker.setPopupContent(popupHtml(place) + backLink);
-}
-
-function showClusterList(clusterId) {
-  const entry = clusterMarkers[clusterId];
-  if (!entry) return;
-  entry.marker.setPopupContent(clusterListHtml(clusterId, entry.group));
-}
-
 function applyFilters() {
   markersLayer.clearLayers();
+  collapseSpider();
   clusterMarkers = {};
   const filtered = PLACES.filter(matches);
 
@@ -789,10 +797,10 @@ function applyFilters() {
       marker.addTo(markersLayer);
     } else {
       const clusterId = 'cl' + (clusterIdx++);
-      const marker = L.marker([first.lat, first.lng], { icon: makeClusterIcon(group.length) });
-      clusterMarkers[clusterId] = { marker, group };
-      marker.bindPopup(clusterListHtml(clusterId, group), { maxWidth: 260 });
-      marker.on('popupclose', () => showClusterList(clusterId));
+      const latlng = L.latLng(first.lat, first.lng);
+      const marker = L.marker(latlng, { icon: makeClusterIcon(group.length) });
+      clusterMarkers[clusterId] = { marker, group, latlng };
+      marker.on('click', () => spiderfyCluster(clusterId));
       marker.addTo(markersLayer);
     }
   });
