@@ -10,6 +10,7 @@
     --vegan: #2e7d32;
     --vejetaryen: #1565c0;
     --dostu: #e65100;
+    --market: #8e24aa;
     --bg: #f4f6f5;
     --panel: #ffffff;
     --border: #dde3e0;
@@ -101,6 +102,7 @@
   .tur-chip.active[data-tur="vegan"] { background: #e8f5e9; border-color: var(--vegan); color: #1b5e20; }
   .tur-chip.active[data-tur="vejetaryen"] { background: #e3f0fc; border-color: var(--vejetaryen); color: #0d47a1; }
   .tur-chip.active[data-tur="vegan dostu"] { background: #fdeee0; border-color: var(--dostu); color: #a34b00; }
+  .tur-chip.active[data-tur="vegan market"] { background: #f3e5f5; border-color: var(--market); color: #4a148c; }
   .tur-chip:not(.active) { opacity: 0.45; }
 
   #il-list {
@@ -219,6 +221,35 @@
     transform: rotate(-45deg);
     border: 2px solid #fff;
     box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  }
+  .marker-cluster {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: #37474f;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  }
+  .cluster-title { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .cluster-hint { font-size: 12px; color: #777; margin-bottom: 6px; }
+  .cluster-list { max-height: 190px; overflow-y: auto; }
+  .cluster-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 4px; border-bottom: 1px solid #eee;
+    cursor: pointer; font-size: 12.5px; color: #2c332e;
+  }
+  .cluster-item:last-child { border-bottom: none; }
+  .cluster-item:hover { background: #f4f7f4; }
+  .cluster-item-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .cluster-item-name { flex: 1; }
+  .cluster-back {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--vegan);
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   @media (max-width: 760px) {
@@ -424,6 +455,7 @@
         <div class="tur-chip active" data-tur="vegan"><span class="dot" style="background:#2e7d32"></span>Vegan</div>
         <div class="tur-chip active" data-tur="vejetaryen"><span class="dot" style="background:#1565c0"></span>Vejetaryen</div>
         <div class="tur-chip active" data-tur="vegan dostu"><span class="dot" style="background:#e65100"></span>Vegan Dostu</div>
+        <div class="tur-chip active" data-tur="vegan market"><span class="dot" style="background:#8e24aa"></span>Vegan Market</div>
       </div>
     </div>
     <div class="filter-section" style="padding-bottom:0;">
@@ -470,6 +502,7 @@
               <option value="vegan">Vegan</option>
               <option value="vejetaryen">Vejetaryen</option>
               <option value="vegan dostu">Vegan Dostu</option>
+              <option value="vegan market">Vegan Market</option>
             </select>
             <div class="form-error">Lütfen bir tür seçin.</div>
           </div>
@@ -556,17 +589,19 @@
 const TUR_COLORS = {
   "vegan": "#2e7d32",
   "vejetaryen": "#1565c0",
-  "vegan dostu": "#e65100"
+  "vegan dostu": "#e65100",
+  "vegan market": "#8e24aa"
 };
 const TUR_LABELS = {
   "vegan": "Vegan",
   "vejetaryen": "Vejetaryen",
-  "vegan dostu": "Vegan Dostu"
+  "vegan dostu": "Vegan Dostu",
+  "vegan market": "Vegan Market"
 };
 
 let PLACES = [];
 let state = {
-  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu"]),
+  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market"]),
   activeIl: null,
   query: ""
 };
@@ -582,6 +617,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 }).addTo(map);
 
 let markersLayer = L.layerGroup().addTo(map);
+let clusterMarkers = {}; // clusterId -> { marker, group } — aynı koordinattaki farklı mekanlar
 
 function makeIcon(tur) {
   const color = TUR_COLORS[tur] || "#555";
@@ -592,6 +628,20 @@ function makeIcon(tur) {
     iconAnchor: [11, 22],
     popupAnchor: [0, -20]
   });
+}
+
+function makeClusterIcon(count) {
+  return L.divIcon({
+    className: '',
+    html: `<div class="marker-cluster">${count}</div>`,
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -14]
+  });
+}
+
+function coordKey(p) {
+  return p.lat.toFixed(5) + ',' + p.lng.toFixed(5);
 }
 
 function buildIlCounts(places) {
@@ -690,14 +740,63 @@ function popupHtml(p) {
   `;
 }
 
+function clusterListHtml(clusterId, group) {
+  const items = group.map(p => `
+    <div class="cluster-item" onclick="showClusterDetail('${clusterId}','${p.id}')">
+      <span class="cluster-item-dot" style="background:${TUR_COLORS[p.tur] || '#555'}"></span>
+      <span class="cluster-item-name">${p.ad}</span>
+    </div>`).join('');
+  return `
+    <div class="cluster-title">${group.length} mekan bu noktada</div>
+    <div class="cluster-hint">Aynı konuma denk gelen kayıtlar — görmek istediğinize tıklayın:</div>
+    <div class="cluster-list">${items}</div>
+  `;
+}
+
+function showClusterDetail(clusterId, placeId) {
+  const entry = clusterMarkers[clusterId];
+  if (!entry) return;
+  const place = entry.group.find(p => p.id === placeId);
+  if (!place) return;
+  const backLink = `<div class="cluster-back" onclick="showClusterList('${clusterId}')">◀ Listeye dön (${entry.group.length})</div>`;
+  entry.marker.setPopupContent(popupHtml(place) + backLink);
+}
+
+function showClusterList(clusterId) {
+  const entry = clusterMarkers[clusterId];
+  if (!entry) return;
+  entry.marker.setPopupContent(clusterListHtml(clusterId, entry.group));
+}
+
 function applyFilters() {
   markersLayer.clearLayers();
+  clusterMarkers = {};
   const filtered = PLACES.filter(matches);
+
+  // Aynı koordinata düşen mekanları grupla (kaba geocoding çakışmaları için)
+  const groups = {};
   filtered.forEach(p => {
-    const marker = L.marker([p.lat, p.lng], { icon: makeIcon(p.tur) });
-    marker.bindPopup(popupHtml(p));
-    marker.addTo(markersLayer);
+    const key = coordKey(p);
+    (groups[key] = groups[key] || []).push(p);
   });
+
+  let clusterIdx = 0;
+  Object.values(groups).forEach(group => {
+    const first = group[0];
+    if (group.length === 1) {
+      const marker = L.marker([first.lat, first.lng], { icon: makeIcon(first.tur) });
+      marker.bindPopup(popupHtml(first));
+      marker.addTo(markersLayer);
+    } else {
+      const clusterId = 'cl' + (clusterIdx++);
+      const marker = L.marker([first.lat, first.lng], { icon: makeClusterIcon(group.length) });
+      clusterMarkers[clusterId] = { marker, group };
+      marker.bindPopup(clusterListHtml(clusterId, group), { maxWidth: 260 });
+      marker.on('popupclose', () => showClusterList(clusterId));
+      marker.addTo(markersLayer);
+    }
+  });
+
   document.getElementById('result-count').textContent = filtered.length;
 
   if (filtered.length > 0 && (state.activeIl || state.query)) {
