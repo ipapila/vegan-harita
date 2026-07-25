@@ -272,6 +272,42 @@
   }
   #suggest-btn:hover { background: #1b5e20; }
 
+  /* --- Admin araçları --- */
+  #admin-tools-wrap {
+    display: none;
+    padding: 4px 18px 4px;
+    gap: 8px;
+    flex-direction: column;
+  }
+  #admin-tools-wrap.open { display: flex; }
+  #admin-tools-wrap .admin-tools-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--muted);
+    margin: 4px 0 2px;
+  }
+  .admin-btn {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: #2c332e;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all .15s ease;
+  }
+  .admin-btn:hover { background: #f0f3f1; }
+  .admin-btn.manual { border-color: var(--vegan); color: #1b5e20; }
+  .admin-btn.import { border-color: var(--market); color: #4a148c; }
+  .admin-btn.export { border-color: var(--urunlu); color: #004d54; }
+
   /* --- Modal --- */
   .modal-overlay {
     display: none;
@@ -429,6 +465,18 @@
   .modal-success .big-emoji { font-size: 34px; margin-bottom: 10px; }
   .modal-success h3 { margin: 0 0 8px; color: #1b3a1e; }
   .modal-success p { margin: 0 0 18px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* --- Import özet --- */
+  .import-summary {
+    font-size: 12.5px;
+    background: #f7f9f7;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+  .import-summary b { color: #1b3a1e; }
 </style>
 </head>
 <body>
@@ -459,6 +507,13 @@
     <div id="load-status" style="display:none;"></div>
     <div id="suggest-btn-wrap">
       <button id="suggest-btn" type="button">➕ Yeni Mekan Öner</button>
+    </div>
+    <div id="admin-tools-wrap">
+      <div class="admin-tools-label">Admin Araçları</div>
+      <button id="manual-add-btn" type="button" class="admin-btn manual">📝 Manuel Mekan Ekle</button>
+      <button id="json-import-btn" type="button" class="admin-btn import">📥 JSON İçe Aktar</button>
+      <button id="json-export-btn" type="button" class="admin-btn export">📤 JSON Dışa Aktar</button>
+      <input type="file" id="json-import-input" accept="application/json,.json" style="display:none;">
     </div>
     <div id="results-footer">
       <span id="result-count">0</span> mekan gösteriliyor
@@ -574,6 +629,150 @@
       <p>ipapila@gmail.com adresine gönderilecek şekilde hazırlanan e-postayı<br>
          kontrol edip gönder butonuna basmanız yeterli.</p>
       <button type="button" class="btn-primary" id="suggest-done">Tamam</button>
+    </div>
+  </div>
+</div>
+
+<!-- Manuel Mekan Ekle Modal (Admin) -->
+<div class="modal-overlay" id="manual-overlay">
+  <div class="modal-box">
+    <div id="manual-form-view">
+      <div class="modal-header">
+        <div>
+          <h3>Manuel Mekan Ekle</h3>
+          <p>Kaydı doğrudan veri setine ekler (yalnızca bu tarayıcı oturumunda). Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.</p>
+        </div>
+        <button class="modal-close" id="manual-close-1" type="button" aria-label="Kapat">✕</button>
+      </div>
+      <form id="manual-form" novalidate>
+        <div class="modal-body">
+          <div class="form-row" id="m-row-ad">
+            <label for="m-ad">Mekan Adı</label>
+            <input type="text" id="m-ad" placeholder="Örn: Vegan Masa">
+            <div class="form-error">Lütfen mekan adını girin.</div>
+          </div>
+
+          <div class="form-row" id="m-row-tur">
+            <label for="m-tur">Tür</label>
+            <select id="m-tur">
+              <option value="">Seçin...</option>
+              <option value="vegan">Vegan</option>
+              <option value="vejetaryen">Vejetaryen</option>
+              <option value="vegan dostu">Vegan Dostu</option>
+              <option value="vegan market">Vegan Market</option>
+              <option value="vegan ürünlü">Vegan Ürünlü (market/zincir mağaza)</option>
+            </select>
+            <div class="form-error">Lütfen bir tür seçin.</div>
+          </div>
+
+          <div class="form-row two-col">
+            <div class="form-row" id="m-row-il" style="margin-bottom:0;">
+              <label for="m-il">İl</label>
+              <input type="text" id="m-il" placeholder="Örn: İstanbul">
+              <div class="form-error">İl gerekli.</div>
+            </div>
+            <div class="form-row" id="m-row-ilce" style="margin-bottom:0;">
+              <label for="m-ilce">İlçe</label>
+              <input type="text" id="m-ilce" placeholder="Örn: Kadıköy">
+              <div class="form-error">İlçe gerekli.</div>
+            </div>
+          </div>
+
+          <div class="form-row" id="m-row-adres" style="margin-top:13px;">
+            <label for="m-adres">Adres</label>
+            <textarea id="m-adres" placeholder="Açık adres"></textarea>
+            <div class="form-error">Adres gerekli.</div>
+          </div>
+
+          <div class="form-row" style="margin-bottom:8px;">
+            <label>Konum <span class="opt">opsiyonel</span></label>
+            <div class="pick-map-wrap">
+              <div class="pick-map" id="manual-pick-map"></div>
+              <div class="form-hint">Haritada mekanın yerine tıklayın ya da işaretçiyi sürükleyin — enlem/boylam alanları otomatik dolar.</div>
+            </div>
+          </div>
+          <div class="form-row two-col">
+            <div style="margin-bottom:0;">
+              <label for="m-lat">Enlem (lat) <span class="opt">opsiyonel</span></label>
+              <input type="number" step="any" id="m-lat" placeholder="Örn: 41.0449907">
+            </div>
+            <div style="margin-bottom:0;">
+              <label for="m-lng">Boylam (lng) <span class="opt">opsiyonel</span></label>
+              <input type="number" step="any" id="m-lng" placeholder="Örn: 29.0025483">
+            </div>
+          </div>
+          <div class="form-hint" style="margin-bottom:13px;">Haritadan seçebilir ya da koordinatları elle girebilirsiniz.</div>
+
+          <div class="form-row">
+            <label for="m-telefon">Telefon <span class="opt">opsiyonel</span></label>
+            <input type="tel" id="m-telefon" placeholder="+90 5xx xxx xx xx">
+          </div>
+
+          <div class="form-row">
+            <label for="m-web">Web sitesi / Instagram <span class="opt">opsiyonel</span></label>
+            <input type="url" id="m-web" placeholder="https://...">
+          </div>
+
+          <div class="form-row">
+            <label for="m-not">Not <span class="opt">opsiyonel</span></label>
+            <textarea id="m-not" placeholder="Öne çıkan yemekler, ipuçları vb."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="m-kaynak">Kaynak <span class="opt">opsiyonel</span></label>
+            <input type="text" id="m-kaynak" placeholder="Örn: Google Places, Manuel Giriş">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="manual-cancel">Vazgeç</button>
+          <button type="submit" class="btn-primary" id="manual-submit">Listeye Ekle</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal-success" id="manual-success-view">
+      <div class="big-emoji">✅</div>
+      <h3>Mekan eklendi</h3>
+      <p id="manual-success-text">Kayıt haritaya ve listeye eklendi.<br>Kalıcı hale getirmek için veriyi JSON olarak dışa aktarmayı unutmayın.</p>
+      <div style="display:flex; gap:10px; justify-content:center;">
+        <button type="button" class="btn-secondary" id="manual-add-another">Başka Ekle</button>
+        <button type="button" class="btn-primary" id="manual-done">Tamam</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JSON İçe Aktar Modal (Admin) -->
+<div class="modal-overlay" id="import-overlay">
+  <div class="modal-box">
+    <div id="import-view">
+      <div class="modal-header">
+        <div>
+          <h3>JSON İçe Aktar</h3>
+          <p>vegan_mekanlar.json formatıyla uyumlu bir dosya seçin. Mevcut veriyle birleştirilebilir ya da tamamen değiştirilebilir.</p>
+        </div>
+        <button class="modal-close" id="import-close-1" type="button" aria-label="Kapat">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <label>Dosya</label>
+          <button type="button" class="btn-secondary" id="import-pick-btn" style="width:100%;">📁 JSON Dosyası Seç</button>
+          <div class="form-hint" id="import-file-status">Henüz dosya seçilmedi.</div>
+        </div>
+        <div class="import-summary" id="import-summary" style="display:none;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" id="import-cancel">Vazgeç</button>
+        <button type="button" class="btn-primary" id="import-merge-btn" disabled>Birleştir</button>
+        <button type="button" class="btn-primary" id="import-replace-btn" disabled style="background:#c62828;">Tümünü Değiştir</button>
+      </div>
+    </div>
+
+    <div class="modal-success" id="import-success-view">
+      <div class="big-emoji">✅</div>
+      <h3>İçe aktarma tamamlandı</h3>
+      <p id="import-success-text"></p>
+      <button type="button" class="btn-primary" id="import-done">Tamam</button>
     </div>
   </div>
 </div>
@@ -871,12 +1070,15 @@ async function sha256Hex(text) {
 function updateAdminUI() {
   const link = document.getElementById('admin-toggle-link');
   const status = document.getElementById('admin-status');
+  const toolsWrap = document.getElementById('admin-tools-wrap');
   if (isAdminMode()) {
     link.textContent = '🔓 Admin Çıkışı';
     status.textContent = '👤 Admin modu aktif';
+    toolsWrap.classList.add('open');
   } else {
     link.textContent = '🔐 Admin';
     status.textContent = '';
+    toolsWrap.classList.remove('open');
   }
 }
 
@@ -1166,6 +1368,289 @@ suggestForm.addEventListener('submit', (e) => {
 
   formView.style.display = 'none';
   successView.classList.add('open');
+});
+
+// ================= Manuel Mekan Ekle (Admin) =================
+const manualOverlay = document.getElementById('manual-overlay');
+const manualFormView = document.getElementById('manual-form-view');
+const manualSuccessView = document.getElementById('manual-success-view');
+const manualForm = document.getElementById('manual-form');
+
+let manualPickMap = null;
+let manualPickMarker = null;
+
+function ensureManualPickMap() {
+  if (manualPickMap) return;
+  manualPickMap = L.map('manual-pick-map', { zoomControl: true, attributionControl: false }).setView([39.0, 35.0], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(manualPickMap);
+  manualPickMap.on('click', (e) => setManualPickedLocation(e.latlng.lat, e.latlng.lng, { zoom: Math.max(manualPickMap.getZoom(), 14) }));
+}
+
+function setManualPickedLocation(lat, lng, opts) {
+  opts = opts || {};
+  document.getElementById('m-lat').value = lat;
+  document.getElementById('m-lng').value = lng;
+  if (!manualPickMarker) {
+    manualPickMarker = L.marker([lat, lng], { draggable: true }).addTo(manualPickMap);
+    manualPickMarker.on('dragend', () => {
+      const p = manualPickMarker.getLatLng();
+      document.getElementById('m-lat').value = p.lat;
+      document.getElementById('m-lng').value = p.lng;
+    });
+  } else {
+    manualPickMarker.setLatLng([lat, lng]);
+  }
+  if (opts.recenter !== false) {
+    manualPickMap.setView([lat, lng], opts.zoom || manualPickMap.getZoom());
+  }
+}
+
+function clearManualPickMarker() {
+  if (manualPickMarker) { manualPickMap.removeLayer(manualPickMarker); manualPickMarker = null; }
+}
+
+['m-lat', 'm-lng'].forEach((id) => {
+  document.getElementById(id).addEventListener('change', () => {
+    const lat = Number(document.getElementById('m-lat').value);
+    const lng = Number(document.getElementById('m-lng').value);
+    if (Number.isFinite(lat) && Number.isFinite(lng) && document.getElementById('m-lat').value !== '' && document.getElementById('m-lng').value !== '') {
+      ensureManualPickMap();
+      setManualPickedLocation(lat, lng, { zoom: Math.max(manualPickMap.getZoom(), 14) });
+    }
+  });
+});
+
+// Mevcut id'lerdeki en büyük "vNNNN" numarasına göre bir sonraki id'yi üretir.
+function nextPlaceId() {
+  let max = 0;
+  PLACES.forEach(p => {
+    const m = /^v(\d+)$/.exec(p.id || '');
+    if (m) max = Math.max(max, parseInt(m[1], 10));
+  });
+  return 'v' + String(max + 1).padStart(4, '0');
+}
+
+function openManualModal() {
+  manualForm.reset();
+  document.querySelectorAll('#manual-form .form-row').forEach(r => r.classList.remove('invalid'));
+  manualFormView.style.display = '';
+  manualSuccessView.classList.remove('open');
+  manualOverlay.classList.add('open');
+  setTimeout(() => {
+    ensureManualPickMap();
+    manualPickMap.invalidateSize();
+    clearManualPickMarker();
+    manualPickMap.setView([39.0, 35.0], 6);
+  }, 50);
+}
+
+function closeManualModal() {
+  manualOverlay.classList.remove('open');
+  manualForm.reset();
+  document.querySelectorAll('#manual-form .form-row').forEach(r => r.classList.remove('invalid'));
+  clearManualPickMarker();
+}
+
+document.getElementById('manual-add-btn').addEventListener('click', openManualModal);
+document.getElementById('manual-close-1').addEventListener('click', closeManualModal);
+document.getElementById('manual-cancel').addEventListener('click', closeManualModal);
+document.getElementById('manual-done').addEventListener('click', closeManualModal);
+document.getElementById('manual-add-another').addEventListener('click', () => {
+  manualForm.reset();
+  document.querySelectorAll('#manual-form .form-row').forEach(r => r.classList.remove('invalid'));
+  manualFormView.style.display = '';
+  manualSuccessView.classList.remove('open');
+  clearManualPickMarker();
+  if (manualPickMap) manualPickMap.setView([39.0, 35.0], 6);
+});
+manualOverlay.addEventListener('click', (e) => {
+  if (e.target === manualOverlay) closeManualModal();
+});
+
+manualForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!isAdminMode()) { alert('Bu işlem için admin girişi gerekli.'); return; }
+
+  const ad = document.getElementById('m-ad').value.trim();
+  const tur = document.getElementById('m-tur').value;
+  const il = document.getElementById('m-il').value.trim();
+  const ilce = document.getElementById('m-ilce').value.trim();
+  const adres = document.getElementById('m-adres').value.trim();
+  const lat = document.getElementById('m-lat').value.trim();
+  const lng = document.getElementById('m-lng').value.trim();
+  const telefon = document.getElementById('m-telefon').value.trim();
+  const web = document.getElementById('m-web').value.trim();
+  const not = document.getElementById('m-not').value.trim();
+  const kaynak = document.getElementById('m-kaynak').value.trim();
+
+  let valid = true;
+  markInvalid('m-row-ad', !ad); if (!ad) valid = false;
+  markInvalid('m-row-tur', !tur); if (!tur) valid = false;
+  markInvalid('m-row-il', !il); if (!il) valid = false;
+  markInvalid('m-row-ilce', !ilce); if (!ilce) valid = false;
+  markInvalid('m-row-adres', !adres); if (!adres) valid = false;
+  if (!valid) return;
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  // vegan_mekanlar.json ile birebir uyumlu alan seti
+  const entry = {
+    ad: ad,
+    il: il,
+    ilce: ilce,
+    tur: tur,
+    adres: adres,
+    lat: lat ? Number(lat) : null,
+    lng: lng ? Number(lng) : null,
+    telefon: telefon || null,
+    not: not || null,
+    id: nextPlaceId(),
+    kaynak: kaynak || 'Manuel Giriş (Admin)',
+    eklenme: today,
+    web: web || null
+  };
+
+  PLACES.push(entry);
+  renderIlList();
+  applyFilters();
+
+  document.getElementById('manual-success-text').innerHTML =
+    `<b>${entry.ad}</b> (${entry.id}) listeye eklendi.<br>Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.`;
+  manualFormView.style.display = 'none';
+  manualSuccessView.classList.add('open');
+});
+
+// ================= JSON İçe / Dışa Aktar (Admin) =================
+const importOverlay = document.getElementById('import-overlay');
+const importView = document.getElementById('import-view');
+const importSuccessView = document.getElementById('import-success-view');
+const importFileStatus = document.getElementById('import-file-status');
+const importSummaryEl = document.getElementById('import-summary');
+const importMergeBtn = document.getElementById('import-merge-btn');
+const importReplaceBtn = document.getElementById('import-replace-btn');
+let importedData = null;
+
+function downloadJson(data, filename) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('json-export-btn').addEventListener('click', () => {
+  if (!isAdminMode()) { alert('Bu işlem için admin girişi gerekli.'); return; }
+  downloadJson(PLACES, 'vegan_mekanlar.json');
+});
+
+function openImportModal() {
+  importedData = null;
+  importFileStatus.textContent = 'Henüz dosya seçilmedi.';
+  importSummaryEl.style.display = 'none';
+  importSummaryEl.innerHTML = '';
+  importMergeBtn.disabled = true;
+  importReplaceBtn.disabled = true;
+  importView.style.display = '';
+  importSuccessView.classList.remove('open');
+  importOverlay.classList.add('open');
+}
+
+function closeImportModal() {
+  importOverlay.classList.remove('open');
+  document.getElementById('json-import-input').value = '';
+}
+
+document.getElementById('json-import-btn').addEventListener('click', () => {
+  if (!isAdminMode()) { alert('Bu işlem için admin girişi gerekli.'); return; }
+  openImportModal();
+});
+document.getElementById('import-close-1').addEventListener('click', closeImportModal);
+document.getElementById('import-cancel').addEventListener('click', closeImportModal);
+document.getElementById('import-done').addEventListener('click', closeImportModal);
+document.getElementById('import-done').addEventListener('click', () => { if (PLACES.length) applyFilters(); });
+importOverlay.addEventListener('click', (e) => {
+  if (e.target === importOverlay) closeImportModal();
+});
+
+document.getElementById('import-pick-btn').addEventListener('click', () => {
+  document.getElementById('json-import-input').click();
+});
+
+document.getElementById('json-import-input').addEventListener('change', (e) => {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(reader.result);
+      if (!Array.isArray(parsed)) throw new Error('Dosya bir JSON dizisi (array) olmalı.');
+      const invalidIdx = parsed.findIndex(p => !p || typeof p !== 'object' || !p.ad || !p.tur || !p.il);
+      if (invalidIdx !== -1) throw new Error(`Kayıt #${invalidIdx + 1}: "ad", "tur" ve "il" alanları zorunlu.`);
+
+      importedData = parsed;
+      importFileStatus.textContent = `✓ ${file.name} yüklendi.`;
+      importFileStatus.style.color = '#1b5e20';
+
+      const existingIds = new Set(PLACES.map(p => p.id));
+      const newCount = importedData.filter(p => !existingIds.has(p.id)).length;
+      const overlapCount = importedData.length - newCount;
+
+      importSummaryEl.style.display = 'block';
+      importSummaryEl.innerHTML =
+        `İçe aktarılan dosyada <b>${importedData.length}</b> kayıt bulundu.<br>` +
+        `Mevcut veride <b>${PLACES.length}</b> kayıt var.<br>` +
+        `<b>Birleştir:</b> ${newCount} yeni kayıt eklenir, id'si çakışan ${overlapCount} kayıt güncellenir.<br>` +
+        `<b>Tümünü Değiştir:</b> mevcut ${PLACES.length} kayıt silinir, yerine bu ${importedData.length} kayıt yüklenir.`;
+
+      importMergeBtn.disabled = false;
+      importReplaceBtn.disabled = false;
+    } catch (err) {
+      importedData = null;
+      importFileStatus.textContent = 'Hata: ' + err.message;
+      importFileStatus.style.color = '#c62828';
+      importSummaryEl.style.display = 'none';
+      importMergeBtn.disabled = true;
+      importReplaceBtn.disabled = true;
+    }
+  };
+  reader.onerror = () => {
+    importFileStatus.textContent = 'Dosya okunamadı.';
+    importFileStatus.style.color = '#c62828';
+  };
+  reader.readAsText(file, 'utf-8');
+});
+
+function finishImport(mergedCount, totalCount, mode) {
+  renderIlList();
+  applyFilters();
+  const modeText = mode === 'merge' ? 'birleştirildi' : 'tümüyle değiştirildi';
+  document.getElementById('import-success-text').innerHTML =
+    `Veri ${modeText}. Şu anda listede <b>${totalCount}</b> kayıt var.<br>` +
+    `Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.`;
+  importView.style.display = 'none';
+  importSuccessView.classList.add('open');
+}
+
+importMergeBtn.addEventListener('click', () => {
+  if (!importedData) return;
+  const byId = new Map(PLACES.map(p => [p.id, p]));
+  importedData.forEach(p => byId.set(p.id, p));
+  PLACES = Array.from(byId.values());
+  finishImport(importedData.length, PLACES.length, 'merge');
+});
+
+importReplaceBtn.addEventListener('click', () => {
+  if (!importedData) return;
+  if (!confirm(`Mevcut ${PLACES.length} kayıt silinip yerine ${importedData.length} kayıt yüklenecek. Emin misiniz?`)) return;
+  PLACES = importedData.slice();
+  finishImport(importedData.length, PLACES.length, 'replace');
 });
 </script>
 </body>
