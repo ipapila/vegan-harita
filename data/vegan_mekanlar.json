@@ -2499,5 +2499,19 @@
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
     "web": "https://www.migros.com.tr"
+  },
+  {
+    "ad": "Vegu Aydın Vegan ve Glutensiz Mutfak Yemekleri",
+    "il": "Aydın",
+    "ilce": "Efeler",
+    "tur": "vegan",
+    "adres": "Aydın (kesin adres doğrulanamadı)",
+    "lat": 37.8439532,
+    "lng": 27.8071423,
+    "telefon": null,
+    "not": "Vegan ve glütensiz yemek servisi",
+    "id": "v0200",
+    "kaynak": "Kullanıcı tarafından doğrulanmış liste",
+    "eklenme": "2026-07-25"
   }
 ]
