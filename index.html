@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Türkiye Vegan / Vejetaryen Mekan Haritası</title>
+<title>Vegan Mekanlar</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
   :root{
@@ -28,6 +28,7 @@
   #app {
     display: flex;
     height: 100vh;
+    height: 100dvh;
     min-height: 560px;
   }
   #sidebar {
@@ -132,14 +133,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
     padding: 8px 10px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 13.5px;
+    min-width: 0;
   }
   .il-item:hover { background: #f0f3f1; }
   .il-item.selected { background: #e8f5e9; color: #1b5e20; font-weight: 600; }
+  .il-item > span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
   .il-item .count {
+    flex-shrink: 0;
     font-size: 11.5px;
     color: var(--muted);
     background: #f0f3f1;
@@ -246,8 +256,38 @@
 
   @media (max-width: 760px) {
     #app { flex-direction: column; }
-    #sidebar { width: 100%; height: 46%; border-right: none; border-bottom: 1px solid var(--border); }
-    #map { height: 54%; }
+    #sidebar {
+      width: 100%;
+      height: 58%;
+      min-height: 0;
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+    #map { height: 42%; }
+
+    #sidebar-header { padding: 10px 14px 8px; }
+    #sidebar-header h1 { font-size: 15px; padding-right: 70px; }
+    #sidebar-header p { font-size: 11px; }
+    #admin-toggle-link { top: 10px; right: 14px; font-size: 10px; padding: 4px 7px; }
+
+    #search-box { margin: 8px 14px 0; }
+    #search-box input { padding: 7px 10px; font-size: 13px; }
+
+    .filter-section { padding: 8px 14px 2px; }
+    .filter-section h2 { margin: 0 0 5px; }
+    .tur-chip { padding: 4px 8px; font-size: 11.5px; }
+
+    #il-list { padding: 3px 8px 8px; }
+    .il-item { padding: 6px 9px; font-size: 12.5px; }
+    .il-item.all-item { padding-bottom: 6px; }
+
+    #suggest-btn-wrap { padding: 6px 14px 2px; }
+    #suggest-btn { padding: 7px 10px; font-size: 12.5px; }
+
+    #admin-tools-wrap { padding: 2px 14px 2px; gap: 5px; }
+    .admin-btn { padding: 6px 10px; font-size: 12px; }
+
+    #results-footer { padding: 6px 14px; font-size: 11px; }
   }
 
   /* --- Mekan öner butonu --- */
@@ -385,6 +425,7 @@
   .form-row input[type="tel"],
   .form-row input[type="url"],
   .form-row input[type="number"],
+  .form-row input[type="password"],
   .form-row select,
   .form-row textarea {
     width: 100%;
@@ -456,6 +497,10 @@
     color: #fff;
   }
   .btn-primary:hover { background: #1b5e20; }
+  .btn-primary:disabled, .btn-secondary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
   .modal-success {
     display: none;
     padding: 30px 22px 26px;
@@ -477,13 +522,27 @@
     line-height: 1.6;
   }
   .import-summary b { color: #1b3a1e; }
+
+  /* --- GitHub bağlantı rozeti --- */
+  .gh-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+  }
+  .gh-badge.connected { background: #e8f5e9; color: #1b5e20; }
+  .gh-badge.disconnected { background: #f0f3f1; color: var(--muted); }
 </style>
 </head>
 <body>
 <div id="app">
   <div id="sidebar">
     <div id="sidebar-header">
-      <h1>🌱 Türkiye Vegan Mekan Haritası</h1>
+      <h1>🌱 Vegan Mekanlar</h1>
       <p>Vegan, vejetaryen ve vegan dostu mekanlar — il bazlı</p>
       <a href="#" id="admin-toggle-link">🔐 Admin</a>
     </div>
@@ -513,6 +572,7 @@
       <button id="manual-add-btn" type="button" class="admin-btn manual">📝 Manuel Mekan Ekle</button>
       <button id="json-import-btn" type="button" class="admin-btn import">📥 JSON İçe Aktar</button>
       <button id="json-export-btn" type="button" class="admin-btn export">📤 JSON Dışa Aktar</button>
+      <button id="github-config-btn" type="button" class="admin-btn" style="border-color:#455a64; color:#37474f;">⚙️ GitHub Ayarları</button>
       <input type="file" id="json-import-input" accept="application/json,.json" style="display:none;">
     </div>
     <div id="results-footer">
@@ -624,9 +684,9 @@
     </div>
 
     <div class="modal-success" id="suggest-success-view">
-      <div class="big-emoji">📬</div>
-      <h3>E-posta uygulamanız açılıyor</h3>
-      <p>ipapila@gmail.com adresine gönderilecek şekilde hazırlanan e-postayı<br>
+      <div class="big-emoji" id="suggest-success-emoji">📬</div>
+      <h3 id="suggest-success-title">E-posta uygulamanız açılıyor</h3>
+      <p id="suggest-success-text">ipapila@gmail.com adresine gönderilecek şekilde hazırlanan e-postayı<br>
          kontrol edip gönder butonuna basmanız yeterli.</p>
       <button type="button" class="btn-primary" id="suggest-done">Tamam</button>
     </div>
@@ -640,7 +700,7 @@
       <div class="modal-header">
         <div>
           <h3>Manuel Mekan Ekle</h3>
-          <p>Kaydı doğrudan veri setine ekler (yalnızca bu tarayıcı oturumunda). Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.</p>
+          <p id="manual-desc">Kaydı doğrudan veri setine ekler. Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.</p>
         </div>
         <button class="modal-close" id="manual-close-1" type="button" aria-label="Kapat">✕</button>
       </div>
@@ -731,8 +791,8 @@
     </div>
 
     <div class="modal-success" id="manual-success-view">
-      <div class="big-emoji">✅</div>
-      <h3>Mekan eklendi</h3>
+      <div class="big-emoji" id="manual-success-emoji">✅</div>
+      <h3 id="manual-success-title">Mekan eklendi</h3>
       <p id="manual-success-text">Kayıt haritaya ve listeye eklendi.<br>Kalıcı hale getirmek için veriyi JSON olarak dışa aktarmayı unutmayın.</p>
       <div style="display:flex; gap:10px; justify-content:center;">
         <button type="button" class="btn-secondary" id="manual-add-another">Başka Ekle</button>
@@ -774,6 +834,55 @@
       <p id="import-success-text"></p>
       <button type="button" class="btn-primary" id="import-done">Tamam</button>
     </div>
+  </div>
+</div>
+
+<!-- GitHub Ayarları Modal (Admin) -->
+<div class="modal-overlay" id="github-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <h3>GitHub Ayarları</h3>
+        <p>Buraya girdiğiniz bilgiler yalnızca bu tarayıcıda saklanır. Bağlantı kurulduğunda "Manuel Mekan Ekle", "JSON İçe Aktar" ve mekan düzenlemeleri otomatik olarak GitHub deponuza commit edilir ve tüm cihazlarda görünür olur.</p>
+      </div>
+      <button class="modal-close" id="github-close-1" type="button" aria-label="Kapat">✕</button>
+    </div>
+    <form id="github-config-form" novalidate>
+      <div class="modal-body">
+        <div class="form-row two-col">
+          <div style="margin-bottom:0;">
+            <label for="gh-owner">GitHub Kullanıcı Adı</label>
+            <input type="text" id="gh-owner" placeholder="Örn: ipapila">
+          </div>
+          <div style="margin-bottom:0;">
+            <label for="gh-repo">Repo Adı</label>
+            <input type="text" id="gh-repo" placeholder="Örn: vegan-mekan-haritasi">
+          </div>
+        </div>
+        <div class="form-row two-col" style="margin-top:13px;">
+          <div style="margin-bottom:0;">
+            <label for="gh-branch">Branch</label>
+            <input type="text" id="gh-branch" placeholder="main">
+          </div>
+          <div style="margin-bottom:0;">
+            <label for="gh-path">Dosya Yolu</label>
+            <input type="text" id="gh-path" placeholder="data/vegan_mekanlar.json">
+          </div>
+        </div>
+        <div class="form-row" style="margin-top:13px;">
+          <label for="gh-token">Personal Access Token</label>
+          <input type="password" id="gh-token" placeholder="ghp_... veya github_pat_...">
+          <div class="form-hint">
+            Sadece bu repo için "Contents: Read and write" izniyle oluşturulmuş fine-grained bir token kullanın (Settings → Developer settings → Fine-grained tokens). Token bu tarayıcının localStorage'ında düz metin olarak saklanır — bu cihazı başkalarıyla paylaşmayın ve token'ı sadece bu iş için, süresi sınırlı olarak oluşturun.
+          </div>
+        </div>
+        <div class="form-hint" id="gh-test-status" style="margin-top:6px;"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" id="github-disconnect-btn">Bağlantıyı Kaldır</button>
+        <button type="submit" class="btn-primary" id="github-save-btn">Kaydet ve Bağlan</button>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -1073,7 +1182,10 @@ function updateAdminUI() {
   const toolsWrap = document.getElementById('admin-tools-wrap');
   if (isAdminMode()) {
     link.textContent = '🔓 Admin Çıkışı';
-    status.textContent = '👤 Admin modu aktif';
+    const ghBadge = isGithubConfigured()
+      ? '<span class="gh-badge connected">🔗 GitHub bağlı</span>'
+      : '<span class="gh-badge disconnected">🔌 GitHub bağlı değil</span>';
+    status.innerHTML = '👤 Admin modu aktif ' + ghBadge;
     toolsWrap.classList.add('open');
   } else {
     link.textContent = '🔐 Admin';
@@ -1099,6 +1211,160 @@ document.getElementById('admin-toggle-link').addEventListener('click', async (e)
     if (PLACES.length) applyFilters();
   } else {
     alert('Şifre yanlış.');
+  }
+});
+
+// ================= GitHub Entegrasyonu =================
+const GITHUB_CONFIG_KEY = 'eiGithubConfig';
+
+function getGithubConfig() {
+  try {
+    const raw = localStorage.getItem(GITHUB_CONFIG_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function saveGithubConfigToStorage(cfg) {
+  localStorage.setItem(GITHUB_CONFIG_KEY, JSON.stringify(cfg));
+}
+
+function clearGithubConfig() {
+  localStorage.removeItem(GITHUB_CONFIG_KEY);
+}
+
+function isGithubConfigured() {
+  const c = getGithubConfig();
+  return !!(c && c.owner && c.repo && c.branch && c.path && c.token);
+}
+
+function utf8ToBase64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+function githubApiUrl(cfg, contentsPath) {
+  const encodedPath = contentsPath.split('/').map(encodeURIComponent).join('/');
+  return `https://api.github.com/repos/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/contents/${encodedPath}`;
+}
+
+async function githubGetFileSha(cfg) {
+  const url = githubApiUrl(cfg, cfg.path) + '?ref=' + encodeURIComponent(cfg.branch);
+  const res = await fetch(url, {
+    headers: {
+      'Authorization': 'Bearer ' + cfg.token,
+      'Accept': 'application/vnd.github+json'
+    }
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error('Dosya bilgisi alınamadı (HTTP ' + res.status + '): ' + (body.message || 'bilinmeyen hata'));
+  }
+  const data = await res.json();
+  return data.sha;
+}
+
+// PLACES dizisini doğrudan GitHub deposundaki vegan_mekanlar.json dosyasına commit eder.
+async function githubSavePlaces(commitMessage) {
+  const cfg = getGithubConfig();
+  if (!cfg) throw new Error('GitHub ayarları yapılandırılmamış.');
+
+  const sha = await githubGetFileSha(cfg);
+  const content = utf8ToBase64(JSON.stringify(PLACES, null, 2));
+  const body = {
+    message: commitMessage,
+    content: content,
+    branch: cfg.branch
+  };
+  if (sha) body.sha = sha;
+
+  const res = await fetch(githubApiUrl(cfg, cfg.path), {
+    method: 'PUT',
+    headers: {
+      'Authorization': 'Bearer ' + cfg.token,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+
+  if (!res.ok) {
+    const errBody = await res.json().catch(() => ({}));
+    throw new Error('GitHub kaydı başarısız (HTTP ' + res.status + '): ' + (errBody.message || 'bilinmeyen hata'));
+  }
+  return await res.json();
+}
+
+const githubOverlay = document.getElementById('github-overlay');
+const githubForm = document.getElementById('github-config-form');
+const ghTestStatus = document.getElementById('gh-test-status');
+
+function openGithubModal() {
+  const cfg = getGithubConfig() || {};
+  document.getElementById('gh-owner').value = cfg.owner || '';
+  document.getElementById('gh-repo').value = cfg.repo || '';
+  document.getElementById('gh-branch').value = cfg.branch || 'main';
+  document.getElementById('gh-path').value = cfg.path || 'data/vegan_mekanlar.json';
+  document.getElementById('gh-token').value = cfg.token || '';
+  ghTestStatus.textContent = isGithubConfigured() ? '🔗 Şu anda GitHub\'a bağlı.' : '';
+  ghTestStatus.style.color = '#1b5e20';
+  githubOverlay.classList.add('open');
+}
+
+function closeGithubModal() {
+  githubOverlay.classList.remove('open');
+}
+
+document.getElementById('github-config-btn').addEventListener('click', () => {
+  if (!isAdminMode()) { alert('Bu işlem için admin girişi gerekli.'); return; }
+  openGithubModal();
+});
+document.getElementById('github-close-1').addEventListener('click', closeGithubModal);
+githubOverlay.addEventListener('click', (e) => {
+  if (e.target === githubOverlay) closeGithubModal();
+});
+
+document.getElementById('github-disconnect-btn').addEventListener('click', () => {
+  clearGithubConfig();
+  updateAdminUI();
+  ghTestStatus.textContent = 'Bağlantı kaldırıldı. Bundan sonra kayıtlar yalnızca bu tarayıcı oturumunda tutulacak.';
+  ghTestStatus.style.color = '#667069';
+});
+
+githubForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const owner = document.getElementById('gh-owner').value.trim();
+  const repo = document.getElementById('gh-repo').value.trim();
+  const branch = document.getElementById('gh-branch').value.trim() || 'main';
+  const path = document.getElementById('gh-path').value.trim() || 'data/vegan_mekanlar.json';
+  const token = document.getElementById('gh-token').value.trim();
+
+  if (!owner || !repo || !token) {
+    ghTestStatus.textContent = 'Lütfen kullanıcı adı, repo adı ve token alanlarını doldurun.';
+    ghTestStatus.style.color = '#c62828';
+    return;
+  }
+
+  const cfg = { owner, repo, branch, path, token };
+  const saveBtn = document.getElementById('github-save-btn');
+  saveBtn.disabled = true;
+  saveBtn.textContent = 'Bağlanıyor...';
+  ghTestStatus.textContent = 'Bağlantı test ediliyor...';
+  ghTestStatus.style.color = '#667069';
+
+  try {
+    saveGithubConfigToStorage(cfg);
+    await githubGetFileSha(cfg); // sadece erişimi doğrulamak için
+    ghTestStatus.textContent = '✓ Bağlantı başarılı. Ayarlar bu tarayıcıda kaydedildi.';
+    ghTestStatus.style.color = '#1b5e20';
+    updateAdminUI();
+  } catch (err) {
+    ghTestStatus.textContent = 'Bağlantı hatası: ' + err.message;
+    ghTestStatus.style.color = '#c62828';
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = 'Kaydet ve Bağlan';
   }
 });
 
@@ -1171,6 +1437,7 @@ function openSuggestModal(place) {
   const titleEl = document.getElementById('modal-title');
   const descEl = document.getElementById('modal-desc');
   const submitBtn = document.getElementById('suggest-submit');
+  const directSave = isAdminMode() && isGithubConfigured();
 
   if (place) {
     editingOriginal = place;
@@ -1188,8 +1455,13 @@ function openSuggestModal(place) {
     document.getElementById('f-oneren').value = '';
 
     titleEl.textContent = 'Mekanı Düzenle';
-    descEl.textContent = 'Hatalı bilgileri düzeltin, gönderdiğinizde e-posta uygulamanız açılacak.';
-    submitBtn.textContent = 'Düzeltmeyi Gönder';
+    if (directSave) {
+      descEl.textContent = 'Değişiklikleri kaydettiğinizde doğrudan GitHub deponuza commit edilecek.';
+      submitBtn.textContent = 'Kaydet (GitHub\'a commit et)';
+    } else {
+      descEl.textContent = 'Hatalı bilgileri düzeltin, gönderdiğinizde e-posta uygulamanız açılacak.';
+      submitBtn.textContent = 'Düzeltmeyi Gönder';
+    }
   } else {
     editingOriginal = null;
     document.getElementById('f-edit-id').value = '';
@@ -1274,7 +1546,7 @@ locBtn.addEventListener('click', () => {
   );
 });
 
-suggestForm.addEventListener('submit', (e) => {
+suggestForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const ad = document.getElementById('f-ad').value.trim();
@@ -1300,6 +1572,7 @@ suggestForm.addEventListener('submit', (e) => {
   const today = new Date().toISOString().slice(0, 10);
   const editId = document.getElementById('f-edit-id').value;
   const isEdit = !!editId;
+  const directSave = isEdit && isAdminMode() && isGithubConfigured();
 
   // JSON dosyasındaki alan başlıklarıyla uyumlu obje
   const entry = {
@@ -1319,6 +1592,35 @@ suggestForm.addEventListener('submit', (e) => {
   };
   if (isEdit) entry.duzenlenme = today;
 
+  // ---- Admin + GitHub bağlıysa: doğrudan kaydet ve commit et ----
+  if (directSave) {
+    const submitBtn = document.getElementById('suggest-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Kaydediliyor...';
+    try {
+      const idx = PLACES.findIndex(p => p.id === editId);
+      if (idx === -1) throw new Error('Kayıt listede bulunamadı.');
+      PLACES[idx] = entry;
+      renderIlList();
+      applyFilters();
+      await githubSavePlaces('Mekan güncellendi: ' + ad + ' (' + editId + ')');
+
+      document.getElementById('suggest-success-emoji').textContent = '✅';
+      document.getElementById('suggest-success-title').textContent = 'Değişiklik GitHub\'a kaydedildi';
+      document.getElementById('suggest-success-text').innerHTML =
+        `<b>${ad}</b> güncellendi ve GitHub deponuza commit edildi. Birkaç dakika içinde tüm cihazlarda güncel haliyle görünecek.`;
+      formView.style.display = 'none';
+      successView.classList.add('open');
+    } catch (err) {
+      alert('GitHub\'a kaydedilemedi: ' + err.message + '\n\nDeğişiklik yerel listede kalmaya devam ediyor; "JSON Dışa Aktar" ile yedekleyebilir ya da GitHub ayarlarınızı kontrol edebilirsiniz.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Kaydet (GitHub\'a commit et)';
+    }
+    return;
+  }
+
+  // ---- Aksi halde (ziyaretçi önerisi ya da GitHub bağlı değilse): mailto ----
   let bodyLines;
   let subject;
 
@@ -1366,6 +1668,10 @@ suggestForm.addEventListener('submit', (e) => {
 
   window.location.href = mailtoUrl;
 
+  document.getElementById('suggest-success-emoji').textContent = '📬';
+  document.getElementById('suggest-success-title').textContent = 'E-posta uygulamanız açılıyor';
+  document.getElementById('suggest-success-text').innerHTML =
+    'ipapila@gmail.com adresine gönderilecek şekilde hazırlanan e-postayı<br>kontrol edip gönder butonuna basmanız yeterli.';
   formView.style.display = 'none';
   successView.classList.add('open');
 });
@@ -1439,6 +1745,9 @@ function openManualModal() {
   manualFormView.style.display = '';
   manualSuccessView.classList.remove('open');
   manualOverlay.classList.add('open');
+  document.getElementById('manual-desc').textContent = isGithubConfigured()
+    ? 'Kaydı veri setine ekler ve GitHub deponuza otomatik commit eder.'
+    : 'Kaydı doğrudan veri setine ekler (yalnızca bu tarayıcı oturumunda). Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları\'ndan bağlantı kurun.';
   setTimeout(() => {
     ensureManualPickMap();
     manualPickMap.invalidateSize();
@@ -1470,7 +1779,7 @@ manualOverlay.addEventListener('click', (e) => {
   if (e.target === manualOverlay) closeManualModal();
 });
 
-manualForm.addEventListener('submit', (e) => {
+manualForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!isAdminMode()) { alert('Bu işlem için admin girişi gerekli.'); return; }
 
@@ -1517,8 +1826,33 @@ manualForm.addEventListener('submit', (e) => {
   renderIlList();
   applyFilters();
 
-  document.getElementById('manual-success-text').innerHTML =
-    `<b>${entry.ad}</b> (${entry.id}) listeye eklendi.<br>Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.`;
+  const submitBtn = document.getElementById('manual-submit');
+  const successEmoji = document.getElementById('manual-success-emoji');
+  const successTitle = document.getElementById('manual-success-title');
+  const successText = document.getElementById('manual-success-text');
+
+  if (isGithubConfigured()) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Kaydediliyor...';
+    try {
+      await githubSavePlaces('Yeni mekan eklendi: ' + entry.ad + ' (' + entry.id + ')');
+      successEmoji.textContent = '✅';
+      successTitle.textContent = 'Mekan eklendi ve GitHub\'a kaydedildi';
+      successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi ve GitHub deponuza commit edildi. Birkaç dakika içinde tüm cihazlarda görünecek.`;
+    } catch (err) {
+      successEmoji.textContent = '⚠️';
+      successTitle.textContent = 'Eklendi ama GitHub\'a kaydedilemedi';
+      successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>"JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Listeye Ekle';
+    }
+  } else {
+    successEmoji.textContent = '✅';
+    successTitle.textContent = 'Mekan eklendi';
+    successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi.<br>Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
+  }
+
   manualFormView.style.display = 'none';
   manualSuccessView.classList.add('open');
 });
@@ -1607,7 +1941,8 @@ document.getElementById('json-import-input').addEventListener('change', (e) => {
         `İçe aktarılan dosyada <b>${importedData.length}</b> kayıt bulundu.<br>` +
         `Mevcut veride <b>${PLACES.length}</b> kayıt var.<br>` +
         `<b>Birleştir:</b> ${newCount} yeni kayıt eklenir, id'si çakışan ${overlapCount} kayıt güncellenir.<br>` +
-        `<b>Tümünü Değiştir:</b> mevcut ${PLACES.length} kayıt silinir, yerine bu ${importedData.length} kayıt yüklenir.`;
+        `<b>Tümünü Değiştir:</b> mevcut ${PLACES.length} kayıt silinir, yerine bu ${importedData.length} kayıt yüklenir.` +
+        (isGithubConfigured() ? '<br><br>🔗 GitHub bağlı — işlem tamamlandığında değişiklik otomatik commit edilecek.' : '');
 
       importMergeBtn.disabled = false;
       importReplaceBtn.disabled = false;
@@ -1627,15 +1962,35 @@ document.getElementById('json-import-input').addEventListener('change', (e) => {
   reader.readAsText(file, 'utf-8');
 });
 
-function finishImport(mergedCount, totalCount, mode) {
+async function finishImport(totalCount, mode) {
   renderIlList();
   applyFilters();
   const modeText = mode === 'merge' ? 'birleştirildi' : 'tümüyle değiştirildi';
-  document.getElementById('import-success-text').innerHTML =
-    `Veri ${modeText}. Şu anda listede <b>${totalCount}</b> kayıt var.<br>` +
-    `Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun.`;
-  importView.style.display = 'none';
-  importSuccessView.classList.add('open');
+  const successTextEl = document.getElementById('import-success-text');
+
+  if (isGithubConfigured()) {
+    importMergeBtn.disabled = true;
+    importReplaceBtn.disabled = true;
+    successTextEl.innerHTML = 'GitHub\'a kaydediliyor...';
+    importView.style.display = 'none';
+    importSuccessView.classList.add('open');
+    try {
+      await githubSavePlaces('JSON içe aktarma (' + mode + '): ' + totalCount + ' kayıt');
+      successTextEl.innerHTML =
+        `Veri ${modeText} ve GitHub deponuza commit edildi. Şu anda listede <b>${totalCount}</b> kayıt var. ` +
+        `Birkaç dakika içinde tüm cihazlarda güncel haliyle görünecek.`;
+    } catch (err) {
+      successTextEl.innerHTML =
+        `Veri ${modeText} ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>` +
+        `Şu anda listede <b>${totalCount}</b> kayıt var (yalnızca bu tarayıcıda). "JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+    }
+  } else {
+    successTextEl.innerHTML =
+      `Veri ${modeText}. Şu anda listede <b>${totalCount}</b> kayıt var.<br>` +
+      `Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
+    importView.style.display = 'none';
+    importSuccessView.classList.add('open');
+  }
 }
 
 importMergeBtn.addEventListener('click', () => {
@@ -1643,14 +1998,14 @@ importMergeBtn.addEventListener('click', () => {
   const byId = new Map(PLACES.map(p => [p.id, p]));
   importedData.forEach(p => byId.set(p.id, p));
   PLACES = Array.from(byId.values());
-  finishImport(importedData.length, PLACES.length, 'merge');
+  finishImport(PLACES.length, 'merge');
 });
 
 importReplaceBtn.addEventListener('click', () => {
   if (!importedData) return;
   if (!confirm(`Mevcut ${PLACES.length} kayıt silinip yerine ${importedData.length} kayıt yüklenecek. Emin misiniz?`)) return;
   PLACES = importedData.slice();
-  finishImport(importedData.length, PLACES.length, 'replace');
+  finishImport(PLACES.length, 'replace');
 });
 </script>
 </body>
