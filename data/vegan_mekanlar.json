@@ -559,13 +559,15 @@
     "ilce": "Seyhan",
     "tur": "vegan dostu",
     "adres": "Reşatbey, 62008. Sk. No:10/A, Seyhan/Adana",
-    "lat": 36.99296,
-    "lng": 35.3281599,
+    "lat": 36.9922102216702,
+    "lng": 35.3303468227387,
     "telefon": "+90 533 551 92 82",
     "not": "Ev yemekleri lokantası, çok sayıda vejetaryen seçenek",
     "id": "v0036",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Padme Cafe",
