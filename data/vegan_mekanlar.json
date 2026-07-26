@@ -1065,14 +1065,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Osmanağa, Canan Sk. 20/A, Kadıköy/İstanbul",
-    "lat": 40.987945,
-    "lng": 29.0274372,
+    "lat": 40.9879567035062,
+    "lng": 29.030012190342,
     "telefon": "+90 216 418 78 53",
     "not": "Geleneksel Türk mutfağının vegan yorumları, kendi kaju ayranını üretiyor",
     "id": "v0075",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://veganarsist.com/"
+    "web": "https://veganarsist.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Veganarsist (Balat)",
