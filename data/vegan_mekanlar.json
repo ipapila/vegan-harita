@@ -53,14 +53,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Osmanağa, Vahapbey Sok. No:18/A, Kadıköy/İstanbul",
-    "lat": 40.9913683,
-    "lng": 29.0252137,
+    "lat": 40.9913661405624,
+    "lng": 29.027681350708,
     "telefon": "+90 541 255 69 72",
     "not": "Tamamen vegan Türk restoranı (pide, lahmacun, çorba, kadayıf)",
     "id": "v0004",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/veganmasa/"
+    "web": "https://www.instagram.com/veganmasa/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Arch Bistro",
