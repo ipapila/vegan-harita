@@ -1706,13 +1706,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "No:15C Beykoz Sokak, Ankara",
-    "lat": 39.9107562,
-    "lng": 32.8580066,
+    "lat": 39.9106990932598,
+    "lng": 32.8605768084526,
     "telefon": null,
     "not": "Vegan Türk mutfağı: pide, lahmacun, pizza",
     "id": "v0128",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Oses Gourmet",
