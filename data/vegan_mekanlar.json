@@ -2585,14 +2585,15 @@
     "ilce": "Kuşadası",
     "tur": "vegan ürünlü",
     "adres": "Davutlar Cad. No:55, Kuşadası/Aydın",
-    "lat": 37.857,
-    "lng": 27.2605,
+    "lat": 37.8247346685399,
+    "lng": 27.2615432739258,
     "telefon": "+90 256 444 00 00",
     "not": "Bitkisel süt ve atıştırmalık.",
     "id": "v0198",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.filemarket.com.tr"
+    "web": "https://www.filemarket.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Migros Çanakkale",
