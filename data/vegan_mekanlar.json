@@ -125,14 +125,15 @@
     "ilce": "Beşiktaş",
     "tur": "vegan",
     "adres": "Etiler, Dilhayat Sk. No:10/1, Beşiktaş/İstanbul",
-    "lat": 41.0795109,
-    "lng": 29.0304781,
+    "lat": 41.0795230064807,
+    "lng": 29.0331262350082,
     "telefon": "+90 212 358 60 32",
     "not": "Vegan deli, glutensiz seçenekler mevcut",
     "id": "v0009",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://binevideli.com/"
+    "web": "https://binevideli.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Turp Vegan Sokak Lezzetleri",
