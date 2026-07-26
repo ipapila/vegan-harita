@@ -1684,14 +1684,15 @@
     "ilce": "Göreme",
     "tur": "vegan dostu",
     "adres": "Aydınlı - Orta Mah. Uzundere-1 Sok. No:1, 50180 Göreme/Nevşehir",
-    "lat": 38.6412261,
-    "lng": 34.8220111,
+    "lat": 38.641284,
+    "lng": 34.8245096,
     "telefon": "+90 535 770 65 00",
     "not": "Michelin Rehberi'nde yer alan, vegan seçenekleri bulunan bir restoran",
     "id": "v0113",
     "kaynak": "Michelin Guide, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://sahsaraycavesuites.com/restorant/"
+    "web": "https://sahsaraycavesuites.com/restorant/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Dükkan (Market)",
