@@ -338,14 +338,15 @@
     "ilce": "Konak",
     "tur": "vegan dostu",
     "adres": "Alsancak, 1460. Sk. No:21, Konak/İzmir",
-    "lat": 38.4389169,
-    "lng": 27.1430731,
+    "lat": 38.4389238345152,
+    "lng": 27.1456262469292,
     "telefon": "+90 531 778 74 18",
     "not": "Kafe, glutensiz ve vegan ürünler",
     "id": "v0022",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://inncoffee.com.tr/"
+    "web": "https://inncoffee.com.tr/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Meze Bursa",
