@@ -1671,14 +1671,15 @@
     "ilce": "Fatih",
     "tur": "vegan dostu",
     "adres": "No:11 16 Mart Şehitleri Caddesi, İstanbul",
-    "lat": 41.0130639,
-    "lng": 28.9582282,
+    "lat": 41.0130617392312,
+    "lng": 28.9607441425324,
     "telefon": "+90 543 461 40 45",
     "not": "6 farklı vegan ana yemek (patates/ıspanaklı gözleme, sebze wrap, vegan köfte)",
     "id": "v0127",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.valenscafe.com/"
+    "web": "https://www.valenscafe.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Taş Fırın",
