@@ -260,14 +260,15 @@
     "ilce": "Karşıyaka",
     "tur": "vegan",
     "adres": "Bostanlı, Şehitler Blv No:49/C, Karşıyaka/İzmir",
-    "lat": 38.4599024,
-    "lng": 27.0983751,
+    "lat": 38.460005360907,
+    "lng": 27.1008414030075,
     "telefon": "+90 545 855 54 15",
     "not": "Tamamen vegan, mantı ve tiramisu öne çıkan",
     "id": "v0017",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/gibivegan/"
+    "web": "https://www.instagram.com/gibivegan/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Yaşam Vegan",
