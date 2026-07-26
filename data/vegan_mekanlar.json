@@ -148,14 +148,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Caferağa Mh, Mühürdar Karakolu Sk. 12/B, Kadıköy/İstanbul",
-    "lat": 40.9851577,
-    "lng": 29.0206888,
+    "lat": 40.9851180709494,
+    "lng": 29.0232852101326,
     "telefon": "+90 539 575 84 25",
     "not": "Vegan burger ve döner",
     "id": "v0010",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/turpmoda/"
+    "web": "https://www.instagram.com/turpmoda/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vinni The Vegan Witch",
