@@ -1909,14 +1909,15 @@
     "ilce": "Konak",
     "tur": "vegan dostu",
     "adres": "Turgut Reis, Dario Moreno Sk. No:1, İzmir",
-    "lat": 38.4093699,
-    "lng": 27.1148887,
+    "lat": 38.4093707679161,
+    "lng": 27.1174281835556,
     "telefon": "+90 545 342 09 75",
     "not": "Ayrı vegan menü (burger, falafel, pasta)",
     "id": "v0148",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/frida__cafe/"
+    "web": "https://www.instagram.com/frida__cafe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Improvement Alsancak",
