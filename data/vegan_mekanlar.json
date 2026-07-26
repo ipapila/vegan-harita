@@ -393,14 +393,15 @@
     "ilce": "Muratpaşa",
     "tur": "vegan",
     "adres": "Meltem, 3808. Sk. 13 C, Muratpaşa/Antalya",
-    "lat": 36.8907754,
-    "lng": 30.6660061,
+    "lat": 36.8907591978409,
+    "lng": 30.6685602664948,
     "telefon": "+90 544 934 62 34",
     "not": "Vegan bowl, ramen, tofu tavuk",
     "id": "v0027",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.sisukitchentr.com/en"
+    "web": "https://www.sisukitchentr.com/en",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Gaiya's Vegan House",
