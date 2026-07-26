@@ -1704,14 +1704,15 @@
     "ilce": "Beşiktaş",
     "tur": "vegan dostu",
     "adres": "No:4/A, Mısırlıbahçe Sokağı, Beşiktaş/İstanbul",
-    "lat": 41.0450104,
-    "lng": 29.0001372,
+    "lat": 41.0450334256585,
+    "lng": 29.0027394890785,
     "telefon": "+90 212 913 19 13",
     "not": "Vegan Kebap ve Vegan Burger, bitkisel süt seçenekleri",
     "id": "v0130",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/jayscafeofficial/"
+    "web": "https://www.instagram.com/jayscafeofficial/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Doğa Mantı Evi",
