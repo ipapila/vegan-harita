@@ -83,14 +83,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan",
     "adres": "Hacımimi Mah. Dibek Sokak 17/A, Beyoğlu/İstanbul",
-    "lat": 41.0269496,
-    "lng": 28.9738272,
+    "lat": 41.0269765207567,
+    "lng": 28.9764913916588,
     "telefon": "+90 544 930 97 39",
     "not": "Vegan kafe, galet ve tatlı ağırlıklı",
     "id": "v0006",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://vacilandoistanbul.com/"
+    "web": "https://vacilandoistanbul.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "GRINGO - Vegan Street Food",
