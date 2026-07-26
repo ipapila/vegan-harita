@@ -1656,14 +1656,15 @@
     "ilce": "Fatih",
     "tur": "vegan dostu",
     "adres": "Yavuz Sultan Selim, Camcı Çeşmesi Ykş. No:68, İstanbul",
-    "lat": 41.0283694,
-    "lng": 28.9469866,
+    "lat": 41.0297425326212,
+    "lng": 28.9509943127632,
     "telefon": "+90 542 438 19 66",
     "not": "Vegan bölümü: falafel salata, avokado salata, falafel burger",
     "id": "v0126",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/balladrestaurant/"
+    "web": "https://www.instagram.com/balladrestaurant/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Valens Cafe Restaurant",
