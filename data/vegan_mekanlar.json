@@ -2287,14 +2287,15 @@
     "ilce": "Şahinbey",
     "tur": "vegan",
     "adres": "İncili Pınar Mah., Ali Fuat Cebesoy Bulvarı No:22/B, Şahinbey/Gaziantep",
-    "lat": 37.0612,
-    "lng": 37.3807,
+    "lat": 37.0723680714095,
+    "lng": 37.3740613460541,
     "telefon": "+90 342 220 33 44",
     "not": "Güneydoğu’da ilk vegan market, baklava ve baharat.",
     "id": "v0178",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Trabzon",
