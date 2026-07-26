@@ -1870,13 +1870,15 @@
     "ilce": "Muratpaşa",
     "tur": "vegan dostu",
     "adres": "Antalya",
-    "lat": 36.884907,
-    "lng": 30.7058529,
+    "lat": 36.8848768846208,
+    "lng": 30.7069158554077,
+    "telefon": null,
     "not": "Vegan kahvaltı (bowl, smoothie)",
     "id": "v0151",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/cava.restaurant/"
+    "web": "https://www.instagram.com/cava.restaurant/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "The Hunger",
