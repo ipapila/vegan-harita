@@ -2017,13 +2017,15 @@
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
     "adres": "Alaçatı/İzmir",
-    "lat": 38.3824282,
-    "lng": 26.4750165,
+    "lat": 38.3823476294986,
+    "lng": 26.4774262905121,
     "telefon": null,
     "not": "Vejetaryen/vegan seçenekler",
     "id": "v0160",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Kirmizi Ardic Kusu",
