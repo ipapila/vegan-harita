@@ -1840,13 +1840,15 @@
     "ilce": "Kırklareli Merkez",
     "tur": "vegan dostu",
     "adres": "Kırklareli Merkez/Kırklareli",
-    "lat": 41.7256976,
-    "lng": 27.2218938,
+    "lat": 41.7256138842829,
+    "lng": 27.2245073318481,
     "telefon": null,
     "not": "Vegan/vejetaryen dostu",
     "id": "v0137",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Kırklareli Pablo Bistro",
