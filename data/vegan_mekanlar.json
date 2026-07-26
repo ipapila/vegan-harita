@@ -226,14 +226,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Remzi Oğuz Arık, Tunus Cd No:49, Çankaya/Ankara",
-    "lat": 39.9085826,
-    "lng": 32.8536158,
+    "lat": 39.9085840781082,
+    "lng": 32.858476638794,
     "telefon": "+90 531 290 26 32",
     "not": "Vegan fast-food (döner, burger, hot dog)",
     "id": "v0015",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/junkveganankara/"
+    "web": "https://www.instagram.com/junkveganankara/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Mystery Foods Gluten-Free Atelier Alsancak",
