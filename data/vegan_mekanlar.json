@@ -1104,14 +1104,15 @@
     "ilce": "Beşiktaş",
     "tur": "vegan",
     "adres": "Sinanpaşa, Şair Veysi Sk. No:9 D:11A, Beşiktaş/İstanbul",
-    "lat": 41.0438184,
-    "lng": 29.0003827,
+    "lat": 41.0438439466906,
+    "lng": 29.00300770998,
     "telefon": "+90 538 652 92 01",
     "not": "Vegan burger, iskender ve wrap çeşitleri, glutensiz seçenekler mevcut",
     "id": "v0078",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.veganfoodcartel.com/"
+    "web": "https://www.veganfoodcartel.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Tatlı Fırın (Ataköy)",
