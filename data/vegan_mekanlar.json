@@ -726,13 +726,15 @@
     "ilce": "Seyhan",
     "tur": "vegan",
     "adres": "Kurtuluş Mah. Ziyapaşa Blv. Özmucur Apt. altı 14/B, Seyhan/Adana",
-    "lat": 37.0007581,
-    "lng": 35.3171367,
+    "lat": 37.0017386943327,
+    "lng": 35.3215599060059,
     "telefon": "+90 541 334 31 68",
     "not": "Adana'nın tam vegan kafelerinden, bowl ve tatlı çeşitleri var",
     "id": "v0050",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Kantin",
