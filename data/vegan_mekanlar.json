@@ -2104,14 +2104,15 @@
     "ilce": "Konyaaltı",
     "tur": "vegan",
     "adres": "Arapsuyu Mah., 642. Sokak No:5/A, Konyaaltı/Antalya",
-    "lat": 36.8775336,
-    "lng": 30.6458466,
+    "lat": 36.8776467249623,
+    "lng": 30.6484222412109,
     "telefon": "+90 242 229 11 00",
     "not": "Akdeniz’in vegan marketi; glutensiz ve vegan atıştırmalıklar.",
     "id": "v0173",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Bursa",
