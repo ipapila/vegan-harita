@@ -2622,14 +2622,16 @@
     "il": "Aydın",
     "ilce": "Efeler",
     "tur": "vegan",
-    "adres": "Aydın (kesin adres doğrulanamadı)",
-    "lat": 37.8439532,
-    "lng": 27.8071423,
+    "adres": "Efeler, Reyhan Cd. Novapark Sitesi No: 3/B Kat 5 Daire 9, 09020 Merkez/Aydın",
+    "lat": 37.8439440950418,
+    "lng": 27.8247106075287,
     "telefon": null,
     "not": "Vegan ve glütensiz yemek servisi",
     "id": "v0200",
     "kaynak": "Kullanıcı tarafından doğrulanmış liste",
-    "eklenme": "2026-07-25"
+    "eklenme": "2026-07-25",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "CaFe LoKal",
