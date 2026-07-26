@@ -874,13 +874,15 @@
     "ilce": "Fethiye",
     "tur": "vegan dostu",
     "adres": "Çalış, Foça, Barış Manço Blv. No:95, Fethiye/Muğla",
-    "lat": 36.6615897,
-    "lng": 29.1118161,
+    "lat": 36.6616072437299,
+    "lng": 29.1143703460693,
     "telefon": "+90 555 862 26 59",
     "not": "Vegan burger seçenekli bistro, sebze/baklagil bazlı köfte",
     "id": "v0060",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Köşebaşı Kapadokya",
