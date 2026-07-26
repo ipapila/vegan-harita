@@ -2298,14 +2298,15 @@
     "ilce": "Şişli",
     "tur": "vegan ürünlü",
     "adres": "Teşvikiye Mah., Valikonağı Cad. No:72/A, Şişli/İstanbul",
-    "lat": 41.0523,
-    "lng": 28.992,
+    "lat": 41.0531528658918,
+    "lng": 28.9933598041534,
     "telefon": "+90 212 241 33 33",
     "not": "Organik market; vegan protein barları, süt alternatifleri.",
     "id": "v0185",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.biorganik.com.tr"
+    "web": "https://www.biorganik.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Tadım Organik",
