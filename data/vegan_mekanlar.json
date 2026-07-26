@@ -949,13 +949,15 @@
     "ilce": "Yakutiye",
     "tur": "vegan dostu",
     "adres": "Muratpaşa, Şerif Efendi Cd. No:28, Yakutiye/Erzurum",
-    "lat": 39.9047254,
-    "lng": 41.2697849,
+    "lat": 39.9042633189134,
+    "lng": 41.276718378067,
     "telefon": "+90 442 233 36 56",
     "not": "Erzurum'da düzenli vejetaryen/vegan seçenek sunan nadir mekanlardan",
     "id": "v0064",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Bitlis Sofrası",
