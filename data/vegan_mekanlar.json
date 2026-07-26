@@ -2620,14 +2620,15 @@
     "ilce": "Merkez",
     "tur": "vegan ürünlü",
     "adres": "İsmetpaşa Mah., Demircioğlu Cad. No:9, Çanakkale",
-    "lat": 40.147,
-    "lng": 26.405,
+    "lat": 40.14701973764,
+    "lng": 26.4080214500427,
     "telefon": "+90 286 444 00 00",
     "not": "Sınırlı vegan seçenek.",
     "id": "v0199",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.migros.com.tr"
+    "web": "https://www.migros.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegu Aydın Vegan ve Glutensiz Mutfak Yemekleri",
