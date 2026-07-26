@@ -1634,14 +1634,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan market",
     "adres": "Sıraselviler Cad. Cihangir Mah. Soğancı Sok. No:8/A, Beyoğlu/İstanbul",
-    "lat": 41.0326956,
-    "lng": 28.9814563,
+    "lat": 41.0326419653026,
+    "lng": 28.984090089798,
     "telefon": "+90 212 243 23 83",
     "not": "Türkiye'nin ilk vegan ürün marketi",
     "id": "v0114",
     "kaynak": "HappyCow, vegandukkan.com",
     "eklenme": "2026-07-24",
-    "web": "https://vegandukkanlokanta.com/"
+    "web": "https://vegandukkanlokanta.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Ballad Restaurant",
