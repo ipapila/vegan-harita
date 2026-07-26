@@ -2308,14 +2308,15 @@
     "ilce": "Ortahisar",
     "tur": "vegan",
     "adres": "İskenderpaşa Mah., Kahramanmaraş Cad. No:18/A, Ortahisar/Trabzon",
-    "lat": 41.0061713,
-    "lng": 39.7243782,
+    "lat": 41.0064109088065,
+    "lng": 39.7231936454773,
     "telefon": "+90 462 321 55 66",
     "not": "Karadeniz’de vegan market, fındık ezmesi çeşitleri.",
     "id": "v0179",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Macrocenter Kanyon",
