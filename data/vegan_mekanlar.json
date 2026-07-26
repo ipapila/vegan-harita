@@ -306,14 +306,15 @@
     "ilce": "Karşıyaka",
     "tur": "vegan",
     "adres": "No:34D Şehit Üt. Ahmet Konuksever Sk, İzmir",
-    "lat": 38.4571726,
-    "lng": 27.1184412,
+    "lat": 38.4571342159979,
+    "lng": 27.1209955215454,
     "telefon": "+90 232 999 78 48",
     "not": "Tamamen vegan fırın ve kafe (ekler, muffin, börek)",
     "id": "v0020",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/moonovegan/"
+    "web": "https://www.instagram.com/moonovegan/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Smyrnart Coffee Atölye",
