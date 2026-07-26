@@ -2409,14 +2409,15 @@
     "ilce": "Çankaya",
     "tur": "vegan ürünlü",
     "adres": "Ayrancı Mah., Hoşdere Cad. No:122/A, Çankaya/Ankara",
-    "lat": 39.8955,
-    "lng": 32.848,
+    "lat": 39.8913899564826,
+    "lng": 32.8469163179398,
     "telefon": "+90 312 440 55 00",
     "not": "Organik ürünler ve vegan spesiyaller; badem sütü, kinoa.",
     "id": "v0189",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Migros MMM Eskişehir Espark",
