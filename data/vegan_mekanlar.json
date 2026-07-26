@@ -983,14 +983,15 @@
     "ilce": "Kars Merkez",
     "tur": "vegan dostu",
     "adres": "Ortakapı, Atatürk Cd. No:66B, Kars Merkez/Kars",
-    "lat": 40.606593,
-    "lng": 43.094984,
+    "lat": 40.6055468949208,
+    "lng": 43.0960822105408,
     "telefon": "+90 501 657 69 02",
     "not": "Vegan çiğköfte ve falafel seçenekleri sunan mekan",
     "id": "v0066",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://cigkoftem.com/"
+    "web": "https://cigkoftem.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Mutfakna",
