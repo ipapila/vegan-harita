@@ -1308,14 +1308,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Çankaya, Nergis Sk. No:2, Çankaya/Ankara",
-    "lat": 39.8953791,
-    "lng": 32.8559906,
+    "lat": 39.8942628025866,
+    "lng": 32.8600430488587,
     "telefon": "+90 535 457 62 27",
     "not": "Falafel ve köfte çeşitleriyle tam vegan/vejetaryen mekan",
     "id": "v0090",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/vegvej_restorant/"
+    "web": "https://www.instagram.com/vegvej_restorant/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Zeus Vegkek Book Coffee",
