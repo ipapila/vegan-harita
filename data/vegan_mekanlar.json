@@ -101,14 +101,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Caferağa, Hünkar Sok. NO:8/A, Kadıköy/İstanbul",
-    "lat": 40.9841894,
-    "lng": 29.0204948,
+    "lat": 40.984140111462,
+    "lng": 29.0230947732925,
     "telefon": "+90 533 562 24 94",
     "not": "Vegan sokak lezzetleri (seitan wrap, döner)",
     "id": "v0007",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/_gringomoda/"
+    "web": "https://www.instagram.com/_gringomoda/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Salve Cafe",
