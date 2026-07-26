@@ -1529,14 +1529,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Caferağa, Kadıköy/İstanbul",
-    "lat": 40.9840077,
-    "lng": 29.026622,
+    "lat": 40.9840166000191,
+    "lng": 29.0291967988014,
     "telefon": "+90 536 596 01 15",
     "not": "Tamamen vegan bir fırın ve pastane",
     "id": "v0106",
     "kaynak": "HappyCow, Yandex",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/sistersandharvest/"
+    "web": "https://www.instagram.com/sistersandharvest/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Healin Foods",
