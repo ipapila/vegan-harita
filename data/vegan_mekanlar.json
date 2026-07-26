@@ -2563,14 +2563,15 @@
     "ilce": "Pamukkale",
     "tur": "vegan ürünlü",
     "adres": "Sümer Mah., Teraspark AVM, Pamukkale/Denizli",
-    "lat": 37.776,
-    "lng": 29.066,
+    "lat": 37.7599263695416,
+    "lng": 29.0425729751587,
     "telefon": "+90 258 444 00 00",
     "not": "Vegan peynir alternatifleri.",
     "id": "v0196",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.migros.com.tr"
+    "web": "https://www.migros.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Macrocenter Bodrum",
