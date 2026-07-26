@@ -634,14 +634,15 @@
     "ilce": "Melikgazi",
     "tur": "vegan dostu",
     "adres": "Tacettin Veli, Bayram Sk. No: 12, Melikgazi/Kayseri",
-    "lat": 38.7155288,
-    "lng": 35.4826446,
+    "lat": 38.715870362732,
+    "lng": 35.4854911565781,
     "telefon": "+90 352 333 69 99",
     "not": "Vegan burger, falafel bowl, vegan salata seçenekleri",
     "id": "v0041",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/thehunger/"
+    "web": "https://www.instagram.com/thehunger/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "SeRa Bowl&Salata",
