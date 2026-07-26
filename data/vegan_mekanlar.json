@@ -1220,14 +1220,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Osmanağa, Sakız Sk. No:22C, Kadıköy/İstanbul",
-    "lat": 40.989038,
-    "lng": 29.0243751,
+    "lat": 40.988956877305,
+    "lng": 29.0269008278847,
     "telefon": "+90 505 269 15 14",
     "not": "Falafel ve humus çeşitleri sunan vegan/vejetaryen mekan",
     "id": "v0085",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/nohut.falafel.humus/"
+    "web": "https://www.instagram.com/nohut.falafel.humus/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vega Vegan Büfe",
