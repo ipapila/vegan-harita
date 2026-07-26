@@ -1821,14 +1821,16 @@
     "il": "Kırklareli",
     "ilce": "Kırklareli Merkez",
     "tur": "vegan dostu",
-    "adres": "Kırklareli Merkez/Kırklareli",
-    "lat": 41.7347432,
-    "lng": 27.2194233,
+    "adres": "Karakaş Mah Fevzi Çakmak Geçidi Sokak Gürpınar Pasajı No:10 P.17, 39000 Kırklareli Merkez/Kırklareli",
+    "lat": 41.7346976001541,
+    "lng": 27.2219431400299,
     "telefon": null,
     "not": "Vegan/vejetaryen dostu",
     "id": "v0136",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "ELİT KÖŞE lokanta",
