@@ -1586,14 +1586,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Rasimpaşa Mah. Macit Erbulak Sk. No:50/A, Kadıköy/İstanbul",
-    "lat": 40.9913683,
-    "lng": 29.0252137,
+    "lat": 40.9970427455323,
+    "lng": 29.028931260109,
     "telefon": "+90 535 608 32 80",
     "not": "%100 vegan kafe ve restoran",
     "id": "v0110",
     "kaynak": "Venues, Yelp, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/mahatmaacafe/"
+    "web": "https://www.instagram.com/mahatmaacafe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Dr Falafel",
