@@ -811,14 +811,15 @@
     "ilce": "Alanya",
     "tur": "vegan",
     "adres": "Çarşı, İskele Cd. 58A, Alanya/Antalya",
-    "lat": 36.5395913,
-    "lng": 31.9953287,
+    "lat": 36.5394672837608,
+    "lng": 31.9978094100952,
     "telefon": "+90 553 811 86 74",
     "not": "Tam vegan restoran, vegan burger ve borscht öne çıkıyor, kedi dostu",
     "id": "v0058",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/tyche_vegan_re/"
+    "web": "https://www.instagram.com/tyche_vegan_re/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Eski Ev Pub & Kitchen",
