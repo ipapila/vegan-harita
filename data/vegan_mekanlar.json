@@ -1054,7 +1054,8 @@
     "id": "v0071",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/markscoffeeandcrafts/"
+    "web": "https://www.instagram.com/markscoffeeandcrafts/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Glutensiz Vegan Mutfak",
@@ -2509,15 +2510,16 @@
     "il": "Samsun",
     "ilce": "İlkadım",
     "tur": "vegan ürünlü",
-    "adres": "Piazza AVM, İlkadım/Samsun",
-    "lat": 41.2905,
-    "lng": 36.3375,
+    "adres": "Yenimahalle, Çarşamba Cd. No:52, 55080 Canik/Samsun",
+    "lat": 41.2764357545547,
+    "lng": 36.3535666465759,
     "telefon": "+90 362 444 00 00",
     "not": "Vegan dondurma ve bitkisel içecekler.",
     "id": "v0193",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.migros.com.tr"
+    "web": "https://www.migros.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Migros Kayseri Forum",
