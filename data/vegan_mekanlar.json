@@ -1272,14 +1272,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan dostu",
     "adres": "Kalyoncu Kulluğu, Kalyoncu Kulluğu Cd. 13A, Beyoğlu/İstanbul",
-    "lat": 41.036402,
-    "lng": 28.9744721,
+    "lat": 41.0363950538497,
+    "lng": 28.9770224690437,
     "telefon": "+90 536 569 02 82",
     "not": "Nepal/Hint mutfağı, geniş vejetaryen ve vegan seçenekler",
     "id": "v0089",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.thehimalayanrestaurants.com.tr/"
+    "web": "https://www.thehimalayanrestaurants.com.tr/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "VegVej Ankara Falafelcisi",
