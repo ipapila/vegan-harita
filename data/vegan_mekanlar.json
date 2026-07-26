@@ -649,13 +649,15 @@
     "ilce": "Talas",
     "tur": "vegan dostu",
     "adres": "Bahçelievler, Mevlana Cd. No: 32E, Talas/Kayseri",
-    "lat": 38.687645,
-    "lng": 35.5417782,
+    "lat": 38.6876369291494,
+    "lng": 35.5442261695862,
     "telefon": "+90 552 841 03 84",
     "not": "Sağlıklı bowl ve salata konsepti",
     "id": "v0042",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "le cafe de chat noir",
