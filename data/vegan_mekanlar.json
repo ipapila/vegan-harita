@@ -2275,14 +2275,15 @@
     "ilce": "Muratpaşa",
     "tur": "vegan ürünlü",
     "adres": "Lara, Fener Mah., Tekelioğlu Cad. No:57, Muratpaşa/Antalya",
-    "lat": 36.859,
-    "lng": 30.7595,
+    "lat": 36.8521361732707,
+    "lng": 30.7571321725845,
     "telefon": "+90 242 323 00 00",
     "not": "Organik ve vegan köşesi olan süpermarket.",
     "id": "v0184",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.happycenter.com.tr"
+    "web": "https://www.happycenter.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Biorganik Nişantaşı",
