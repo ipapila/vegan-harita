@@ -2001,7 +2001,7 @@
     "il": "İzmir",
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
-    "adres": "Alaçatı/İzmir",
+    "adres": "Alaçatı, 13002 Sok No:11, 35937 Çeşme/İzmir",
     "lat": 38.2843218,
     "lng": 26.3725167,
     "telefon": null,
@@ -2009,7 +2009,8 @@
     "id": "v0159",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.gaiaalacati.com/"
+    "web": "https://www.gaiaalacati.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Katres Kitchen",
