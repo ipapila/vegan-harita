@@ -1922,14 +1922,16 @@
     "il": "İzmir",
     "ilce": "Konak",
     "tur": "vegan dostu",
-    "adres": "Alsancak/İzmir",
-    "lat": 38.43247,
-    "lng": 27.1393911,
+    "adres": "Kültür, 1389. Sk. no:1/c, 35220 Konak/İzmir",
+    "lat": 38.4324758926325,
+    "lng": 27.1420320868492,
     "telefon": null,
     "not": "Vegan tost, salata ve içecek seçenekleri",
     "id": "v0149",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Cava Restaurant",
