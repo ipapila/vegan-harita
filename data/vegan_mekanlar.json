@@ -860,13 +860,15 @@
     "ilce": "Fethiye",
     "tur": "vegan",
     "adres": "Cumhuriyet, Çarşı Cd. Üstyol No:194, Fethiye/Muğla",
-    "lat": 36.6206295,
-    "lng": 29.1121114,
+    "lat": 36.6205803004789,
+    "lng": 29.1146332025528,
     "telefon": "+90 532 514 18 95",
     "not": "Tam vegan gastropub, lahmacun/menemen gibi Türk mutfağının vegan yorumu",
     "id": "v0059",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Lu Bistro",
