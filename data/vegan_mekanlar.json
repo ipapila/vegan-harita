@@ -1410,14 +1410,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Meşrutiyet, Konur Sok. 59/4, Çankaya/Ankara",
-    "lat": 39.9164661,
-    "lng": 32.8539314,
+    "lat": 39.9152004839746,
+    "lng": 32.8571999073029,
     "telefon": "+90 530 921 81 27",
     "not": "Türkiye'nin en eski vegan pub'larından",
     "id": "v0097",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/tunelveganpub/"
+    "web": "https://www.instagram.com/tunelveganpub/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "KORELEE",
