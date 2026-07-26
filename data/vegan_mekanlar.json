@@ -2063,14 +2063,15 @@
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
     "adres": "Alaçatı/İzmir",
-    "lat": 38.2850228,
-    "lng": 26.3727161,
+    "lat": 38.2852038952093,
+    "lng": 26.3756203651428,
     "telefon": "+90 553 883 67 15",
     "not": "Vejetaryen/vegan seçenekler",
     "id": "v0163",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/salkimsogutalacati/"
+    "web": "https://www.instagram.com/salkimsogutalacati/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Syrian Restaurant",
