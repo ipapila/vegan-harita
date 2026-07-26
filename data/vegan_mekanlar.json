@@ -603,14 +603,15 @@
     "ilce": "Seyhan",
     "tur": "vejetaryen",
     "adres": "Fevzipaşa, Vefa Cad. NO:135, Seyhan/Adana",
-    "lat": 37.000529,
-    "lng": 35.2679863,
+    "lat": 36.9994423730732,
+    "lng": 35.2740472555161,
     "telefon": "+90 505 222 65 00",
     "not": "Bulgur bazlı çiğköfte zinciri, et içermez",
     "id": "v0039",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.komagene.com.tr/"
+    "web": "https://www.komagene.com.tr/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Pizza Pellini",
