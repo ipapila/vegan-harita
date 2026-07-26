@@ -1849,14 +1849,16 @@
     "il": "Kırklareli",
     "ilce": "Kırklareli Merkez",
     "tur": "vegan dostu",
-    "adres": "Kırklareli Merkez/Kırklareli",
-    "lat": 41.7349158,
-    "lng": 27.2189518,
+    "adres": "Kasaplararası Efendy'nin karşı sokağı, Karacaibrahim, Şükrü Naili Cd. 47. Sokak No: 2, 39100 Kırklareli Merkez/Kırklareli",
+    "lat": 41.7346935970365,
+    "lng": 27.2238206863403,
     "telefon": null,
     "not": "Vegan/vejetaryen dostu",
     "id": "v0138",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "The Rabbit Hole",
