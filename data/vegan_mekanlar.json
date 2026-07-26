@@ -1233,14 +1233,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Rasimpaşa, İzzettin Sk. No:44/A, Kadıköy/İstanbul",
-    "lat": 40.9944804,
-    "lng": 29.0248265,
+    "lat": 40.9944818555183,
+    "lng": 29.0274801850319,
     "telefon": null,
     "not": "Veganlaştırılmış Türk sokak lezzetleri (köfte, ayran)",
     "id": "v0086",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/vegaveganbufe/"
+    "web": "https://www.instagram.com/vegaveganbufe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Community Kitchen",
