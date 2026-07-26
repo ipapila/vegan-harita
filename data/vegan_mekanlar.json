@@ -1962,14 +1962,15 @@
     "ilce": "Osmangazi",
     "tur": "vegan dostu",
     "adres": "12B, Bursa",
-    "lat": 40.2108157,
-    "lng": 28.9973398,
+    "lat": 40.2105644635885,
+    "lng": 28.9995074272156,
     "telefon": null,
     "not": "4 vegan yemek (burger, salata, pizza)",
     "id": "v0154",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.facebook.com/thehungerparkora/"
+    "web": "https://www.facebook.com/thehungerparkora/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Miske Restaurant",
