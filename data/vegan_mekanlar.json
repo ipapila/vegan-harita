@@ -1147,14 +1147,15 @@
     "ilce": "Şişli",
     "tur": "vegan dostu",
     "adres": "Mecidiyeköy Mahallesi, Büyükdere Caddesi, Naci Kasım Sokak No:6B (Goranga Yoga içerisinde), Şişli/İstanbul",
-    "lat": 41.0672299,
-    "lng": 28.9962646,
+    "lat": 41.0670632195947,
+    "lng": 28.9988341927528,
     "telefon": "+90 212 234 36 33",
     "not": "ISKCON tarafından işletilen vejetaryen/vegan Hint mutfağı",
     "id": "v0081",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://govindaistanbul.net/"
+    "web": "https://govindaistanbul.net/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Veganİstasyon",
