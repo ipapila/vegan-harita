@@ -1083,13 +1083,15 @@
     "ilce": "Altıeylül",
     "tur": "vegan dostu",
     "adres": "Plevne, 12085 Sk. No:40, Altıeylül/Balıkesir",
-    "lat": 39.6184303,
-    "lng": 27.8937285,
+    "lat": 39.6183629770271,
+    "lng": 27.8963577747345,
     "telefon": "+90 534 671 35 03",
     "not": "Glutensiz pastane, vegan pasta seçenekleri de sunuyor",
     "id": "v0074",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Veganarsist (Kadıköy)",
