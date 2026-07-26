@@ -1714,14 +1714,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan dostu",
     "adres": "Sultan Selim, Şahinler Cd. No:31/B, İstanbul",
-    "lat": 41.092973,
-    "lng": 28.9990262,
+    "lat": 41.092653574984,
+    "lng": 29.0015888214111,
     "telefon": null,
     "not": "Vegan pelmeni (ıspanaklı/patatesli), çiğbörek",
     "id": "v0131",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.dogamantievi.com/"
+    "web": "https://www.dogamantievi.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "New Mr Cook",
