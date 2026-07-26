@@ -618,14 +618,15 @@
     "ilce": "Selçuklu",
     "tur": "vegan dostu",
     "adres": "Bosna Hersek Mahallesi Osmanlı Cad. Kıvılcım Bulvarı AVM No: 1R, Selçuklu/Konya",
-    "lat": 38.0100846,
-    "lng": 32.5185168,
+    "lat": 38.0102556113549,
+    "lng": 32.5212693214417,
     "telefon": "+90 542 143 43 43",
     "not": "İtalyan pizzacı, vejetaryen/vegan seçenekler mevcut",
     "id": "v0040",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.pizzapellini.com/tr"
+    "web": "https://www.pizzapellini.com/tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "The Hunger Kayseri",
