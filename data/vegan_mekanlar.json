@@ -1189,14 +1189,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Osmanağa, Pavlonya Sk. No:9, Kadıköy/İstanbul",
-    "lat": 40.9905339,
-    "lng": 29.0238267,
+    "lat": 40.9905684614678,
+    "lng": 29.0264475345612,
     "telefon": "+90 533 422 92 43",
     "not": "Mısır mutfağının bitkisel bazlı ve glutensiz yorumu",
     "id": "v0083",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/kem.kum.egyptian.eatery/"
+    "web": "https://www.instagram.com/kem.kum.egyptian.eatery/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Rulo Ezberbozan Lezzetler",
