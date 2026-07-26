@@ -1639,14 +1639,15 @@
     "ilce": "Bornova",
     "tur": "vegan dostu",
     "adres": "129/7 Sokak No:16 Evka3 Bornova/İzmir",
-    "lat": 38.4621867,
-    "lng": 27.2478798,
+    "lat": 38.4622337274562,
+    "lng": 27.2501760721207,
     "telefon": "+90 232 375 76 76",
     "not": "Michelin Rehberi'nde yer alan, vegan/vejetaryen dostu seçenekler",
     "id": "v0112",
     "kaynak": "Michelin Guide, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.emektarkebap.com/"
+    "web": "https://www.emektarkebap.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Uzundere Kapadokya Mutfağı",
