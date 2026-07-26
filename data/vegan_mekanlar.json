@@ -906,13 +906,15 @@
     "ilce": "Efeler",
     "tur": "vegan",
     "adres": "Kurtuluş, Adnan Menderes Blv. No:72, Menderes Park, Efeler/Aydın",
-    "lat": 37.8409334,
-    "lng": 27.8421632,
+    "lat": 37.8408177140349,
+    "lng": 27.8447681665421,
     "telefon": "+90 501 035 67 10",
     "not": "Belediye tarafından işletilen Türkiye'nin ilk glutensiz+vegan kafelerinden",
     "id": "v0062",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Minori İtalyan Mutfak",
