@@ -1331,13 +1331,15 @@
     "ilce": "Konak",
     "tur": "vegan",
     "adres": "Alsancak, 1462. Sk. No:49/A, Konak/İzmir",
-    "lat": 38.4379532,
-    "lng": 27.1436847,
+    "lat": 38.4378922865497,
+    "lng": 27.1462699770927,
     "telefon": "+90 554 136 69 41",
     "not": "Kitap temalı vegan kafe, ev yapımı lazanya ve tatlılar",
     "id": "v0091",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Ch'i For Life",
