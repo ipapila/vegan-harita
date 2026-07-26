@@ -1376,14 +1376,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Fikirtepe, Volkan Sk. Pırlanta Sitesi B Blok 1/1D, Kadıköy/İstanbul",
-    "lat": 40.9898956,
-    "lng": 29.0529954,
+    "lat": 40.9899570359328,
+    "lng": 29.055597782135,
     "telefon": "+90 535 445 95 66",
     "not": "Tamamen vegan Fransız pastanesi",
     "id": "v0095",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://ethiqueplantbased.com/"
+    "web": "https://ethiqueplantbased.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Ayrışım Kitabevi Kafe",
