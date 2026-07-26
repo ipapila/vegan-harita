@@ -322,13 +322,15 @@
     "ilce": "Bayraklı",
     "tur": "vegan dostu",
     "adres": "Bayraklı, 1909. Sk. 13A, Bayraklı/İzmir",
-    "lat": 38.462483,
-    "lng": 27.1667553,
+    "lat": 38.4624899536925,
+    "lng": 27.1693986654282,
     "telefon": "+90 555 759 49 49",
     "not": "Kafe, vegan cheesecake ve atölyeler",
     "id": "v0021",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "inn coffee",
