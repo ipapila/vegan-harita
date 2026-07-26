@@ -1163,14 +1163,15 @@
     "ilce": "Şişli",
     "tur": "vegan",
     "adres": "Merkez, İskenderoğlu Sk. No:30B, Şişli/İstanbul",
-    "lat": 41.0621506,
-    "lng": 28.9823611,
+    "lat": 41.062183402895,
+    "lng": 28.9849591255188,
     "telefon": "+90 850 241 96 90",
     "not": "Vegan ürünler satan market (tofu, bitkisel süt, kozmetik vb.)",
     "id": "v0082",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://veganistasyon.com/"
+    "web": "https://veganistasyon.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "PlantBased Egyptian Food, Gluten free",
