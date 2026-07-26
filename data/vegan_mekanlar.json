@@ -1454,14 +1454,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan",
     "adres": "Firuzağa, Boğazkesen Cd. 74/A, Beyoğlu/İstanbul",
-    "lat": 41.0293919,
-    "lng": 28.9770271,
+    "lat": 41.0293783240951,
+    "lng": 28.9796590805054,
     "telefon": "+90 539 611 21 18",
     "not": "Aile işletmesi tam vegan restoran; bezelye/mercimek proteinli döner",
     "id": "v0102",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://wegainn.com/"
+    "web": "https://wegainn.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Pure Mutfak",
