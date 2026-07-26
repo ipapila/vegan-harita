@@ -1972,14 +1972,15 @@
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
     "adres": "Alaçatı/İzmir",
-    "lat": 38.274536,
-    "lng": 26.3588569,
+    "lat": 38.2745247062138,
+    "lng": 26.3614663481712,
     "telefon": null,
     "not": "Vejetaryen/vegan seçenekler",
     "id": "v0156",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/asmayapragialacati/"
+    "web": "https://www.instagram.com/asmayapragialacati/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Bom Dia",
