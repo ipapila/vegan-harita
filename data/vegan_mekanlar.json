@@ -276,14 +276,15 @@
     "ilce": "Konak",
     "tur": "vegan",
     "adres": "1484 Sk 9/A, Alsancak Konak, İzmir",
-    "lat": 38.437512,
-    "lng": 27.1417283,
+    "lat": 38.4375057148798,
+    "lng": 27.1441161632538,
     "telefon": "+90 534 033 03 72",
     "not": "İzmir'in ilk %100 vegan restoranı",
     "id": "v0018",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.facebook.com/Yasamvegancafe/"
+    "web": "https://www.facebook.com/Yasamvegancafe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Boho Lokal",
