@@ -1204,13 +1204,15 @@
     "ilce": "Safranbolu",
     "tur": "vegan dostu",
     "adres": "Musalla, Safranbolu/Karabük",
-    "lat": 41.2442711,
-    "lng": 32.6937611,
+    "lat": 41.2442217672322,
+    "lng": 32.6935583353043,
     "telefon": "+90 541 194 98 33",
     "not": "Yöresel ev yemekleri lokantası, vegan/vejetaryen seçenekler de sunuyor",
     "id": "v0080",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Govinda Istanbul",
