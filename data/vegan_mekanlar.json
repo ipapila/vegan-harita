@@ -2272,14 +2272,15 @@
     "ilce": "Çankaya",
     "tur": "vegan ürünlü",
     "adres": "Armada AVM, Eskişehir Yolu No:6, Çankaya/Ankara",
-    "lat": 39.9122,
-    "lng": 32.8078,
+    "lat": 39.9126659164525,
+    "lng": 32.8094673156738,
     "telefon": "+90 312 219 00 00",
     "not": "Vegan dondurma, tofu ve tempeh gibi özel ürünler bulunur.",
     "id": "v0181",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.macrocenter.com.tr"
+    "web": "https://www.macrocenter.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "CarrefourSA Mavişehir",
