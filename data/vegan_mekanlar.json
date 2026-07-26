@@ -68,14 +68,15 @@
     "ilce": "Fatih",
     "tur": "vegan dostu",
     "adres": "Küçük Ayasofya, Kadırga Limanı Cd. No:177, Fatih/İstanbul",
-    "lat": 41.004643,
-    "lng": 28.9686721,
+    "lat": 41.0046317079788,
+    "lng": 28.9712905883789,
     "telefon": "+90 532 490 47 24",
     "not": "Geniş vegan seçenekli şarap barı/bistro",
     "id": "v0005",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://archbistro.com/"
+    "web": "https://archbistro.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vacilando",
