@@ -2034,14 +2034,15 @@
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
     "adres": "Alaçatı/İzmir",
-    "lat": 38.2833179,
-    "lng": 26.3720109,
+    "lat": 38.2833490462863,
+    "lng": 26.374576985836,
     "telefon": "+90 535 774 94 07",
     "not": "Vejetaryen/vegan seçenekler",
     "id": "v0161",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/kirmiziardic/"
+    "web": "https://www.instagram.com/kirmiziardic/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Pizza Locale",
