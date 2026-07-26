@@ -1799,14 +1799,15 @@
     "ilce": "Marmaris",
     "tur": "vegan dostu",
     "adres": "Barbaros Cd., Marmaris/Muğla",
-    "lat": 36.8500731,
-    "lng": 28.2716216,
+    "lat": 36.8500242183599,
+    "lng": 28.2742220163345,
     "telefon": null,
     "not": "Vegan seçenekler istek üzerine yapılıyor",
     "id": "v0135",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.facebook.com/p/Mr-Cook-100063829821385/"
+    "web": "https://www.facebook.com/p/Mr-Cook-100063829821385/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Bizim Mutfak",
