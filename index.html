@@ -961,6 +961,10 @@ function makeClusterIcon(count) {
   });
 }
 
+function hasCoords(p) {
+  return typeof p.lat === 'number' && typeof p.lng === 'number' && Number.isFinite(p.lat) && Number.isFinite(p.lng);
+}
+
 function coordKey(p) {
   return p.lat.toFixed(5) + ',' + p.lng.toFixed(5);
 }
@@ -1118,10 +1122,17 @@ function applyFilters() {
   collapseSpider();
   clusterMarkers = {};
   const filtered = PLACES.filter(matches);
+  // Lat/lng "opsiyonel" olarak işaretlendiği için bazı kayıtlarda konum olmayabilir.
+  // Bunlar haritada pin olarak gösterilemez ama sonuç sayısına ve listeye dahil edilmeli;
+  // coordKey() sadece geçerli koordinatı olan kayıtlara uygulanmalı, yoksa (lat/lng null
+  // iken .toFixed çağrılması) tüm applyFilters() çağrısı hatayla yarıda kesilir — bu da
+  // manuel ekleme/JSON içe aktarma sonrası "hiçbir şey olmuyor" gibi görünen asıl sebeptir.
+  const mappable = filtered.filter(hasCoords);
+  const missingCoordCount = filtered.length - mappable.length;
 
   // Aynı koordinata düşen mekanları grupla (kaba geocoding çakışmaları için)
   const groups = {};
-  filtered.forEach(p => {
+  mappable.forEach(p => {
     const key = coordKey(p);
     (groups[key] = groups[key] || []).push(p);
   });
@@ -1143,10 +1154,11 @@ function applyFilters() {
     }
   });
 
-  document.getElementById('result-count').textContent = filtered.length;
+  document.getElementById('result-count').textContent = filtered.length +
+    (missingCoordCount > 0 ? ` (${missingCoordCount} konumsuz, haritada görünmüyor)` : '');
 
-  if (filtered.length > 0 && (state.activeIl || state.query)) {
-    const bounds = L.latLngBounds(filtered.map(p => [p.lat, p.lng]));
+  if (mappable.length > 0 && (state.activeIl || state.query)) {
+    const bounds = L.latLngBounds(mappable.map(p => [p.lat, p.lng]));
     map.fitBounds(bounds, { padding: [40, 40], maxZoom: 14 });
   } else if (!state.activeIl && !state.query) {
     map.setView([39.0, 35.0], 6);
