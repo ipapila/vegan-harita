@@ -2152,14 +2152,16 @@
     "il": "Rize",
     "ilce": "Fındıklı",
     "tur": "vegan",
-    "adres": "Rize Fındıklı",
-    "lat": 41.2714,
-    "lng": 41.1424,
+    "adres": "Merkez, Papatya Sokak No:7/B, 53700 Fındıklı/Rize",
+    "lat": 41.2715573959871,
+    "lng": 41.1417603492737,
     "telefon": null,
     "not": "Rize Fındıklı'da vegan kafe",
     "id": "v0169",
     "kaynak": "HappyCow",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Bakkal",
