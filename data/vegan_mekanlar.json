@@ -165,14 +165,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Remzi Oğuz Arık, Gerede Sk. No:3 D:A, Çankaya/Ankara",
-    "lat": 39.9014242,
-    "lng": 32.8524666,
+    "lat": 39.9014114685697,
+    "lng": 32.855054140091,
     "telefon": "+90 531 305 75 72",
     "not": "Vegan pastane/kafe, queer-dostu mekan",
     "id": "v0011",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.veganwitchvinni.com/"
+    "web": "https://www.veganwitchvinni.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Eathica Eatery",
