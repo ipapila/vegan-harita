@@ -2103,14 +2103,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Caferağa Mah., Muvakkıthane Cad. No:41/A, Kadıköy/İstanbul",
-    "lat": 40.9843978,
-    "lng": 29.0240512,
+    "lat": 40.9898315107837,
+    "lng": 29.0250045061112,
     "telefon": "+90 216 337 00 11",
     "not": "Tamamen vegan bakkal; atıştırmalık, peynir, et alternatifleri.",
     "id": "v0170",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.instagram.com/veganbakkal/"
+    "web": "https://www.instagram.com/veganbakkal/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Dükkan",
