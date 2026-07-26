@@ -386,14 +386,15 @@
     "ilce": "Nilüfer",
     "tur": "vegan dostu",
     "adres": "Dumlupınar, Kalkan Sk. Mehmet Ayşe Güney Apt. 4/A1 B Blok, Nilüfer/Bursa",
-    "lat": 40.2247452,
-    "lng": 28.8435481,
+    "lat": 40.2246719701556,
+    "lng": 28.8461494445801,
     "telefon": "+90 555 703 51 16",
     "not": "Vegan seçenekli kafe",
     "id": "v0025",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/at_kafe/"
+    "web": "https://www.instagram.com/at_kafe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Salt Vegetarian",
