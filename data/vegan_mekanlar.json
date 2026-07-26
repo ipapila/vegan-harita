@@ -2345,14 +2345,15 @@
     "ilce": "Nilüfer",
     "tur": "vegan ürünlü",
     "adres": "Korupark AVM, İzmir Yolu, Nilüfer/Bursa",
-    "lat": 40.218,
-    "lng": 28.9645,
+    "lat": 40.2503152008732,
+    "lng": 28.9591026306152,
     "telefon": "+90 224 444 00 00",
     "not": "Migros’un vegan reyonu; vegan sucuk, peynir ve tatlılar.",
     "id": "v0183",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.migros.com.tr"
+    "web": "https://www.migros.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Happy Center Lara",
