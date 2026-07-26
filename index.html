@@ -830,10 +830,10 @@
     </div>
 
     <div class="modal-success" id="import-success-view">
-      <div class="big-emoji">✅</div>
-      <h3>İçe aktarma tamamlandı</h3>
+      <div class="big-emoji" id="import-success-emoji">⏳</div>
+      <h3 id="import-success-title">İşleniyor...</h3>
       <p id="import-success-text"></p>
-      <button type="button" class="btn-primary" id="import-done">Tamam</button>
+      <button type="button" class="btn-primary" id="import-done" disabled>Tamam</button>
     </div>
   </div>
 </div>
@@ -2011,34 +2011,62 @@ document.getElementById('json-import-input').addEventListener('change', (e) => {
   reader.readAsText(file, 'utf-8');
 });
 
+function closeImportModalAfterDelay(ms) {
+  setTimeout(() => {
+    // Sadece kullanıcı hâlâ bu ekrandaysa (arada başka bir modal açmadıysa) kapat.
+    if (importOverlay.classList.contains('open') && importSuccessView.classList.contains('open')) {
+      closeImportModal();
+    }
+  }, ms);
+}
+
 async function finishImport(totalCount, mode) {
   renderIlList();
   applyFilters();
   const modeText = mode === 'merge' ? 'birleştirildi' : 'tümüyle değiştirildi';
   const successTextEl = document.getElementById('import-success-text');
+  const successEmojiEl = document.getElementById('import-success-emoji');
+  const successTitleEl = document.getElementById('import-success-title');
+  const doneBtn = document.getElementById('import-done');
+
+  doneBtn.disabled = true;
+  importMergeBtn.disabled = true;
+  importReplaceBtn.disabled = true;
 
   if (isGithubConfigured()) {
-    importMergeBtn.disabled = true;
-    importReplaceBtn.disabled = true;
-    successTextEl.innerHTML = 'GitHub\'a kaydediliyor...';
+    successEmojiEl.textContent = '⏳';
+    successTitleEl.textContent = 'GitHub\'a kaydediliyor...';
+    successTextEl.innerHTML = 'Değişiklik deponuza commit ediliyor, lütfen bekleyin.';
     importView.style.display = 'none';
     importSuccessView.classList.add('open');
     try {
       await githubSavePlaces('JSON içe aktarma (' + mode + '): ' + totalCount + ' kayıt');
+      successEmojiEl.textContent = '✅';
+      successTitleEl.textContent = 'İçe aktarma tamamlandı';
       successTextEl.innerHTML =
         `Veri ${modeText} ve GitHub deponuza commit edildi. Şu anda listede <b>${totalCount}</b> kayıt var. ` +
         `Birkaç dakika içinde tüm cihazlarda güncel haliyle görünecek.`;
+      doneBtn.disabled = false;
+      closeImportModalAfterDelay(2200);
     } catch (err) {
+      successEmojiEl.textContent = '⚠️';
+      successTitleEl.textContent = 'GitHub\'a kaydedilemedi';
       successTextEl.innerHTML =
         `Veri ${modeText} ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>` +
         `Şu anda listede <b>${totalCount}</b> kayıt var (yalnızca bu tarayıcıda). "JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+      doneBtn.disabled = false;
+      // Hata durumunda otomatik kapatmıyoruz — kullanıcı mesajı okuyup aksiyon alabilsin.
     }
   } else {
+    successEmojiEl.textContent = '✅';
+    successTitleEl.textContent = 'İçe aktarma tamamlandı';
     successTextEl.innerHTML =
       `Veri ${modeText}. Şu anda listede <b>${totalCount}</b> kayıt var.<br>` +
       `Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
     importView.style.display = 'none';
     importSuccessView.classList.add('open');
+    doneBtn.disabled = false;
+    closeImportModalAfterDelay(2200);
   }
 }
 
