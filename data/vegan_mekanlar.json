@@ -1426,14 +1426,15 @@
     "ilce": "Çankaya",
     "tur": "vegan dostu",
     "adres": "Kavaklıdere, Bestekar Cd No:27/A, Çankaya/Ankara",
-    "lat": 39.9099065,
-    "lng": 32.8562333,
+    "lat": 39.9098123584759,
+    "lng": 32.858844101429,
     "telefon": "+90 312 418 06 88",
     "not": "Kore mutfağı, vegan tteokbokki/kimbap/kimchi seçenekleri",
     "id": "v0098",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/koreleetr/"
+    "web": "https://www.instagram.com/koreleetr/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Cafe Eli Coffeehouse & Vegan Food",
