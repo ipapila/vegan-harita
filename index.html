@@ -536,6 +536,20 @@
   }
   .gh-badge.connected { background: #e8f5e9; color: #1b5e20; }
   .gh-badge.disconnected { background: #f0f3f1; color: var(--muted); }
+
+  /* --- Yerel (senkronize edilmemiş) değişiklik rozeti --- */
+  .local-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    background: #fff3e0;
+    color: #a34b00;
+  }
 </style>
 </head>
 <body>
@@ -573,6 +587,7 @@
       <button id="json-import-btn" type="button" class="admin-btn import">📥 JSON İçe Aktar</button>
       <button id="json-export-btn" type="button" class="admin-btn export">📤 JSON Dışa Aktar</button>
       <button id="github-config-btn" type="button" class="admin-btn" style="border-color:#455a64; color:#37474f;">⚙️ GitHub Ayarları</button>
+      <button id="local-clear-btn" type="button" class="admin-btn" style="display:none; border-color:#a34b00; color:#a34b00;">🧹 Yerel Değişiklikleri Temizle</button>
       <input type="file" id="json-import-input" accept="application/json,.json" style="display:none;">
     </div>
     <div id="results-footer">
@@ -1140,15 +1155,74 @@ function applyFilters() {
 
 const statusEl = document.getElementById('load-status');
 
+// ================= Yerel (tarayıcı) kalıcılık — GitHub bağlı değilken güvenlik ağı =================
+// GitHub Ayarları yapılandırılmadığı sürece admin değişiklikleri (manuel ekleme, JSON içe
+// aktarma, düzenleme, silme) yalnızca bellekte tutuluyordu ve sayfa yenilendiğinde kayboluyordu,
+// çünkü PLACES her seferinde sunucudaki data/vegan_mekanlar.json dosyasından yeniden yükleniyordu.
+// Bu blok, GitHub'a commit edilemeyen değişiklikleri bu tarayıcının localStorage'ına da yazıp
+// sayfa açılışında geri yükleyerek en azından aynı cihaz/tarayıcıda kaybolmalarını önler.
+const LOCAL_PLACES_KEY = 'eiVeganPlacesLocalOverride';
+
+function saveLocalPlacesSnapshot() {
+  try {
+    localStorage.setItem(LOCAL_PLACES_KEY, JSON.stringify(PLACES));
+  } catch (e) {
+    console.warn('Yerel kayıt başarısız:', e);
+  }
+}
+
+function loadLocalPlacesSnapshot() {
+  try {
+    const raw = localStorage.getItem(LOCAL_PLACES_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function clearLocalPlacesSnapshot() {
+  localStorage.removeItem(LOCAL_PLACES_KEY);
+}
+
+function hasLocalOverride() {
+  return localStorage.getItem(LOCAL_PLACES_KEY) !== null;
+}
+
+// GitHub'a başarıyla commit edilen her değişiklikten sonra çağrılır: artık sunucudaki
+// dosya güncel olduğu için yerel yedeği tutmaya gerek kalmaz.
+function onGithubSaveSucceeded() {
+  clearLocalPlacesSnapshot();
+  updateAdminUI();
+}
+
+// Admin bir değişiklik yaptığında (ekleme/düzenleme/silme/içe aktarma) çağrılır.
+// GitHub bağlı değilse değişikliği localStorage'a da yazar ki sayfa yenilenince kaybolmasın.
+function persistPlacesLocallyIfNeeded() {
+  if (!isGithubConfigured()) {
+    saveLocalPlacesSnapshot();
+    updateAdminUI();
+  }
+}
+
 fetch('data/vegan_mekanlar.json')
   .then(res => {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     return res.json();
   })
   .then(data => {
-    PLACES = data;
+    const localOverride = loadLocalPlacesSnapshot();
+    if (localOverride && !isGithubConfigured()) {
+      // Bu tarayıcıda daha önce kaydedilmiş, sunucuya commit edilmemiş değişiklikler var — onları kullan.
+      PLACES = localOverride;
+      statusEl.style.display = 'block';
+      statusEl.style.color = '#a34b00';
+      statusEl.textContent = '⚠️ Bu tarayıcıda kaydedilmiş, henüz sunucuya/GitHub\'a gönderilmemiş yerel değişiklikler yüklendi.';
+    } else {
+      PLACES = data;
+    }
     renderIlList();
     applyFilters();
+    updateAdminUI();
   })
   .catch(err => {
     statusEl.style.display = 'block';
@@ -1180,19 +1254,40 @@ function updateAdminUI() {
   const link = document.getElementById('admin-toggle-link');
   const status = document.getElementById('admin-status');
   const toolsWrap = document.getElementById('admin-tools-wrap');
+  const localClearBtn = document.getElementById('local-clear-btn');
   if (isAdminMode()) {
     link.textContent = '🔓 Admin Çıkışı';
     const ghBadge = isGithubConfigured()
       ? '<span class="gh-badge connected">🔗 GitHub bağlı</span>'
       : '<span class="gh-badge disconnected">🔌 GitHub bağlı değil</span>';
-    status.innerHTML = '👤 Admin modu aktif ' + ghBadge;
+    const localBadge = (!isGithubConfigured() && hasLocalOverride())
+      ? '<span class="local-badge">💾 Yerel değişiklik (senkronize değil)</span>'
+      : '';
+    status.innerHTML = '👤 Admin modu aktif ' + ghBadge + localBadge;
     toolsWrap.classList.add('open');
+    localClearBtn.style.display = (!isGithubConfigured() && hasLocalOverride()) ? '' : 'none';
   } else {
     link.textContent = '🔐 Admin';
     status.textContent = '';
     toolsWrap.classList.remove('open');
+    localClearBtn.style.display = 'none';
   }
 }
+
+document.getElementById('local-clear-btn').addEventListener('click', () => {
+  if (!confirm('Bu tarayıcıda kaydedilmiş, henüz GitHub\'a gönderilmemiş tüm yerel değişiklikler silinsin ve veri sunucudaki vegan_mekanlar.json dosyasından yeniden yüklensin mi? Bu işlem geri alınamaz.')) return;
+  clearLocalPlacesSnapshot();
+  fetch('data/vegan_mekanlar.json')
+    .then(res => res.json())
+    .then(data => {
+      PLACES = data;
+      renderIlList();
+      applyFilters();
+      updateAdminUI();
+      statusEl.style.display = 'none';
+    })
+    .catch(err => alert('Sunucudaki veri yeniden yüklenemedi: ' + err.message));
+});
 
 document.getElementById('admin-toggle-link').addEventListener('click', async (e) => {
   e.preventDefault();
@@ -1460,6 +1555,9 @@ function openSuggestModal(place) {
     if (directSave) {
       descEl.textContent = 'Değişiklikleri kaydettiğinizde doğrudan GitHub deponuza commit edilecek.';
       submitBtn.textContent = 'Kaydet (GitHub\'a commit et)';
+    } else if (isAdminMode()) {
+      descEl.textContent = 'Değişiklik bu tarayıcıda kaydedilecek (GitHub bağlı değil). Kalıcı hale getirmek için GitHub Ayarları\'nı yapılandırın ya da JSON Dışa Aktar\'ı kullanın.';
+      submitBtn.textContent = 'Kaydet (bu tarayıcıda)';
     } else {
       descEl.textContent = 'Hatalı bilgileri düzeltin, gönderdiğinizde e-posta uygulamanız açılacak.';
       submitBtn.textContent = 'Düzeltmeyi Gönder';
@@ -1533,15 +1631,18 @@ document.getElementById('suggest-delete-btn').addEventListener('click', async ()
   if (isGithubConfigured()) {
     try {
       await githubSavePlaces('Mekan silindi: ' + place.ad + ' (' + place.id + ')');
+      onGithubSaveSucceeded();
       document.getElementById('suggest-success-text').innerHTML =
         `<b>${place.ad}</b> listeden silindi ve GitHub deponuza commit edildi.`;
     } catch (err) {
+      persistPlacesLocallyIfNeeded();
       document.getElementById('suggest-success-text').innerHTML =
-        `<b>${place.ad}</b> yerel listeden silindi ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>"JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+        `<b>${place.ad}</b> yerel listeden silindi ve bu tarayıcıda saklandı, ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>"JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
     }
   } else {
+    persistPlacesLocallyIfNeeded();
     document.getElementById('suggest-success-text').innerHTML =
-      `<b>${place.ad}</b> listeden silindi (yalnızca bu tarayıcı oturumunda). Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirin ya da GitHub Ayarları'ndan bağlantı kurun.`;
+      `<b>${place.ad}</b> listeden silindi ve bu tarayıcıda kaydedildi (sayfa yenilense de kalır). Başka bir cihazda da görünmesi için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun ya da GitHub Ayarları'ndan bağlantı kurun.`;
   }
 
   deleteBtn.disabled = false;
@@ -1621,7 +1722,7 @@ suggestForm.addEventListener('submit', async (e) => {
   const today = new Date().toISOString().slice(0, 10);
   const editId = document.getElementById('f-edit-id').value;
   const isEdit = !!editId;
-  const directSave = isEdit && isAdminMode() && isGithubConfigured();
+  const directOrLocalSave = isEdit && isAdminMode();
 
   // JSON dosyasındaki alan başlıklarıyla uyumlu obje
   const entry = {
@@ -1641,8 +1742,8 @@ suggestForm.addEventListener('submit', async (e) => {
   };
   if (isEdit) entry.duzenlenme = today;
 
-  // ---- Admin + GitHub bağlıysa: doğrudan kaydet ve commit et ----
-  if (directSave) {
+  // ---- Admin olarak düzenliyorsa: doğrudan kaydet (GitHub bağlıysa commit et, değilse bu tarayıcıda tut) ----
+  if (directOrLocalSave) {
     const submitBtn = document.getElementById('suggest-submit');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Kaydediliyor...';
@@ -1652,24 +1753,34 @@ suggestForm.addEventListener('submit', async (e) => {
       PLACES[idx] = entry;
       renderIlList();
       applyFilters();
-      await githubSavePlaces('Mekan güncellendi: ' + ad + ' (' + editId + ')');
 
-      document.getElementById('suggest-success-emoji').textContent = '✅';
-      document.getElementById('suggest-success-title').textContent = 'Değişiklik GitHub\'a kaydedildi';
-      document.getElementById('suggest-success-text').innerHTML =
-        `<b>${ad}</b> güncellendi ve GitHub deponuza commit edildi. Birkaç dakika içinde tüm cihazlarda güncel haliyle görünecek.`;
+      if (isGithubConfigured()) {
+        await githubSavePlaces('Mekan güncellendi: ' + ad + ' (' + editId + ')');
+        onGithubSaveSucceeded();
+        document.getElementById('suggest-success-emoji').textContent = '✅';
+        document.getElementById('suggest-success-title').textContent = 'Değişiklik GitHub\'a kaydedildi';
+        document.getElementById('suggest-success-text').innerHTML =
+          `<b>${ad}</b> güncellendi ve GitHub deponuza commit edildi. Birkaç dakika içinde tüm cihazlarda güncel haliyle görünecek.`;
+      } else {
+        persistPlacesLocallyIfNeeded();
+        document.getElementById('suggest-success-emoji').textContent = '✅';
+        document.getElementById('suggest-success-title').textContent = 'Değişiklik bu tarayıcıda kaydedildi';
+        document.getElementById('suggest-success-text').innerHTML =
+          `<b>${ad}</b> güncellendi ve bu tarayıcıda kaydedildi (sayfa yenilense de kalır). Başka bir cihazda da görünmesi için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun ya da GitHub Ayarları'ndan bağlantı kurun.`;
+      }
       formView.style.display = 'none';
       successView.classList.add('open');
     } catch (err) {
-      alert('GitHub\'a kaydedilemedi: ' + err.message + '\n\nDeğişiklik yerel listede kalmaya devam ediyor; "JSON Dışa Aktar" ile yedekleyebilir ya da GitHub ayarlarınızı kontrol edebilirsiniz.');
+      persistPlacesLocallyIfNeeded();
+      alert('GitHub\'a kaydedilemedi: ' + err.message + '\n\nDeğişiklik bu tarayıcıda kaydedildi; "JSON Dışa Aktar" ile yedekleyebilir ya da GitHub ayarlarınızı kontrol edebilirsiniz.');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Kaydet (GitHub\'a commit et)';
+      submitBtn.textContent = isGithubConfigured() ? 'Kaydet (GitHub\'a commit et)' : 'Kaydet (bu tarayıcıda)';
     }
     return;
   }
 
-  // ---- Aksi halde (ziyaretçi önerisi ya da GitHub bağlı değilse): mailto ----
+  // ---- Aksi halde (ziyaretçi önerisi): mailto ----
   let bodyLines;
   let subject;
 
@@ -1796,7 +1907,7 @@ function openManualModal() {
   manualOverlay.classList.add('open');
   document.getElementById('manual-desc').textContent = isGithubConfigured()
     ? 'Kaydı veri setine ekler ve GitHub deponuza otomatik commit eder.'
-    : 'Kaydı doğrudan veri setine ekler (yalnızca bu tarayıcı oturumunda). Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları\'ndan bağlantı kurun.';
+    : 'Kaydı doğrudan veri setine ekler ve bu tarayıcıda saklar (sayfa yenilense de kalır). Başka cihazlarda da görünmesi için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları\'ndan bağlantı kurun.';
   setTimeout(() => {
     ensureManualPickMap();
     manualPickMap.invalidateSize();
@@ -1885,21 +1996,24 @@ manualForm.addEventListener('submit', async (e) => {
     submitBtn.textContent = 'Kaydediliyor...';
     try {
       await githubSavePlaces('Yeni mekan eklendi: ' + entry.ad + ' (' + entry.id + ')');
+      onGithubSaveSucceeded();
       successEmoji.textContent = '✅';
       successTitle.textContent = 'Mekan eklendi ve GitHub\'a kaydedildi';
       successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi ve GitHub deponuza commit edildi. Birkaç dakika içinde tüm cihazlarda görünecek.`;
     } catch (err) {
+      persistPlacesLocallyIfNeeded();
       successEmoji.textContent = '⚠️';
       successTitle.textContent = 'Eklendi ama GitHub\'a kaydedilemedi';
-      successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>"JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+      successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi ve bu tarayıcıda saklandı, ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>"JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Listeye Ekle';
     }
   } else {
+    persistPlacesLocallyIfNeeded();
     successEmoji.textContent = '✅';
     successTitle.textContent = 'Mekan eklendi';
-    successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi.<br>Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
+    successText.innerHTML = `<b>${entry.ad}</b> (${entry.id}) listeye eklendi ve bu tarayıcıda kaydedildi (sayfa yenilense de kalır).<br>Başka cihazlarda da görünmesi için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
   }
 
   manualFormView.style.display = 'none';
@@ -1977,6 +2091,27 @@ document.getElementById('json-import-input').addEventListener('change', (e) => {
       const invalidIdx = parsed.findIndex(p => !p || typeof p !== 'object' || !p.ad || !p.tur || !p.il);
       if (invalidIdx !== -1) throw new Error(`Kayıt #${invalidIdx + 1}: "ad", "tur" ve "il" alanları zorunlu.`);
 
+      // İçe aktarılan kayıtlarda id eksikse (elle hazırlanmış dosyalarda sık görülür),
+      // hepsi aynı "undefined" anahtarına düşüp birbirinin üzerine yazar ve neredeyse
+      // hiçbir şey eklenmemiş gibi görünürdü. Eksik id'lere burada otomatik id atanıyor.
+      let maxExisting = 0;
+      PLACES.forEach(p => {
+        const m = /^v(\d+)$/.exec(p.id || '');
+        if (m) maxExisting = Math.max(maxExisting, parseInt(m[1], 10));
+      });
+      const usedIds = new Set(PLACES.map(p => p.id).filter(Boolean));
+      parsed.forEach(p => {
+        if (!p.id) {
+          let candidate;
+          do {
+            maxExisting += 1;
+            candidate = 'v' + String(maxExisting).padStart(4, '0');
+          } while (usedIds.has(candidate));
+          p.id = candidate;
+          usedIds.add(candidate);
+        }
+      });
+
       importedData = parsed;
       importFileStatus.textContent = `✓ ${file.name} yüklendi.`;
       importFileStatus.style.color = '#1b5e20';
@@ -1991,7 +2126,9 @@ document.getElementById('json-import-input').addEventListener('change', (e) => {
         `Mevcut veride <b>${PLACES.length}</b> kayıt var.<br>` +
         `<b>Birleştir:</b> ${newCount} yeni kayıt eklenir, id'si çakışan ${overlapCount} kayıt güncellenir.<br>` +
         `<b>Tümünü Değiştir:</b> mevcut ${PLACES.length} kayıt silinir, yerine bu ${importedData.length} kayıt yüklenir.` +
-        (isGithubConfigured() ? '<br><br>🔗 GitHub bağlı — işlem tamamlandığında değişiklik otomatik commit edilecek.' : '');
+        (isGithubConfigured()
+          ? '<br><br>🔗 GitHub bağlı — işlem tamamlandığında değişiklik otomatik commit edilecek.'
+          : '<br><br>💾 GitHub bağlı değil — işlem tamamlandığında değişiklik bu tarayıcıda kaydedilecek (sayfa yenilense de kalır). Kalıcı hale getirmek için GitHub Ayarları\'nı yapılandırın.');
 
       importMergeBtn.disabled = false;
       importReplaceBtn.disabled = false;
@@ -2041,6 +2178,7 @@ async function finishImport(totalCount, mode) {
     importSuccessView.classList.add('open');
     try {
       await githubSavePlaces('JSON içe aktarma (' + mode + '): ' + totalCount + ' kayıt');
+      onGithubSaveSucceeded();
       successEmojiEl.textContent = '✅';
       successTitleEl.textContent = 'İçe aktarma tamamlandı';
       successTextEl.innerHTML =
@@ -2049,20 +2187,22 @@ async function finishImport(totalCount, mode) {
       doneBtn.disabled = false;
       closeImportModalAfterDelay(2200);
     } catch (err) {
+      persistPlacesLocallyIfNeeded();
       successEmojiEl.textContent = '⚠️';
       successTitleEl.textContent = 'GitHub\'a kaydedilemedi';
       successTextEl.innerHTML =
-        `Veri ${modeText} ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>` +
-        `Şu anda listede <b>${totalCount}</b> kayıt var (yalnızca bu tarayıcıda). "JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+        `Veri ${modeText} ve bu tarayıcıda kaydedildi (sayfa yenilense de kalır), ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>` +
+        `Şu anda listede <b>${totalCount}</b> kayıt var. "JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
       doneBtn.disabled = false;
       // Hata durumunda otomatik kapatmıyoruz — kullanıcı mesajı okuyup aksiyon alabilsin.
     }
   } else {
+    persistPlacesLocallyIfNeeded();
     successEmojiEl.textContent = '✅';
     successTitleEl.textContent = 'İçe aktarma tamamlandı';
     successTextEl.innerHTML =
-      `Veri ${modeText}. Şu anda listede <b>${totalCount}</b> kayıt var.<br>` +
-      `Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
+      `Veri ${modeText} ve bu tarayıcıda kaydedildi (sayfa yenilense de kalır). Şu anda listede <b>${totalCount}</b> kayıt var.<br>` +
+      `Başka cihazlarda da görünmesi için "JSON Dışa Aktar" ile indirip vegan_mekanlar.json dosyasının yerine koyun, ya da GitHub Ayarları'ndan bağlantı kurun.`;
     importView.style.display = 'none';
     importSuccessView.classList.add('open');
     doneBtn.disabled = false;
