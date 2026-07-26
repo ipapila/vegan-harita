@@ -441,14 +441,15 @@
     "ilce": "Muratpaşa",
     "tur": "vegan",
     "adres": "Barbaros, Civelek Sk. No:12, Muratpaşa/Antalya",
-    "lat": 36.8849035,
-    "lng": 30.7044129,
+    "lat": 36.8848725939279,
+    "lng": 30.7069104909897,
     "telefon": "+90 533 403 36 76",
     "not": "Vegan ve glutensiz burger, buddha bowl",
     "id": "v0030",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://levelkaleici.com/"
+    "web": "https://levelkaleici.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Lilaya Bodrum",
