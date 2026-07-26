@@ -1519,15 +1519,16 @@
     "il": "Antalya",
     "ilce": "Kaş",
     "tur": "vegan dostu",
-    "adres": "Andifli, Hastane Caddesi No:22, Kaş/Antalya",
-    "lat": 36.1992522,
-    "lng": 29.6354304,
+    "adres": "Andifli, Hastane Caddesi No: 22, Kaş/Antalya",
+    "lat": 36.1992502851051,
+    "lng": 29.6381172537804,
     "telefon": "+90 532 178 53 98",
     "not": "Bao/burger konsepti, geniş vegan ve vejetaryen seçenekler",
     "id": "v0104",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/bunbunkas/"
+    "web": "https://www.instagram.com/bunbunkas/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Alâka Cafe Restaurant",
