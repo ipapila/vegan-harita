@@ -1523,14 +1523,15 @@
     "ilce": "Şişli",
     "tur": "vegan",
     "adres": "Teşvikiye Mah. Hüsrev Gerede Cd. No:110, Nişantaşı/İstanbul",
-    "lat": 41.0487735,
-    "lng": 28.9919659,
+    "lat": 41.0487554658365,
+    "lng": 28.9945667982101,
     "telefon": "+90 212 260 08 08",
     "not": "Doğal, taze ve temiz yemek anlayışıyla vegan ve glütensiz seçenekler",
     "id": "v0107",
     "kaynak": "healinfoods.com",
     "eklenme": "2026-07-24",
-    "web": "https://healinfoods.com/"
+    "web": "https://healinfoods.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Community Kitchen (Şube)",
