@@ -1558,14 +1558,15 @@
     "ilce": "Beyoğlu",
     "tur": "vejetaryen",
     "adres": "Şehit Muhtar Mah., Kurabiye Sok. No:8/A, Beyoğlu/İstanbul",
-    "lat": 41.0365729,
-    "lng": 28.9799778,
+    "lat": 41.0365751157916,
+    "lng": 28.9826068282127,
     "telefon": "+90 212 243 82 34",
     "not": "Şehrin köklü vejetaryen restoranlarından biri",
     "id": "v0109",
     "kaynak": "Yelp, Filgezi, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/zencefilbeyoglu/"
+    "web": "https://www.instagram.com/zencefilbeyoglu/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Mahatma Cafe",
