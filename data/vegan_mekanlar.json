@@ -1877,14 +1877,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Barbaros mahallesi, Esat Cd. no 112/A, 06680 Çankaya/Ankara",
-    "lat": 39.906294,
-    "lng": 32.8641105,
+    "lat": 39.9061686015556,
+    "lng": 32.8665259480476,
     "telefon": null,
     "not": "Vegan kafe, sağlıklı ve taze menüler",
     "id": "v0146",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/fresh_healthy_garden/"
+    "web": "https://www.instagram.com/fresh_healthy_garden/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Frida Cafe",
