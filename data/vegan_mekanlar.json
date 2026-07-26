@@ -1125,14 +1125,15 @@
     "ilce": "Bakırköy",
     "tur": "vegan",
     "adres": "Ataköy 7-8-9-10. Kısım, Ayamama Sok., Bakırköy/İstanbul",
-    "lat": 40.9920079,
-    "lng": 28.8267047,
+    "lat": 40.9903295607747,
+    "lng": 28.8341116905212,
     "telefon": "+90 212 801 38 38",
     "not": "Glutensiz, şekersiz ve vegan pastane/fırın; lahmacun ve pizza gibi vegan atıştırmalıklar da sunuyor",
     "id": "v0079",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.tatlifirin.com/"
+    "web": "https://www.tatlifirin.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Safranbolu Zencefil Yöresel Lezzetler",
