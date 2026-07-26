@@ -116,14 +116,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Osmanağa, Piri Çavuş Sk. No:4, Kadıköy/İstanbul",
-    "lat": 40.9889842,
-    "lng": 29.0249592,
+    "lat": 40.9889831974633,
+    "lng": 29.0275526046753,
     "telefon": "+90 539 925 31 08",
     "not": "Vegan burger ve tatlı ağırlıklı kafe",
     "id": "v0008",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/salvekadikoy/"
+    "web": "https://www.instagram.com/salvekadikoy/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Bi Nevi Deli",
