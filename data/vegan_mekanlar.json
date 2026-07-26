@@ -767,14 +767,15 @@
     "ilce": "Merkezefendi",
     "tur": "vegan dostu",
     "adres": "Gerzele, Hakkı Derekoylü Cd. No:18 BA, Merkezefendi/Denizli",
-    "lat": 37.7482432,
-    "lng": 29.0519321,
+    "lat": 37.7482202272651,
+    "lng": 29.0546214580536,
     "telefon": "+90 530 484 95 20",
     "not": "Vegan, glutensiz ve şekersiz ürünler satan kafe/market",
     "id": "v0053",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://thenofoods.com/"
+    "web": "https://thenofoods.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Nohut Falafel",
