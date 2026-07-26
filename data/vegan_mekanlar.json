@@ -1426,14 +1426,15 @@
     "ilce": "Muratpaşa",
     "tur": "vegan dostu",
     "adres": "Haşimişcan, Arık Cd. No:20, Muratpaşa/Antalya",
-    "lat": 36.883395,
-    "lng": 30.7081475,
+    "lat": 36.8833837089254,
+    "lng": 30.710743367672,
     "telefon": "+90 530 254 16 80",
     "not": "Eski bir Türk evinde geleneksel mutfak; ayrı ve kapsamlı vegan menüsü",
     "id": "v0100",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.fatmasultanrestaurant.com/en"
+    "web": "https://www.fatmasultanrestaurant.com/en",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Wegain",
