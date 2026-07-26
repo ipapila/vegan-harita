@@ -2523,14 +2523,15 @@
     "ilce": "Kocasinan",
     "tur": "vegan ürünlü",
     "adres": "Forum Kayseri AVM, Kocasinan/Kayseri",
-    "lat": 38.7355,
-    "lng": 35.487,
+    "lat": 38.7227846819934,
+    "lng": 35.4971265792847,
     "telefon": "+90 352 444 00 00",
     "not": "Vegan ürün köşesi.",
     "id": "v0194",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.migros.com.tr"
+    "web": "https://www.migros.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Happy Center Balıkesir",
