@@ -1546,14 +1546,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan",
     "adres": "Şahkulu, Kumbaracı Ykş. 35A, Beyoğlu/İstanbul",
-    "lat": 41.0286,
-    "lng": 28.9776,
+    "lat": 41.0281319063392,
+    "lng": 28.9771646261215,
     "telefon": "Bilgi bulunamadı",
     "not": "Türk klasiklerinin vegan versiyonlarını sunan mekan (farklı adres kaydı)",
     "id": "v0108",
     "kaynak": "PlumeMag, Placera, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/community_kitchen/"
+    "web": "https://www.instagram.com/community_kitchen/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Zencefil",
