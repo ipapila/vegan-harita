@@ -1078,14 +1078,15 @@
     "ilce": "Fatih",
     "tur": "vegan",
     "adres": "Ayvansaray, Leblebiciler Sk. No:18, Fatih/İstanbul",
-    "lat": 41.0337432,
-    "lng": 28.94392,
+    "lat": 41.0337142981493,
+    "lng": 28.9463165402412,
     "telefon": "+90 212 999 56 20",
     "not": "Tam vegan restoran, geniş menü (mantı, lahmacun, tatlılar), Balat manzaralı teras",
     "id": "v0076",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://veganarsistbalat.com/"
+    "web": "https://veganarsistbalat.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Telezzüz",
