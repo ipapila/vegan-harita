@@ -746,7 +746,7 @@
     "il": "Bursa",
     "ilce": "Nilüfer",
     "tur": "vegan",
-    "adres": "Çamlıca Mah. Eğitimciler Cd., Nilüfer/Bursa",
+    "adres": "Çamlıca Mh Ahmet Taner Kışlalı Cd Yerliyurt Apt no: 97 2A Nilüfer Bursa, Bursa, Turkey",
     "lat": 40.2022798,
     "lng": 28.9821547,
     "telefon": null,
@@ -754,7 +754,8 @@
     "id": "v0052",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.facebook.com/goodcallcafe/"
+    "web": "https://www.facebook.com/goodcallcafe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Theno Foods",
