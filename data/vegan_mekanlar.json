@@ -1384,14 +1384,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan",
     "adres": "Rasimpaşa, Beydağı Sk. No:54/A, Kadıköy/İstanbul",
-    "lat": 40.993641,
-    "lng": 29.0254403,
+    "lat": 40.9936518223878,
+    "lng": 29.0280058979988,
     "telefon": "+90 537 614 96 98",
     "not": "Kitapçı-kafe, tam vegan Türk kahvaltısı ve yemekleri",
     "id": "v0096",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/ayrisimkitabevikafe/"
+    "web": "https://www.instagram.com/ayrisimkitabevikafe/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "TünelVeganPub",
