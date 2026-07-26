@@ -357,14 +357,15 @@
     "ilce": "Osmangazi",
     "tur": "vegan dostu",
     "adres": "Şehreküstü, Durak Cd. No:8, Osmangazi/Bursa",
-    "lat": 40.186901,
-    "lng": 29.0580855,
+    "lat": 40.1868896977105,
+    "lng": 29.0606215596199,
     "telefon": "+90 553 387 86 85",
     "not": "Vejetaryen meze ve gözleme ağırlıklı",
     "id": "v0023",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/mezebursa/"
+    "web": "https://www.instagram.com/mezebursa/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vasfi Felafel",
