@@ -2379,14 +2379,15 @@
     "ilce": "Bornova",
     "tur": "vegan ürünlü",
     "adres": "Erzene Mah., 114 Sok. No:5/A, Bornova/İzmir",
-    "lat": 38.4532,
-    "lng": 27.215,
+    "lat": 38.4680510988664,
+    "lng": 27.2348767518997,
     "telefon": "+90 232 374 12 34",
     "not": "Vegan atıştırmalıklar, glutensiz ürünler ve bitkisel içecekler.",
     "id": "v0186",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "CarrefourSA İstinyePark",
