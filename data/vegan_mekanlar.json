@@ -1612,14 +1612,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Selanik 2, Caddesi 66/B, Çankaya/Ankara",
-    "lat": 39.9173273,
-    "lng": 32.8550267,
+    "lat": 39.9173050089439,
+    "lng": 32.8575459122658,
     "telefon": "+90 312 419 17 57",
     "not": "Tamamen vejetaryen/vegan; falafel, humus, vegan lahmacun, ıslak burger",
     "id": "v0111",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://drfalafel.com.tr/"
+    "web": "https://drfalafel.com.tr/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Emektar Kebap",
