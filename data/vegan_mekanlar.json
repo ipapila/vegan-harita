@@ -2437,14 +2437,15 @@
     "ilce": "Selçuklu",
     "tur": "vegan ürünlü",
     "adres": "Bosna Hersek Mah., Yeni İstanbul Cad. No:102, Selçuklu/Konya",
-    "lat": 37.8975,
-    "lng": 32.4928,
+    "lat": 37.9604067343661,
+    "lng": 32.5152826309204,
     "telefon": "+90 332 240 00 00",
     "not": "Market zinciri; vegan süt ve bakliyat ağırlıklı.",
     "id": "v0188",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.makro.com.tr"
+    "web": "https://www.makro.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Natura Organik",
