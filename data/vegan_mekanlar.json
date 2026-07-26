@@ -485,14 +485,15 @@
     "ilce": "Bodrum",
     "tur": "vegan dostu",
     "adres": "Konacık, Kanuni Sultan Süleyman Cd. No:11, Bodrum/Muğla",
-    "lat": 37.0482747,
-    "lng": 27.3810801,
+    "lat": 37.0481258012278,
+    "lng": 27.3825806379318,
     "telefon": "+90 532 220 16 99",
     "not": "Detoks/sağlıklı beslenme mekanı, vegan seçenekler",
     "id": "v0031",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.lilayabodrum.com/"
+    "web": "https://www.lilayabodrum.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "brakte",
