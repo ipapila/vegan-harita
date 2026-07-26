@@ -2570,14 +2570,15 @@
     "ilce": "Bodrum",
     "tur": "vegan ürünlü",
     "adres": "Yalıkavak Mah., Çökertme Cad. No:12, Bodrum/Muğla",
-    "lat": 37.105,
-    "lng": 27.2965,
+    "lat": 37.1031445444255,
+    "lng": 27.2883546352387,
     "telefon": "+90 252 444 00 00",
     "not": "Zengin vegan bölümü; hindistancevizi yoğurdu.",
     "id": "v0197",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.macrocenter.com.tr"
+    "web": "https://www.macrocenter.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "File Market Kuşadası",
