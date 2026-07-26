@@ -372,13 +372,15 @@
     "ilce": "Osmangazi",
     "tur": "vegan dostu",
     "adres": "Yahşibey, Bozkurt Cd. No:3, Osmangazi/Bursa",
-    "lat": 40.1902266,
-    "lng": 29.0479365,
+    "lat": 40.1901353258412,
+    "lng": 29.0506088733673,
     "telefon": "+90 534 977 82 53",
     "not": "Filistin mutfağı, falafel ve humus",
     "id": "v0024",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "At Kafe",
