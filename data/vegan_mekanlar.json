@@ -2508,14 +2508,15 @@
     "ilce": "Kayapınar",
     "tur": "vegan ürünlü",
     "adres": "Kayapınar Mah., Urfa Yolu Bulvarı No:45, Kayapınar/Diyarbakır",
-    "lat": 37.939,
-    "lng": 40.1885,
+    "lat": 37.9282216469898,
+    "lng": 40.170521736145,
     "telefon": "+90 412 252 00 00",
     "not": "Vegan reyonu sınırlı; bitkisel süt bulunur.",
     "id": "v0192",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.carrefoursa.com"
+    "web": "https://www.carrefoursa.com",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Migros Samsun Piazza",
