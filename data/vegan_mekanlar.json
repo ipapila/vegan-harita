@@ -2050,14 +2050,15 @@
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
     "adres": "Alaçatı/İzmir",
-    "lat": 38.2825915,
-    "lng": 26.3723867,
+    "lat": 38.2826079356218,
+    "lng": 26.3748317956924,
     "telefon": null,
     "not": "Vejetaryen/vegan seçenekler",
     "id": "v0162",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/pizzalocale/"
+    "web": "https://www.instagram.com/pizzalocale/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Salkım Söğüt",
