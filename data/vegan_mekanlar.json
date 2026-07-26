@@ -1806,14 +1806,15 @@
     "ilce": "Şişli",
     "tur": "vegan dostu",
     "adres": "Ergenekon/Şişli",
-    "lat": 41.0474116,
-    "lng": 28.9843962,
+    "lat": 41.0473334285993,
+    "lng": 28.9869037270546,
     "telefon": null,
     "not": "Bulgur bazlı vegan çiğköfte",
     "id": "v0140",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.cigkoftem.com/"
+    "web": "https://www.cigkoftem.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Paper Coffee",
