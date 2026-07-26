@@ -677,6 +677,7 @@
           </div>
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="suggest-delete-btn" style="display:none; margin-right:auto; background:#fdecea; color:#c62828;">🗑️ Sil</button>
           <button type="button" class="btn-secondary" id="suggest-cancel">Vazgeç</button>
           <button type="submit" class="btn-primary" id="suggest-submit">Mail ile Gönder</button>
         </div>
@@ -1437,7 +1438,9 @@ function openSuggestModal(place) {
   const titleEl = document.getElementById('modal-title');
   const descEl = document.getElementById('modal-desc');
   const submitBtn = document.getElementById('suggest-submit');
+  const deleteBtn = document.getElementById('suggest-delete-btn');
   const directSave = isAdminMode() && isGithubConfigured();
+  deleteBtn.style.display = (place && isAdminMode()) ? '' : 'none';
 
   if (place) {
     editingOriginal = place;
@@ -1497,9 +1500,56 @@ function closeSuggestModal() {
   document.querySelectorAll('#suggest-form .form-row').forEach(r => r.classList.remove('invalid'));
   document.getElementById('location-status').textContent = '';
   document.getElementById('f-edit-id').value = '';
+  document.getElementById('suggest-delete-btn').style.display = 'none';
   editingOriginal = null;
   clearPickMarker();
 }
+
+document.getElementById('suggest-delete-btn').addEventListener('click', async () => {
+  if (!editingOriginal) return;
+  const place = editingOriginal;
+  const ok = confirm(`"${place.ad}" (${place.id}) kalıcı olarak silinsin mi?` + (isGithubConfigured() ? ' GitHub\'a da otomatik commit edilecek.' : ''));
+  if (!ok) return;
+
+  const deleteBtn = document.getElementById('suggest-delete-btn');
+  deleteBtn.disabled = true;
+  deleteBtn.textContent = 'Siliniyor...';
+
+  const idx = PLACES.findIndex(p => p.id === place.id);
+  if (idx === -1) {
+    alert('Kayıt listede bulunamadı, muhtemelen zaten silinmiş.');
+    deleteBtn.disabled = false;
+    deleteBtn.textContent = '🗑️ Sil';
+    closeSuggestModal();
+    return;
+  }
+  PLACES.splice(idx, 1);
+  renderIlList();
+  applyFilters();
+  map.closePopup();
+
+  document.getElementById('suggest-success-emoji').textContent = '🗑️';
+  document.getElementById('suggest-success-title').textContent = 'Mekan silindi';
+
+  if (isGithubConfigured()) {
+    try {
+      await githubSavePlaces('Mekan silindi: ' + place.ad + ' (' + place.id + ')');
+      document.getElementById('suggest-success-text').innerHTML =
+        `<b>${place.ad}</b> listeden silindi ve GitHub deponuza commit edildi.`;
+    } catch (err) {
+      document.getElementById('suggest-success-text').innerHTML =
+        `<b>${place.ad}</b> yerel listeden silindi ama GitHub'a commit edilirken hata oluştu:<br><i>${err.message}</i><br><br>"JSON Dışa Aktar" ile yedekleyip GitHub ayarlarınızı kontrol edin.`;
+    }
+  } else {
+    document.getElementById('suggest-success-text').innerHTML =
+      `<b>${place.ad}</b> listeden silindi (yalnızca bu tarayıcı oturumunda). Kalıcı hale getirmek için "JSON Dışa Aktar" ile indirin ya da GitHub Ayarları'ndan bağlantı kurun.`;
+  }
+
+  deleteBtn.disabled = false;
+  deleteBtn.textContent = '🗑️ Sil';
+  formView.style.display = 'none';
+  successView.classList.add('open');
+});
 
 document.getElementById('suggest-btn').addEventListener('click', () => openSuggestModal());
 document.getElementById('suggest-close-1').addEventListener('click', closeSuggestModal);
