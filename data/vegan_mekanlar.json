@@ -1257,14 +1257,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan dostu",
     "adres": "Kuloğlu, Faik Paşa Cd. No:6, Beyoğlu/İstanbul",
-    "lat": 41.0329636,
-    "lng": 28.9787209,
+    "lat": 41.0329454575031,
+    "lng": 28.9813461899757,
     "telefon": "+90 542 541 74 48",
     "not": "Ev yapımı Türk mutfağı, geniş vejetaryen/vegan seçenekli",
     "id": "v0088",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://no19.ist/"
+    "web": "https://no19.ist/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "The Himalayan Restaurant",
