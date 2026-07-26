@@ -2128,14 +2128,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Remzi Oğuz Arık Mah., Tunus Cad. No:55/B, Çankaya/Ankara",
-    "lat": 39.9080579,
-    "lng": 32.8561961,
+    "lat": 39.9078763152652,
+    "lng": 32.8588628768921,
     "telefon": "+90 312 468 07 80",
     "not": "Ankara'nın tam vegan marketi; bitkisel süt, vegan peynir, kozmetik.",
     "id": "v0171",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.instagram.com/vegandukkan/"
+    "web": "https://www.instagram.com/vegandukkan/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Pazar",
