@@ -1699,14 +1699,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan dostu",
     "adres": "Müeyyetzade, Necatibey Cd. No:61, İstanbul",
-    "lat": 41.0246889,
-    "lng": 28.975194,
+    "lat": 41.0246292652031,
+    "lng": 28.9777600765228,
     "telefon": "+90 212 625 70 70",
     "not": "Vegan çiğköfte rulo, dürüm, burger",
     "id": "v0129",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.osesgurme.com/"
+    "web": "https://www.osesgurme.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Jay's Cafe",
