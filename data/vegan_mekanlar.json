@@ -2424,14 +2424,15 @@
     "ilce": "Kadıköy",
     "tur": "vegan ürünlü",
     "adres": "Bağdat Cad. No:236, Caddebostan, Kadıköy/İstanbul",
-    "lat": 40.964,
-    "lng": 29.0712,
+    "lat": 40.9725026980285,
+    "lng": 29.0572607517242,
     "telefon": "+90 216 411 00 00",
     "not": "Uygun fiyatlı vegan süt ve atıştırmalıklar.",
     "id": "v0191",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.filemarket.com.tr"
+    "web": "https://www.filemarket.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "CarrefourSA Diyarbakır",
