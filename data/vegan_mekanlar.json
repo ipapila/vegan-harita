@@ -993,14 +993,15 @@
     "ilce": "Şahinbey",
     "tur": "vegan",
     "adres": "Akyol, Akyol Cd. No:34B, Şahinbey/Gaziantep",
-    "lat": 37.0609234,
-    "lng": 37.3700496,
+    "lat": 37.0608729013927,
+    "lng": 37.3726424574852,
     "telefon": "+90 553 160 30 36",
     "not": "Yerel, sürdürülebilir dayanışma mutfağı; vegan/vejetaryen odaklı günlük değişen menü",
     "id": "v0067",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://mutfakna.org/"
+    "web": "https://mutfakna.org/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Has Bahçe Glutensiz ve Vegan Cafe (Yozgat Belediyesi)",
