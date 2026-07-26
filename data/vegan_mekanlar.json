@@ -1002,13 +1002,15 @@
     "ilce": "Yozgat Merkez",
     "tur": "vegan dostu",
     "adres": "Aşağınohutlu, Sakarya Cd. No:8, Yozgat Merkez/Yozgat",
-    "lat": 39.8231766,
-    "lng": 34.8088452,
+    "lat": 39.8231883373159,
+    "lng": 34.8089361190796,
     "telefon": "+90 501 035 67 10",
     "not": "Belediye işletmesi, glutensiz ve vegan ürünler sunuyor",
     "id": "v0068",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Keyif Sanat Kahvesi",
