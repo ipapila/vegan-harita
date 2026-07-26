@@ -2324,14 +2324,15 @@
     "ilce": "Sarıyer",
     "tur": "vegan ürünlü",
     "adres": "İstinye Mah., İstinye Bayırı Cad. No:73, Sarıyer/İstanbul",
-    "lat": 41.1145,
-    "lng": 29.0438,
+    "lat": 41.1114017818676,
+    "lng": 29.0363073348999,
     "telefon": "+90 212 345 00 00",
     "not": "Büyük vegan reyon; dondurulmuş vegan pizza, bitkisel et.",
     "id": "v0187",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.carrefoursa.com"
+    "web": "https://www.carrefoursa.com",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Makro Extra Konya",
