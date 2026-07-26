@@ -1988,14 +1988,15 @@
     "ilce": "Alaçatı",
     "tur": "vegan dostu",
     "adres": "Alaçatı/İzmir",
-    "lat": 38.2801885,
-    "lng": 26.3686985,
+    "lat": 38.2800834706429,
+    "lng": 26.3712000846863,
     "telefon": "+90 539 811 01 67",
     "not": "Vejetaryen/vegan seçenekler",
     "id": "v0157",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/bomdiaalacati/"
+    "web": "https://www.instagram.com/bomdiaalacati/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "GAIA",
