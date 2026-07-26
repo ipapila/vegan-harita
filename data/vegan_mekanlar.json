@@ -36,14 +36,15 @@
     "ilce": "Beyoğlu",
     "tur": "vegan",
     "adres": "Cihangir, Sıraselviler Cad., Soğancı Sk., Beyoğlu/İstanbul",
-    "lat": 41.0326662,
-    "lng": 28.9839869,
+    "lat": 41.0326338721581,
+    "lng": 28.9840820431709,
     "telefon": "+90 212 741 43 59",
     "not": "Geleneksel Türk yemeklerinin vegan yorumu (kebap, mantı)",
     "id": "v0003",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://vegandukkanlokanta.com/"
+    "web": "https://vegandukkanlokanta.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Masa (Kadıköy)",
