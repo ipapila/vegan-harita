@@ -806,14 +806,15 @@
     "ilce": "Kaş",
     "tur": "vegan",
     "adres": "Andifli, Eski Antalya Cd., Kaş/Antalya",
-    "lat": 36.199969,
-    "lng": 29.6575131,
+    "lat": 36.199345521153,
+    "lng": 29.6550446748734,
     "telefon": "+90 542 250 31 89",
     "not": "Glutensiz, vegan, şekersiz ev yapımı yemekler; kendi tofusunu üretiyor",
     "id": "v0056",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://lifeboxtr.com/"
+    "web": "https://lifeboxtr.com/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Kaş Gurme Falafel",
