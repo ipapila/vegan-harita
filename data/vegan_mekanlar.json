@@ -2210,14 +2210,15 @@
     "ilce": "Nilüfer",
     "tur": "vegan",
     "adres": "Fethiye Mah., Mudanya Yolu Cad. No:101 D:B, Nilüfer/Bursa",
-    "lat": 40.2032,
-    "lng": 28.985,
+    "lat": 40.2342637244361,
+    "lng": 28.9717626571655,
     "telefon": "+90 224 452 33 44",
     "not": "Bursa’da tam vegan bakkal, yerel üreticilerden ürünler.",
     "id": "v0174",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.instagram.com/veganbursa/"
+    "web": "https://www.instagram.com/veganbursa/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Veganet Market",
