@@ -2248,14 +2248,15 @@
     "ilce": "Seyhan",
     "tur": "vegan",
     "adres": "Kurtuluş Mah., Ziyapaşa Bulvarı No:44/C, Seyhan/Adana",
-    "lat": 37.000758,
-    "lng": 35.317126,
+    "lat": 36.9979085974827,
+    "lng": 35.3206264972687,
     "telefon": "+90 322 350 00 99",
     "not": "Adana'da vegan bakkal, acılı vegan sucuk.",
     "id": "v0176",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Vegan Mersin",
