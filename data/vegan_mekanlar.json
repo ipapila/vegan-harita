@@ -1381,13 +1381,15 @@
     "ilce": "Kırklareli Merkez",
     "tur": "vegan dostu",
     "adres": "Karakaş, Hasan Paşa Cd. No:28, Kırklareli Merkez/Kırklareli",
-    "lat": 41.7335821,
-    "lng": 27.217733,
+    "lat": 41.7336207525172,
+    "lng": 27.2202479839325,
     "telefon": "+90 288 214 14 04",
     "not": "Zengin menülü lokanta; vegan, glutensiz ve sütsüz seçenekler mevcut",
     "id": "v0093",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "so bowl.",
