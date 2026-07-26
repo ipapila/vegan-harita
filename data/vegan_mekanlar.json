@@ -761,14 +761,15 @@
     "ilce": "Serdivan",
     "tur": "vegan",
     "adres": "Kemalpaşa, Yeni Cd. No:4/B, Serdivan/Sakarya",
-    "lat": 40.7650391,
-    "lng": 30.3576421,
+    "lat": 40.7650206405696,
+    "lng": 30.3602215647697,
     "telefon": "+90 541 384 33 14",
     "not": "Tam vegan falafel ve nohut bazlı yemekler sunan mekan",
     "id": "v0054",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/nohutfalafel/"
+    "web": "https://www.instagram.com/nohutfalafel/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Refresh Vegan Kitchen",
