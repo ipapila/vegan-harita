@@ -1451,14 +1451,15 @@
     "ilce": "Bornova",
     "tur": "vegan",
     "adres": "Kazımdirik, 160. Sk. No:15/C, Bornova/İzmir",
-    "lat": 38.460857,
-    "lng": 27.2111081,
+    "lat": 38.4608097650659,
+    "lng": 27.2137570381165,
     "telefon": "+90 537 270 74 14",
     "not": "Tam vegan menü, gelir sokak hayvanları bakımına aktarılıyor",
     "id": "v0099",
     "kaynak": "HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.facebook.com/elicoffeehousee/"
+    "web": "https://www.facebook.com/elicoffeehousee/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Fatma Sultan Restaurant (Türk Mutfağı)",
