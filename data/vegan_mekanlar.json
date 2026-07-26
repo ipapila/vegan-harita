@@ -212,14 +212,15 @@
     "ilce": "Çankaya",
     "tur": "vegan",
     "adres": "Paris Str, Chile Square, Ankara",
-    "lat": 39.9013485,
-    "lng": 32.8550102,
+    "lat": 39.9016707325968,
+    "lng": 32.8503656387329,
     "telefon": "+90 542 100 83 72",
     "not": "Vegan pub, bira ve kokteyl mevcut",
     "id": "v0014",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/terradanpub/"
+    "web": "https://www.instagram.com/terradanpub/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Junk Vegan",
