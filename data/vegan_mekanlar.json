@@ -894,13 +894,15 @@
     "ilce": "Nevşehir Merkez (Göreme)",
     "tur": "vegan dostu",
     "adres": "Karşıbucak Cd., Aydınlı-Orta, Göreme/Nevşehir",
-    "lat": 38.641613,
-    "lng": 34.8212302,
+    "lat": 38.6415794,
+    "lng": 34.8227939,
     "telefon": "+90 549 132 50 00",
     "not": "Kebap restoranı, soya bazlı vegan kebap seçenekleri mevcut",
     "id": "v0061",
     "kaynak": "Google Places",
-    "eklenme": "2026-07-24"
+    "eklenme": "2026-07-24",
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Efeler Belediyesi Glutensiz ve Vegan Cafe",
