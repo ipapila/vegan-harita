@@ -181,14 +181,15 @@
     "ilce": "Çankaya",
     "tur": "vegan dostu",
     "adres": "Güvenevler, Gülden Sk. 2/A, Çankaya/Ankara",
-    "lat": 39.9002538,
-    "lng": 32.8534173,
+    "lat": 39.9002920951604,
+    "lng": 32.8559929132462,
     "telefon": "+90 312 338 53 38",
     "not": "Geniş vejetaryen/vegan menü, et içeren ürünler de var",
     "id": "v0012",
     "kaynak": "Google Places",
     "eklenme": "2026-07-24",
-    "web": "https://eathica.com.tr"
+    "web": "https://eathica.com.tr",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Gabo Plant Based",
