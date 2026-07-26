@@ -408,14 +408,15 @@
     "ilce": "Konyaaltı",
     "tur": "vegan",
     "adres": "Altınkum, 470 Sk 9 E, Antalya",
-    "lat": 36.8663801,
-    "lng": 30.6375232,
+    "lat": 36.8664804690343,
+    "lng": 30.6401824951172,
     "telefon": "+90 242 228 07 00",
     "not": "Vegan lahmacun, mantı, shawarma",
     "id": "v0028",
     "kaynak": "Google Places, HappyCow",
     "eklenme": "2026-07-24",
-    "web": "https://www.instagram.com/gaiyasveganhouse/"
+    "web": "https://www.instagram.com/gaiyasveganhouse/",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Venüs Cafe & Kitchen",
