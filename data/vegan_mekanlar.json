@@ -2695,14 +2695,15 @@
     "ilce": "Şahinbey",
     "tur": "vegan dostu",
     "adres": "İncili Pınar, Nail Bilen Cd. No:8, Gaziantep, 27090",
-    "lat": 37.070295,
-    "lng": 37.368477,
+    "lat": 37.0721198232507,
+    "lng": 37.3699736595154,
     "telefon": "+90 530 990 39 05",
     "not": "Suriye mutfağı; falafel, humus, ful, fatta gibi geniş vegan seçenekli, bazı yemeklerde yoğurt/peynir olabiliyor (sorarak sipariş vermek gerekir)",
     "id": "v0204",
     "kaynak": "Web araştırması (HappyCow)",
     "eklenme": "2026-07-26",
-    "web": null
+    "web": null,
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Trabzon Botanik Cafe ve Restoran",
