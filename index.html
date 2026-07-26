@@ -913,12 +913,11 @@ let state = {
 
 const map = L.map('map', { zoomControl: true }).setView([39.0, 35.0], 6);
 
-// CARTO Voyager: OSM tabanlı, dosyadan (file://) veya GitHub Pages'ten
-// açıldığında referrer/CORS kısıtı koymayan, 403 vermeyen bir altlık.
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıda bulunanlar &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  subdomains: 'abcd',
-  maxZoom: 20
+// Standart OpenStreetMap (Mapnik) altlığı.
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> katkıda bulunanlar',
+  subdomains: 'abc',
+  maxZoom: 19
 }).addTo(map);
 
 let markersLayer = L.layerGroup().addTo(map);
@@ -1388,8 +1387,8 @@ let pickMarker = null;
 function ensurePickMap() {
   if (pickMap) return;
   pickMap = L.map('pick-map', { zoomControl: true, attributionControl: false }).setView([39.0, 35.0], 6);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    subdomains: 'abc',
     maxZoom: 19
   }).addTo(pickMap);
   pickMap.on('click', (e) => setPickedLocation(e.latlng.lat, e.latlng.lng, { zoom: Math.max(pickMap.getZoom(), 14) }));
@@ -1738,8 +1737,8 @@ let manualPickMarker = null;
 function ensureManualPickMap() {
   if (manualPickMap) return;
   manualPickMap = L.map('manual-pick-map', { zoomControl: true, attributionControl: false }).setView([39.0, 35.0], 6);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    subdomains: 'abc',
     maxZoom: 19
   }).addTo(manualPickMap);
   manualPickMap.on('click', (e) => setManualPickedLocation(e.latlng.lat, e.latlng.lng, { zoom: Math.max(manualPickMap.getZoom(), 14) }));
