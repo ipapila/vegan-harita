@@ -2310,14 +2310,15 @@
     "ilce": "Karşıyaka",
     "tur": "vegan ürünlü",
     "adres": "Mavişehir Mah., Caher Dudayev Bulvarı No:2/A, Karşıyaka/İzmir",
-    "lat": 38.4785,
-    "lng": 27.076,
+    "lat": 38.4748045414127,
+    "lng": 27.0707577466965,
     "telefon": "+90 232 324 00 00",
     "not": "Vegan bölümünde bitkisel süt, yoğurt ve vegan köfte.",
     "id": "v0182",
     "kaynak": "Google Places",
     "eklenme": "2026-07-25",
-    "web": "https://www.carrefoursa.com"
+    "web": "https://www.carrefoursa.com",
+    "duzenlenme": "2026-07-26"
   },
   {
     "ad": "Migros 3M Bursa Korupark",
