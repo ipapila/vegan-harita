@@ -219,6 +219,25 @@
     text-align: center;
   }
   .popup-directions:hover { background: #1b5e20; }
+  .popup-fav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px 10px;
+    background: #fff;
+    border: 1.5px solid #e0a100;
+    color: #8a6200;
+    border-radius: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .popup-fav-btn:hover { background: #fff8e6; }
+  .popup-fav-btn.active { background: #fff3cd; color: #6b4a00; }
+  .popup-fav-btn:disabled { opacity: 0.6; cursor: default; }
   .popup-edit-btn {
     display: flex;
     align-items: center;
@@ -685,6 +704,9 @@
     <div id="search-box">
       <input type="text" id="search-input" placeholder="Mekan adı, ilçe ara..." />
     </div>
+    <div class="filter-section" id="fav-filter-section" style="display:none; padding-bottom:4px;">
+      <div class="tur-chip active" id="fav-only-chip" style="width:100%; justify-content:center; border-color:#e0a100;">⭐ Sadece Favorilerim</div>
+    </div>
     <div class="filter-section">
       <h2>Kategori</h2>
       <div class="chip-row" id="tur-filters">
@@ -702,6 +724,7 @@
     <div id="load-status" style="display:none;"></div>
     <div id="suggest-btn-wrap">
       <button id="suggest-btn" type="button">➕ Yeni Mekan Öner</button>
+      <p id="suggest-btn-hint" style="margin:6px 2px 0; font-size:11px; color:var(--muted); display:none;">Mekan önermek için üye girişi yapmalısınız.</p>
     </div>
     <div id="admin-tools-wrap">
       <div class="admin-tools-label">Admin Araçları</div>
@@ -1087,6 +1110,7 @@
         <h3 id="member-loggedin-title" style="margin:0 0 6px; color:#1b3a1e;"></h3>
         <p style="margin:0 0 18px; font-size:12.5px; color:var(--muted);" id="member-loggedin-email"></p>
         <button type="button" class="btn-secondary" id="member-logout-btn">Çıkış Yap</button>
+        <button type="button" id="member-delete-account-btn" style="margin-top:10px; width:100%; padding:9px 10px; background:#fdecea; color:#c62828; border:1px solid #f5c6c2; border-radius:8px; font-size:12.5px; font-weight:600; cursor:pointer;">Üyeliğimi Sil</button>
       </div>
 
     </div>
@@ -1155,7 +1179,8 @@ let PLACES = [];
 let state = {
   activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market", "vegan ürünlü"]),
   activeIl: null,
-  query: ""
+  query: "",
+  onlyFavorites: false
 };
 
 const map = L.map('map', { zoomControl: true }).setView([39.0, 35.0], 6);
@@ -1243,7 +1268,7 @@ function spiderfyCluster(clusterId) {
     legs.push(leg);
 
     const marker = L.marker(targetLatLng, { icon: makeIcon(p.tur) });
-    marker.bindPopup(popupHtml(p));
+    marker.bindPopup(() => popupHtml(p));
     marker.addTo(spiderLayer);
     markers.push(marker);
   });
@@ -1350,6 +1375,7 @@ document.getElementById('search-input').addEventListener('input', (e) => {
 function matches(p) {
   if (!state.activeTur.has(p.tur)) return false;
   if (state.activeIl && p.il !== state.activeIl) return false;
+  if (state.onlyFavorites && !isFavorite(p.id)) return false;
   if (state.query) {
     const hay = (p.ad + ' ' + p.ilce + ' ' + p.il).toLocaleLowerCase('tr');
     if (!hay.includes(state.query)) return false;
@@ -1376,6 +1402,11 @@ function popupHtml(p) {
   if (isAdminMode()) {
     editBtn = `<button type="button" class="popup-edit-btn" onclick="openEditModal('${p.id}')">✏️ Düzenle</button>`;
   }
+  let favBtn = '';
+  if (currentMember) {
+    const fav = isFavorite(p.id);
+    favBtn = `<button type="button" class="popup-fav-btn${fav ? ' active' : ''}" onclick="toggleFavorite('${p.id}', this)">${fav ? '★ Favorilerimde' : '☆ Favorilere Ekle'}</button>`;
+  }
   return `
     <div class="popup-title">${p.ad}</div>
     <span class="popup-tur" style="background:${color}">${TUR_LABELS[p.tur]}</span>
@@ -1385,6 +1416,7 @@ function popupHtml(p) {
     ${webLine}
     <div class="popup-note">${p.not || ''}</div>
     ${directionsBtn}
+    ${favBtn}
     ${editBtn}
   `;
 }
@@ -1414,7 +1446,7 @@ function applyFilters() {
     const first = group[0];
     if (group.length === 1) {
       const marker = L.marker([first.lat, first.lng], { icon: makeIcon(first.tur) });
-      marker.bindPopup(popupHtml(first));
+      marker.bindPopup(() => popupHtml(first));
       marker.addTo(markersLayer);
     } else {
       const clusterId = 'cl' + (clusterIdx++);
@@ -1775,6 +1807,71 @@ const memberAuthView = document.getElementById('member-auth-view');
 const memberLoggedinView = document.getElementById('member-loggedin-view');
 let currentMember = null; // Giriş yapmış Supabase kullanıcısı, yoksa null
 
+// ---- Favoriler: ayrı bir tablo gerekmez, üyenin kendi Supabase
+// auth "user_metadata" alanına (favoriler: [id, id, ...]) yazılır/okunur.
+// Böylece sadece o üye kendi favorilerini görür/değiştirir, admin tablo
+// kurmak zorunda kalmaz. ----
+function getFavoriteIds() {
+  return (currentMember && currentMember.user_metadata && Array.isArray(currentMember.user_metadata.favoriler))
+    ? currentMember.user_metadata.favoriler
+    : [];
+}
+
+function isFavorite(id) {
+  return getFavoriteIds().includes(id);
+}
+
+async function toggleFavorite(id, btnEl) {
+  if (!currentMember) {
+    alert('Favorilere eklemek için üye girişi yapmalısınız.');
+    return;
+  }
+  const favs = getFavoriteIds();
+  const idx = favs.indexOf(id);
+  const newFavs = idx === -1 ? [...favs, id] : favs.filter(f => f !== id);
+
+  if (btnEl) btnEl.disabled = true;
+  try {
+    const { data, error } = await sbClient.auth.updateUser({ data: { favoriler: newFavs } });
+    if (error) throw error;
+    currentMember = data.user;
+    if (btnEl) {
+      const nowFav = isFavorite(id);
+      btnEl.classList.toggle('active', nowFav);
+      btnEl.innerHTML = nowFav ? '★ Favorilerimde' : '☆ Favorilere Ekle';
+    }
+    updateFavOnlyToggleVisibility();
+    if (state.onlyFavorites) applyFilters();
+  } catch (err) {
+    alert('Favori güncellenemedi: ' + err.message);
+  } finally {
+    if (btnEl) btnEl.disabled = false;
+  }
+}
+
+function updateFavOnlyToggleVisibility() {
+  const section = document.getElementById('fav-filter-section');
+  if (!section) return;
+  if (currentMember) {
+    section.style.display = '';
+  } else {
+    section.style.display = 'none';
+    if (state.onlyFavorites) {
+      state.onlyFavorites = false;
+      const chip = document.getElementById('fav-only-chip');
+      if (chip) chip.classList.remove('active');
+      applyFilters();
+    }
+  }
+}
+
+document.getElementById('fav-only-chip').addEventListener('click', () => {
+  state.onlyFavorites = !state.onlyFavorites;
+  document.getElementById('fav-only-chip').classList.toggle('active', state.onlyFavorites);
+  if (state.activeIl) renderIlList();
+  applyFilters();
+});
+
 function memberDisplayName(user) {
   return (user && user.user_metadata && user.user_metadata.ad_soyad) || (user ? user.email : '');
 }
@@ -1794,6 +1891,9 @@ function updateMemberModalView() {
 
 function updateMemberBarUI() {
   memberToggleLink.textContent = currentMember ? ('👤 ' + memberDisplayName(currentMember)) : '👤 Üye Ol / Giriş Yap';
+  updateFavOnlyToggleVisibility();
+  const hint = document.getElementById('suggest-btn-hint');
+  if (hint) hint.style.display = currentMember ? 'none' : 'block';
 }
 
 function openMemberModal() {
@@ -1903,6 +2003,32 @@ document.getElementById('member-logout-btn').addEventListener('click', async () 
   currentMember = null;
   updateMemberBarUI();
   closeMemberModal();
+});
+
+document.getElementById('member-delete-account-btn').addEventListener('click', async () => {
+  if (!currentMember) return;
+  if (!confirm('Üyeliğinizi kalıcı olarak silmek istediğinize emin misiniz? Bu işlem geri alınamaz ve favorileriniz de silinir.')) return;
+  const btn = document.getElementById('member-delete-account-btn');
+  btn.disabled = true;
+  btn.textContent = 'Siliniyor...';
+  try {
+    // Not: bu, aşağıdaki SQL fonksiyonunun Supabase projenizde bir kez
+    // oluşturulmuş olmasını gerektirir (bkz. kurulum notu). Fonksiyon
+    // "security definer" olduğu için normal (anon/authenticated) anahtarla
+    // çağrılabilir ama sadece kendi hesabınızı (auth.uid()) silebilir.
+    const { error } = await sbClient.rpc('delete_user');
+    if (error) throw error;
+    await sbClient.auth.signOut();
+    currentMember = null;
+    updateMemberBarUI();
+    closeMemberModal();
+    alert('Üyeliğiniz silindi.');
+  } catch (err) {
+    alert('Üyelik silinemedi: ' + (err.message || 'bilinmeyen hata') + '\n\nBu özelliğin çalışması için Supabase projenizde "delete_user" adlı bir SQL fonksiyonunun bir kez oluşturulmuş olması gerekir.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Üyeliğimi Sil';
+  }
 });
 
 if (isSupabaseConfigured()) {
@@ -2243,7 +2369,14 @@ document.getElementById('suggest-delete-btn').addEventListener('click', async ()
   successView.classList.add('open');
 });
 
-document.getElementById('suggest-btn').addEventListener('click', () => openSuggestModal());
+document.getElementById('suggest-btn').addEventListener('click', () => {
+  if (!currentMember) {
+    alert('Yeni mekan önermek için önce üye girişi yapmalısınız.');
+    if (isSupabaseConfigured()) openMemberModal();
+    return;
+  }
+  openSuggestModal();
+});
 document.getElementById('suggest-close-1').addEventListener('click', closeSuggestModal);
 document.getElementById('suggest-cancel').addEventListener('click', closeSuggestModal);
 document.getElementById('suggest-done').addEventListener('click', closeSuggestModal);
