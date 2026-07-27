@@ -520,13 +520,20 @@
     flex: 1;
   }
   .il-arrow {
-    display: inline-block;
-    font-size: 10px;
-    color: var(--muted);
-    transition: transform .15s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #eef2ef;
+    color: #4c564f;
+    font-size: 11px;
     flex-shrink: 0;
+    transition: transform .15s ease, background .15s ease, color .15s ease;
   }
-  .il-item.selected .il-arrow { transform: rotate(90deg); color: #1b5e20; }
+  .il-item:hover .il-arrow { background: #e0e6e2; }
+  .il-item.selected .il-arrow { transform: rotate(90deg); background: #c8e6c9; color: #1b5e20; }
   .il-name {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1088,7 +1095,7 @@ function renderIlList() {
     const isOpen = state.activeIl === il;
     const item = document.createElement('div');
     item.className = 'il-item' + (isOpen ? ' selected' : '');
-    item.innerHTML = `<span class="il-item-main"><span class="il-arrow">▸</span><span class="il-name">${il}</span></span><span class="count">${counts[il]}</span>`;
+    item.innerHTML = `<span class="il-item-main"><span class="il-arrow">▶</span><span class="il-name">${il}</span></span><span class="count">${counts[il]}</span>`;
     item.onclick = () => {
       state.activeIl = (state.activeIl === il) ? null : il;
       renderIlList();
