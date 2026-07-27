@@ -2746,5 +2746,20 @@
     "kaynak": "Manuel Giriş (Admin)",
     "eklenme": "2026-07-27",
     "web": null
+  },
+  {
+    "ad": "Leyli Muse Mutfak restoran",
+    "il": "Mardin",
+    "ilce": "Artuklu",
+    "tur": "vegan dostu",
+    "adres": "Şar mahallesi 239.bademci sokak no:17 Cumhuriyet meydanı 239.bademci sokak, Şar, Kültür Sok. no:17, 47100 Artuklu/Mardin",
+    "lat": 37.3138211507985,
+    "lng": 40.7340699434281,
+    "telefon": null,
+    "not": null,
+    "id": "v0207",
+    "kaynak": "Manuel Giriş (Admin)",
+    "eklenme": "2026-07-27",
+    "web": null
   }
 ]
