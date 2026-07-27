@@ -2731,5 +2731,20 @@
     "kaynak": "Web araştırması (Restaurant Guru, Yandex Maps)",
     "eklenme": "2026-07-26",
     "web": null
+  },
+  {
+    "ad": "Humuscu İbrahim Usta",
+    "il": "Hatay",
+    "ilce": "Antakya",
+    "tur": "vegan dostu",
+    "adres": "Güllübahçe Mahallesi Saray Caddesi Sakarya İşhanı No:13, 31070 Antakya/Hatay",
+    "lat": 36.1992250691908,
+    "lng": 36.1604636907578,
+    "telefon": null,
+    "not": null,
+    "id": "v0206",
+    "kaynak": "Manuel Giriş (Admin)",
+    "eklenme": "2026-07-27",
+    "web": null
   }
 ]
