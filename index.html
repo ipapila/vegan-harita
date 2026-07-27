@@ -347,6 +347,77 @@
   .admin-btn.manual { border-color: var(--vegan); color: #1b5e20; }
   .admin-btn.import { border-color: var(--market); color: #4a148c; }
   .admin-btn.export { border-color: var(--urunlu); color: #004d54; }
+  .admin-btn.members { border-color: #6a1b9a; color: #6a1b9a; }
+
+  /* --- Üye girişi --- */
+  #member-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 18px 0;
+  }
+  #member-toggle-link {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    background: #f0f3f1;
+    padding: 5px 9px;
+    border-radius: 7px;
+    white-space: nowrap;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #member-toggle-link:hover { color: var(--text); background: #e4e9e6; }
+  .member-tabs { display: flex; gap: 6px; margin-bottom: 14px; }
+  .member-tab {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    text-align: center;
+  }
+  .member-tab.active { background: #e8f5e9; border-color: var(--vegan); color: #1b5e20; }
+  .member-panel { display: none; }
+  .member-panel.active { display: block; }
+  .member-loggedin { text-align: center; padding: 10px 4px 4px; }
+  .member-loggedin .big-emoji { font-size: 30px; margin-bottom: 8px; }
+
+  /* --- Admin: Üyeler paneli --- */
+  #members-list {
+    max-height: 46vh;
+    overflow-y: auto;
+    border-top: 1px solid var(--border);
+    margin-top: 10px;
+  }
+  .member-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12.5px;
+  }
+  .member-row-info { flex: 1; min-width: 0; }
+  .member-row-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .member-row-email { color: var(--muted); font-size: 11.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .member-row-date { color: var(--muted); font-size: 10.5px; flex-shrink: 0; }
+  .member-del-btn {
+    flex-shrink: 0;
+    background: #fdeaea;
+    color: #b71c1c;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .member-del-btn:hover { background: #f8d3d3; }
 
   /* --- Modal --- */
   .modal-overlay {
@@ -608,6 +679,9 @@
       <p>Vegan, vejetaryen ve vegan dostu mekanlar — il bazlı</p>
       <a href="#" id="admin-toggle-link">🔐 Admin</a>
     </div>
+    <div id="member-bar">
+      <a href="#" id="member-toggle-link">👤 Üye Ol / Giriş Yap</a>
+    </div>
     <div id="search-box">
       <input type="text" id="search-input" placeholder="Mekan adı, ilçe ara..." />
     </div>
@@ -635,6 +709,7 @@
       <button id="json-import-btn" type="button" class="admin-btn import">📥 JSON İçe Aktar</button>
       <button id="json-export-btn" type="button" class="admin-btn export">📤 JSON Dışa Aktar</button>
       <button id="github-config-btn" type="button" class="admin-btn" style="border-color:#455a64; color:#37474f;">⚙️ GitHub Ayarları</button>
+      <button id="members-admin-btn" type="button" class="admin-btn members">👥 Üyeler</button>
       <button id="local-clear-btn" type="button" class="admin-btn" style="display:none; border-color:#a34b00; color:#a34b00;">🧹 Yerel Değişiklikleri Temizle</button>
       <input type="file" id="json-import-input" accept="application/json,.json" style="display:none;">
     </div>
@@ -950,7 +1025,116 @@
   </div>
 </div>
 
+<!-- Üye Ol / Giriş Yap Modal -->
+<div class="modal-overlay" id="member-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <h3 id="member-modal-title">Üye Ol / Giriş Yap</h3>
+        <p id="member-modal-desc">Şimdilik üyelik yalnızca kayıt/giriş içindir; ek yetkiler ileride eklenecek.</p>
+      </div>
+      <button class="modal-close" id="member-close-1" type="button" aria-label="Kapat">✕</button>
+    </div>
+    <div class="modal-body" id="member-modal-body">
+
+      <div id="member-auth-view">
+        <div class="member-tabs">
+          <button type="button" class="member-tab active" id="member-tab-login">Giriş Yap</button>
+          <button type="button" class="member-tab" id="member-tab-register">Üye Ol</button>
+        </div>
+
+        <form id="member-login-form" class="member-panel active" novalidate>
+          <div class="form-row">
+            <label for="ml-email">E-posta</label>
+            <input type="email" id="ml-email" required>
+          </div>
+          <div class="form-row">
+            <label for="ml-password">Parola</label>
+            <input type="password" id="ml-password" required>
+          </div>
+          <div class="form-hint" id="member-login-status"></div>
+          <div class="modal-footer" style="padding:6px 0 0;">
+            <button type="submit" class="btn-primary" id="member-login-btn" style="width:100%;">Giriş Yap</button>
+          </div>
+        </form>
+
+        <form id="member-register-form" class="member-panel" novalidate>
+          <div class="form-row">
+            <label for="mr-name">Ad Soyad</label>
+            <input type="text" id="mr-name">
+          </div>
+          <div class="form-row">
+            <label for="mr-email">E-posta</label>
+            <input type="email" id="mr-email" required>
+          </div>
+          <div class="form-row">
+            <label for="mr-password">Parola <span class="opt">(en az 6 karakter)</span></label>
+            <input type="password" id="mr-password" required minlength="6">
+          </div>
+          <div class="form-row">
+            <label for="mr-password2">Parola (Tekrar)</label>
+            <input type="password" id="mr-password2" required minlength="6">
+          </div>
+          <div class="form-hint" id="member-register-status"></div>
+          <div class="modal-footer" style="padding:6px 0 0;">
+            <button type="submit" class="btn-primary" id="member-register-btn" style="width:100%;">Üye Ol</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="member-loggedin" id="member-loggedin-view">
+        <div class="big-emoji">👋</div>
+        <h3 id="member-loggedin-title" style="margin:0 0 6px; color:#1b3a1e;"></h3>
+        <p style="margin:0 0 18px; font-size:12.5px; color:var(--muted);" id="member-loggedin-email"></p>
+        <button type="button" class="btn-secondary" id="member-logout-btn">Çıkış Yap</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Admin: Üyeler Modal -->
+<div class="modal-overlay" id="members-admin-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <h3>👥 Üyeler</h3>
+        <p>Siteye kayıt olan üyelerin listesi. Bu bilgilere yalnızca admin, aşağıya girdiği Supabase Service Role anahtarıyla ulaşabilir.</p>
+      </div>
+      <button class="modal-close" id="members-admin-close-1" type="button" aria-label="Kapat">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <div id="members-config-view">
+        <div class="form-row">
+          <label for="sb-service-key">Supabase Service Role Key</label>
+          <input type="password" id="sb-service-key" placeholder="eyJhbGciOi...">
+          <div class="form-hint">
+            Supabase projenizde Project Settings → API → "service_role" anahtarını buraya girin. Bu anahtar tüm üye kayıtlarına erişim sağlar; yalnızca bu tarayıcının localStorage'ında saklanır, kimseyle paylaşmayın.
+          </div>
+        </div>
+        <div class="form-hint" id="members-config-status" style="margin-top:6px;"></div>
+        <div class="modal-footer" style="padding:14px 0 4px;">
+          <button type="button" class="btn-secondary" id="members-config-clear-btn">Anahtarı Kaldır</button>
+          <button type="button" class="btn-primary" id="members-config-save-btn">Kaydet ve Üyeleri Yükle</button>
+        </div>
+      </div>
+
+      <div id="members-list-view" style="display:none;">
+        <div class="form-hint" id="members-list-status"></div>
+        <div id="members-list"></div>
+        <div class="modal-footer" style="padding:14px 0 4px;">
+          <button type="button" class="btn-secondary" id="members-change-key-btn">Anahtarı Değiştir</button>
+          <button type="button" class="btn-primary" id="members-refresh-btn">🔄 Yenile</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
 const TUR_COLORS = {
   "vegan": "#2e7d32",
@@ -1564,6 +1748,314 @@ githubForm.addEventListener('submit', async (e) => {
 });
 
 updateAdminUI();
+
+// ================= Supabase (Üyelik) =================
+// Buraya kendi Supabase projenizin URL'sini ve "anon public" anahtarını girin
+// (supabase.com → projeniz → Project Settings → API). Bu anahtar herkese açık
+// istemci kullanımı için tasarlanmıştır, koda gömülü olması güvenlidir.
+// Ayrıca bir tablo oluşturmanıza gerek yok: kayıtlar Supabase'in yerleşik
+// kimlik doğrulama sistemine (auth.users) yazılır ve bu tablo zaten normal
+// (anon/authenticated) anahtarlarla OKUNAMAZ — sadece "service_role" anahtarıyla
+// (bkz. aşağıdaki Admin → Üyeler paneli) erişilebilir, bu yüzden üyeler
+// birbirini ya da admin dışında kimse listeyi göremez.
+const SUPABASE_URL = ''; // Örn: 'https://xxxxxxxxxxxx.supabase.co'
+const SUPABASE_ANON_KEY = 'sb_publishable_OduoiJXnR1IWd9JLZVYHwQ_kL2SNY95'; // Örn: 'eyJhbGciOi...' (anon public key)
+
+const sbClient = (SUPABASE_URL && SUPABASE_ANON_KEY)
+  ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  : null;
+
+function isSupabaseConfigured() {
+  return !!sbClient;
+}
+
+const memberOverlay = document.getElementById('member-overlay');
+const memberToggleLink = document.getElementById('member-toggle-link');
+const memberAuthView = document.getElementById('member-auth-view');
+const memberLoggedinView = document.getElementById('member-loggedin-view');
+let currentMember = null; // Giriş yapmış Supabase kullanıcısı, yoksa null
+
+function memberDisplayName(user) {
+  return (user && user.user_metadata && user.user_metadata.ad_soyad) || (user ? user.email : '');
+}
+
+function updateMemberModalView() {
+  if (currentMember) {
+    memberAuthView.style.display = 'none';
+    memberLoggedinView.style.display = 'block';
+    const ad = memberDisplayName(currentMember);
+    document.getElementById('member-loggedin-title').textContent = ad ? `Hoş geldin, ${ad}!` : 'Hoş geldin!';
+    document.getElementById('member-loggedin-email').textContent = currentMember.email || '';
+  } else {
+    memberAuthView.style.display = 'block';
+    memberLoggedinView.style.display = 'none';
+  }
+}
+
+function updateMemberBarUI() {
+  memberToggleLink.textContent = currentMember ? ('👤 ' + memberDisplayName(currentMember)) : '👤 Üye Ol / Giriş Yap';
+}
+
+function openMemberModal() {
+  document.getElementById('member-login-status').textContent = '';
+  document.getElementById('member-register-status').textContent = '';
+  updateMemberModalView();
+  memberOverlay.classList.add('open');
+}
+function closeMemberModal() { memberOverlay.classList.remove('open'); }
+
+memberToggleLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (!isSupabaseConfigured()) {
+    alert('Üyelik sistemi henüz yapılandırılmamış (Supabase bağlantısı eksik).');
+    return;
+  }
+  openMemberModal();
+});
+document.getElementById('member-close-1').addEventListener('click', closeMemberModal);
+memberOverlay.addEventListener('click', (e) => { if (e.target === memberOverlay) closeMemberModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && memberOverlay.classList.contains('open')) closeMemberModal();
+});
+
+document.getElementById('member-tab-login').addEventListener('click', () => {
+  document.getElementById('member-tab-login').classList.add('active');
+  document.getElementById('member-tab-register').classList.remove('active');
+  document.getElementById('member-login-form').classList.add('active');
+  document.getElementById('member-register-form').classList.remove('active');
+});
+document.getElementById('member-tab-register').addEventListener('click', () => {
+  document.getElementById('member-tab-register').classList.add('active');
+  document.getElementById('member-tab-login').classList.remove('active');
+  document.getElementById('member-register-form').classList.add('active');
+  document.getElementById('member-login-form').classList.remove('active');
+});
+
+document.getElementById('member-login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const statusEl = document.getElementById('member-login-status');
+  const btn = document.getElementById('member-login-btn');
+  const email = document.getElementById('ml-email').value.trim();
+  const password = document.getElementById('ml-password').value;
+  if (!email || !password) return;
+  btn.disabled = true;
+  statusEl.style.color = 'var(--muted)';
+  statusEl.textContent = 'Giriş yapılıyor...';
+  const { data, error } = await sbClient.auth.signInWithPassword({ email, password });
+  btn.disabled = false;
+  if (error) {
+    statusEl.style.color = '#c62828';
+    statusEl.textContent = 'Giriş başarısız: ' + (error.message === 'Invalid login credentials' ? 'E-posta veya parola hatalı.' : error.message);
+    return;
+  }
+  statusEl.textContent = '';
+  currentMember = data.user;
+  updateMemberBarUI();
+  updateMemberModalView();
+});
+
+document.getElementById('member-register-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const statusEl = document.getElementById('member-register-status');
+  const btn = document.getElementById('member-register-btn');
+  const ad = document.getElementById('mr-name').value.trim();
+  const email = document.getElementById('mr-email').value.trim();
+  const password = document.getElementById('mr-password').value;
+  const password2 = document.getElementById('mr-password2').value;
+  if (!email || !password) return;
+  if (password.length < 6) {
+    statusEl.style.color = '#c62828';
+    statusEl.textContent = 'Parola en az 6 karakter olmalı.';
+    return;
+  }
+  if (password !== password2) {
+    statusEl.style.color = '#c62828';
+    statusEl.textContent = 'Parolalar eşleşmiyor.';
+    return;
+  }
+  btn.disabled = true;
+  statusEl.style.color = 'var(--muted)';
+  statusEl.textContent = 'Kaydediliyor...';
+  const { data, error } = await sbClient.auth.signUp({
+    email, password,
+    options: { data: { ad_soyad: ad } }
+  });
+  btn.disabled = false;
+  if (error) {
+    statusEl.style.color = '#c62828';
+    statusEl.textContent = 'Kayıt başarısız: ' + error.message;
+    return;
+  }
+  if (data.user && !data.session) {
+    // Supabase projesinde e-posta doğrulama açıksa, giriş için önce mail onayı gerekir.
+    statusEl.style.color = '#1b5e20';
+    statusEl.textContent = 'Kayıt alındı! E-postanıza gelen bağlantıyla hesabınızı onayladıktan sonra giriş yapabilirsiniz.';
+    return;
+  }
+  statusEl.textContent = '';
+  currentMember = data.user;
+  updateMemberBarUI();
+  updateMemberModalView();
+});
+
+document.getElementById('member-logout-btn').addEventListener('click', async () => {
+  await sbClient.auth.signOut();
+  currentMember = null;
+  updateMemberBarUI();
+  closeMemberModal();
+});
+
+if (isSupabaseConfigured()) {
+  sbClient.auth.getSession().then(({ data }) => {
+    currentMember = data.session ? data.session.user : null;
+    updateMemberBarUI();
+  });
+  sbClient.auth.onAuthStateChange((_event, session) => {
+    currentMember = session ? session.user : null;
+    updateMemberBarUI();
+  });
+}
+
+// ================= Admin: Üyeler Paneli =================
+// NOT: "service_role" anahtarı Supabase projenizdeki TÜM üye verilerine (RLS'i
+// atlayarak) erişebilir. Bu yüzden sadece admin modundayken, sadece bu tarayıcının
+// localStorage'ında saklanır ve asla GitHub'a / koda commit edilmez.
+const SB_SERVICE_KEY_STORAGE = 'eiSupabaseServiceKey';
+const membersAdminOverlay = document.getElementById('members-admin-overlay');
+const membersConfigView = document.getElementById('members-config-view');
+const membersListView = document.getElementById('members-list-view');
+let sbAdminClient = null;
+
+function getStoredServiceKey() {
+  return localStorage.getItem(SB_SERVICE_KEY_STORAGE) || '';
+}
+function saveStoredServiceKey(key) {
+  localStorage.setItem(SB_SERVICE_KEY_STORAGE, key);
+}
+function clearStoredServiceKey() {
+  localStorage.removeItem(SB_SERVICE_KEY_STORAGE);
+  sbAdminClient = null;
+}
+
+function showMembersConfigView() {
+  document.getElementById('sb-service-key').value = getStoredServiceKey();
+  membersConfigView.style.display = 'block';
+  membersListView.style.display = 'none';
+}
+function showMembersListView() {
+  membersConfigView.style.display = 'none';
+  membersListView.style.display = 'block';
+}
+
+function openMembersAdminModal() {
+  if (!isAdminMode()) { alert('Bu işlem için admin girişi gerekli.'); return; }
+  if (!SUPABASE_URL) {
+    alert('Üyelik sistemi henüz yapılandırılmamış: koddaki SUPABASE_URL / SUPABASE_ANON_KEY alanları boş.');
+    return;
+  }
+  document.getElementById('members-config-status').textContent = '';
+  if (getStoredServiceKey()) {
+    showMembersListView();
+    loadMembersList();
+  } else {
+    showMembersConfigView();
+  }
+  membersAdminOverlay.classList.add('open');
+}
+function closeMembersAdminModal() { membersAdminOverlay.classList.remove('open'); }
+
+document.getElementById('members-admin-btn').addEventListener('click', openMembersAdminModal);
+document.getElementById('members-admin-close-1').addEventListener('click', closeMembersAdminModal);
+membersAdminOverlay.addEventListener('click', (e) => { if (e.target === membersAdminOverlay) closeMembersAdminModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && membersAdminOverlay.classList.contains('open')) closeMembersAdminModal();
+});
+
+document.getElementById('members-config-save-btn').addEventListener('click', () => {
+  const key = document.getElementById('sb-service-key').value.trim();
+  const statusEl = document.getElementById('members-config-status');
+  if (!key) {
+    statusEl.style.color = '#c62828';
+    statusEl.textContent = 'Lütfen bir anahtar girin.';
+    return;
+  }
+  saveStoredServiceKey(key);
+  sbAdminClient = null;
+  showMembersListView();
+  loadMembersList();
+});
+document.getElementById('members-config-clear-btn').addEventListener('click', () => {
+  clearStoredServiceKey();
+  document.getElementById('sb-service-key').value = '';
+});
+document.getElementById('members-change-key-btn').addEventListener('click', showMembersConfigView);
+document.getElementById('members-refresh-btn').addEventListener('click', loadMembersList);
+
+function getSbAdminClient() {
+  const key = getStoredServiceKey();
+  if (!key) return null;
+  if (!sbAdminClient) {
+    sbAdminClient = supabase.createClient(SUPABASE_URL, key, {
+      auth: { autoRefreshToken: false, persistSession: false }
+    });
+  }
+  return sbAdminClient;
+}
+
+async function loadMembersList() {
+  const listEl = document.getElementById('members-list');
+  const statusEl = document.getElementById('members-list-status');
+  const client = getSbAdminClient();
+  if (!client) { showMembersConfigView(); return; }
+  statusEl.style.color = 'var(--muted)';
+  statusEl.textContent = 'Üyeler yükleniyor...';
+  listEl.innerHTML = '';
+  try {
+    const { data, error } = await client.auth.admin.listUsers({ perPage: 1000 });
+    if (error) throw error;
+    const users = data.users || [];
+    if (users.length === 0) {
+      statusEl.textContent = 'Henüz kayıtlı üye yok.';
+      return;
+    }
+    statusEl.textContent = `${users.length} üye`;
+    users
+      .slice()
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+      .forEach(u => {
+        const row = document.createElement('div');
+        row.className = 'member-row';
+        const ad = (u.user_metadata && u.user_metadata.ad_soyad) || '(isim girilmemiş)';
+        const date = u.created_at ? new Date(u.created_at).toLocaleDateString('tr-TR') : '';
+        row.innerHTML = `
+          <div class="member-row-info">
+            <div class="member-row-name">${ad}</div>
+            <div class="member-row-email">${u.email || ''}</div>
+          </div>
+          <div class="member-row-date">${date}</div>
+          <button type="button" class="member-del-btn" data-id="${u.id}">Sil</button>
+        `;
+        row.querySelector('.member-del-btn').addEventListener('click', () => deleteMember(u.id, ad));
+        listEl.appendChild(row);
+      });
+  } catch (err) {
+    statusEl.style.color = '#c62828';
+    statusEl.textContent = 'Üyeler yüklenemedi: ' + (err.message || 'bilinmeyen hata') + '. Service Role anahtarını kontrol edin.';
+  }
+}
+
+async function deleteMember(id, ad) {
+  if (!confirm(`"${ad}" adlı üye silinsin mi? Bu işlem geri alınamaz.`)) return;
+  const client = getSbAdminClient();
+  if (!client) return;
+  try {
+    const { error } = await client.auth.admin.deleteUser(id);
+    if (error) throw error;
+    loadMembersList();
+  } catch (err) {
+    alert('Üye silinemedi: ' + (err.message || 'bilinmeyen hata'));
+  }
+}
 
 // ================= Mekan Öner / Düzenle Modal =================
 const SUGGEST_EMAIL = 'ipapila@gmail.com';
