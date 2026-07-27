@@ -2687,21 +2687,6 @@
     "web": null
   },
   {
-    "ad": "iNput Healthy Foods",
-    "il": "Ankara",
-    "ilce": "Çankaya",
-    "tur": "vegan",
-    "adres": "Çankaya, Üsküp Cd. No:39 D:B, 06690 Çankaya/Ankara",
-    "lat": null,
-    "lng": null,
-    "telefon": null,
-    "not": "Tamamen vegan ve glutensiz menü, rafine şekersiz; Botanik Parkı yakını",
-    "id": "v0203",
-    "kaynak": "Web araştırması (inputkitchen.com, Wanderlog, Tripadvisor)",
-    "eklenme": "2026-07-26",
-    "web": "https://www.inputkitchen.com"
-  },
-  {
     "ad": "Eşter",
     "il": "Gaziantep",
     "ilce": "Şahinbey",
@@ -2723,8 +2708,8 @@
     "ilce": "Ortahisar",
     "tur": "vegan dostu",
     "adres": "Çamoba, 61000 Ortahisar/Trabzon",
-    "lat": null,
-    "lng": null,
+    "lat": 40.9870054,
+    "lng": 39.7087909,
     "telefon": "(0462) 230 69 45",
     "not": "Sebzeli pizza, makarna ve salata çeşitleriyle öne çıkan, yüksek puanlı bir kafe-restoran",
     "id": "v0205",
