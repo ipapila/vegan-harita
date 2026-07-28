@@ -1200,6 +1200,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 const TUR_COLORS = {
   "vegan": "#2e7d32",
@@ -1839,6 +1840,29 @@ githubForm.addEventListener('submit', async (e) => {
 
 updateAdminUI();
 
+// ================= EmailJS (Yeni Üye Bildirimi) =================
+// Biri üye olduğunda size otomatik mail gitmesi için emailjs.com üzerinden
+// kurulmuş bir servis/şablon kullanır. Public Key, tıpkı Supabase'in
+// anon key'i gibi tarayıcıda güvenle kullanılabilecek şekilde tasarlanmıştır.
+const EMAILJS_SERVICE_ID = 'service_slel8rg';
+const EMAILJS_TEMPLATE_ID = 'template_cwy5ipd';
+const EMAILJS_PUBLIC_KEY = 'vFzf9dPBuudScrCmO';
+
+if (window.emailjs && EMAILJS_PUBLIC_KEY) {
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+}
+
+function notifyAdminNewMember(ad, email) {
+  if (!window.emailjs || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) return;
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+    ad_soyad: ad || '(isim girilmemiş)',
+    uye_email: email,
+    tarih: new Date().toLocaleString('tr-TR')
+  }).catch(err => {
+    console.warn('Yeni üye bildirimi gönderilemedi:', err);
+  });
+}
+
 // ================= Supabase (Üyelik) =================
 // Buraya kendi Supabase projenizin URL'sini ve "anon public" anahtarını girin
 // (supabase.com → projeniz → Project Settings → API). Bu anahtar herkese açık
@@ -2223,6 +2247,7 @@ document.getElementById('member-register-form').addEventListener('submit', async
     statusEl.textContent = 'Kayıt başarısız: ' + error.message;
     return;
   }
+  notifyAdminNewMember(ad, email);
   if (data.user && !data.session) {
     // Supabase projesinde e-posta doğrulama açıksa, giriş için önce mail onayı gerekir.
     statusEl.style.color = '#1b5e20';
