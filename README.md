@@ -26,6 +26,29 @@ dosyasına dokunmaya gerek yok, sayfa veriyi her yüklendiğinde bu dosyadan fet
 
 `tur` alanı şu üç değerden birini almalı: `vegan`, `vejetaryen`, `vegan dostu`.
 
+## Google Analytics
+
+Site, GA4 Ölçüm Kimliği `G-E11YLKMDJE` ile Google Analytics'e bağlıdır (`index.html`
+`<head>` içindeki `gtag.js` kodu). Ziyaretçi verilerini
+[analytics.google.com](https://analytics.google.com) üzerinden görebilirsiniz.
+ID'yi değiştirmek isterseniz `index.html` içindeki iki `G-E11YLKMDJE` geçen yeri güncelleyin.
+
+## SEO (Arama motorlarında görünürlük)
+
+- `index.html` içine meta description, Open Graph, Twitter Card ve WebSite JSON-LD
+  yapısal verisi eklendi. Hepsi `https://ipapila.github.io/vegan-harita/` canonical
+  adresini kullanıyor — repo adı veya domain değişirse bu adresi `index.html`,
+  `robots.txt` ve `sitemap.xml` içinde güncelleyin.
+- `robots.txt` ve `sitemap.xml` site kökünde yer alır, GitHub Pages'te otomatik
+  erişilebilir olurlar (`/robots.txt`, `/sitemap.xml`).
+- Yayınladıktan sonra [Google Search Console](https://search.google.com/search-console)'a
+  girip mülk olarak `https://ipapila.github.io/vegan-harita/` adresini ekleyin, sahipliği
+  doğrulayın (HTML dosyası ya da DNS ile) ve **Sitemaps** bölümünden `sitemap.xml`'i
+  gönderin. Bu, Google'ın siteyi taramasını hızlandırır.
+- Aramalarda öne çıkmak için düzenli olarak yeni mekan eklemek (taze içerik),
+  sayfanın hızlı yüklenmesi (zaten statik/hafif) ve başka vegan/vejetaryen
+  sitelerden bağlantı almak (backlink) en etkili yöntemlerdir.
+
 ## Yerelde önizleme
 
 Tarayıcılar `file://` üzerinden açılan sayfalarda `fetch()` isteklerini engelleyebildiği için
