@@ -1791,7 +1791,7 @@ updateAdminUI();
 // (bkz. aşağıdaki Admin → Üyeler paneli) erişilebilir, bu yüzden üyeler
 // birbirini ya da admin dışında kimse listeyi göremez.
 const SUPABASE_URL = 'https://yszrpzgnbmfzklchiiic.supabase.co'; // Örn: 'https://xxxxxxxxxxxx.supabase.co'
-const SUPABASE_ANON_KEY = 'sb_publishable_OduoiJXnR1IWd9JLZVYHwQ_kL2SNY95'; // Örn: 'eyJhbGciOi...' (anon public key)
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlzenJwemduYm1memtsY2hpaWljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxNDUxNDAsImV4cCI6MjEwMDcyMTE0MH0.XmpQgBTNz66UpHG5m8tQ49i3WSAzhInTPAv5SLhItX4'; // Örn: 'eyJhbGciOi...' (anon public key)
 
 const sbClient = (SUPABASE_URL && SUPABASE_ANON_KEY)
   ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
