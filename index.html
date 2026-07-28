@@ -238,6 +238,41 @@
   .popup-fav-btn:hover { background: #fff8e6; }
   .popup-fav-btn.active { background: #fff3cd; color: #6b4a00; }
   .popup-fav-btn:disabled { opacity: 0.6; cursor: default; }
+  .popup-pill-row { display: flex; gap: 5px; margin-top: 8px; }
+  .popup-pill { flex: 1; min-width: 0; margin-top: 0; padding: 6px 3px; font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .popup-report-btn {
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    width: 100%; margin-top: 8px; padding: 7px 10px;
+    background: #fff; border: 1.5px solid #cfd8dc; color: #455a64;
+    border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer;
+  }
+  .popup-report-btn:hover { background: #f5f7f8; }
+  .popup-reviews { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+  .popup-reviews-loading, .popup-reviews-error, .popup-reviews-empty { font-size: 11.5px; color: var(--muted); }
+  .popup-reviews-avg { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .popup-reviews-avg .muted { font-weight: 400; color: var(--muted); font-size: 11px; }
+  .popup-review-item { font-size: 11.5px; margin-bottom: 6px; padding-bottom: 6px; border-bottom: 1px dashed var(--border); }
+  .popup-review-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .popup-review-stars { color: #e0a100; letter-spacing: 1px; }
+  .popup-review-name { font-weight: 600; }
+  .popup-review-date { color: var(--muted); font-size: 10.5px; }
+  .popup-review-del { color: #c62828; cursor: pointer; font-size: 10.5px; margin-left: 6px; text-decoration: underline; }
+  .popup-review-form { margin-top: 8px; }
+  .popup-star-picker { display: flex; gap: 2px; font-size: 18px; cursor: pointer; margin-bottom: 6px; user-select: none; }
+  .popup-star-picker span { color: #ccc; }
+  .popup-star-picker span.on { color: #e0a100; }
+  .popup-review-form textarea {
+    width: 100%; box-sizing: border-box; border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px; font-size: 11.5px; font-family: inherit;
+    resize: vertical; min-height: 44px;
+  }
+  .popup-review-submit {
+    margin-top: 6px; width: 100%; padding: 6px; background: var(--vegan);
+    color: #fff; border: none; border-radius: 6px; font-size: 11.5px;
+    font-weight: 600; cursor: pointer;
+  }
+  .popup-review-submit:disabled { opacity: 0.6; cursor: default; }
+  .popup-review-hint { font-size: 11px; color: var(--muted); margin-top: 6px; }
   .popup-edit-btn {
     display: flex;
     align-items: center;
@@ -705,7 +740,11 @@
       <input type="text" id="search-input" placeholder="Mekan adı, ilçe ara..." />
     </div>
     <div class="filter-section" id="fav-filter-section" style="display:none; padding-bottom:4px;">
-      <div class="tur-chip active" id="fav-only-chip" style="width:100%; justify-content:center; border-color:#e0a100;">⭐ Sadece Favorilerim</div>
+      <div class="chip-row" style="flex-direction:column; gap:6px;">
+        <div class="tur-chip" id="fav-only-chip" style="width:100%; justify-content:center; border-color:#e0a100;">⭐ Sadece Favorilerim</div>
+        <div class="tur-chip" id="visited-only-chip" style="width:100%; justify-content:center; border-color:#2e7d32;">✅ Sadece Gittiklerim</div>
+        <div class="tur-chip" id="wishlist-only-chip" style="width:100%; justify-content:center; border-color:#1565c0;">📍 Sadece Gitmek İstediklerim</div>
+      </div>
     </div>
     <div class="filter-section">
       <h2>Kategori</h2>
@@ -1109,6 +1148,8 @@
         <div class="big-emoji">👋</div>
         <h3 id="member-loggedin-title" style="margin:0 0 6px; color:#1b3a1e;"></h3>
         <p style="margin:0 0 18px; font-size:12.5px; color:var(--muted);" id="member-loggedin-email"></p>
+        <button type="button" class="btn-secondary" id="member-export-json-btn" style="width:100%; margin-bottom:8px;">⬇️ Favorilerimi İndir (JSON)</button>
+        <button type="button" class="btn-secondary" id="member-export-print-btn" style="width:100%; margin-bottom:8px;">🖨️ Favorilerimi Yazdır / PDF</button>
         <button type="button" class="btn-secondary" id="member-logout-btn">Çıkış Yap</button>
         <button type="button" id="member-delete-account-btn" style="margin-top:10px; width:100%; padding:9px 10px; background:#fdecea; color:#c62828; border:1px solid #f5c6c2; border-radius:8px; font-size:12.5px; font-weight:600; cursor:pointer;">Üyeliğimi Sil</button>
       </div>
@@ -1180,7 +1221,9 @@ let state = {
   activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market", "vegan ürünlü"]),
   activeIl: null,
   query: "",
-  onlyFavorites: false
+  onlyFavorites: false,
+  onlyVisited: false,
+  onlyWishlist: false
 };
 
 const map = L.map('map', { zoomControl: true }).setView([39.0, 35.0], 6);
@@ -1269,6 +1312,7 @@ function spiderfyCluster(clusterId) {
 
     const marker = L.marker(targetLatLng, { icon: makeIcon(p.tur) });
     marker.bindPopup(() => popupHtml(p));
+    marker.on('popupopen', () => loadReviewsForPopup(p));
     marker.addTo(spiderLayer);
     markers.push(marker);
   });
@@ -1376,6 +1420,8 @@ function matches(p) {
   if (!state.activeTur.has(p.tur)) return false;
   if (state.activeIl && p.il !== state.activeIl) return false;
   if (state.onlyFavorites && !isFavorite(p.id)) return false;
+  if (state.onlyVisited && !isInUserList('ziyaretEdildi', p.id)) return false;
+  if (state.onlyWishlist && !isInUserList('gitmekIstiyorum', p.id)) return false;
   if (state.query) {
     const hay = (p.ad + ' ' + p.ilce + ' ' + p.il).toLocaleLowerCase('tr');
     if (!hay.includes(state.query)) return false;
@@ -1402,11 +1448,20 @@ function popupHtml(p) {
   if (isAdminMode()) {
     editBtn = `<button type="button" class="popup-edit-btn" onclick="openEditModal('${p.id}')">✏️ Düzenle</button>`;
   }
-  let favBtn = '';
+  let personalBtns = '';
   if (currentMember) {
     const fav = isFavorite(p.id);
-    favBtn = `<button type="button" class="popup-fav-btn${fav ? ' active' : ''}" onclick="toggleFavorite('${p.id}', this)">${fav ? '★ Favorilerimde' : '☆ Favorilere Ekle'}</button>`;
+    const visited = isInUserList('ziyaretEdildi', p.id);
+    const wish = isInUserList('gitmekIstiyorum', p.id);
+    personalBtns = `
+    <div class="popup-pill-row">
+      <button type="button" class="popup-fav-btn popup-pill${fav ? ' active' : ''}" title="${fav ? 'Favorilerden çıkar' : 'Favorilere ekle'}" onclick="toggleFavorite('${p.id}', this)">${fav ? '★ Çıkar' : '☆ Favori'}</button>
+      <button type="button" class="popup-fav-btn popup-pill${visited ? ' active' : ''}" onclick="toggleVisited('${p.id}', this)">${visited ? '✅' : '⬜'} Gittim</button>
+      <button type="button" class="popup-fav-btn popup-pill${wish ? ' active' : ''}" onclick="toggleWishlist('${p.id}', this)">${wish ? '📍' : '📌'} İstiyorum</button>
+    </div>`;
   }
+  const reportBtn = `<button type="button" class="popup-report-btn" onclick="reportIssue('${p.id}')">🚩 Hatalı Bilgi Bildir</button>`;
+  const reviewsBox = `<div class="popup-reviews" id="rv-${p.id}"><div class="popup-reviews-loading">Değerlendirmeler yükleniyor...</div></div>`;
   return `
     <div class="popup-title">${p.ad}</div>
     <span class="popup-tur" style="background:${color}">${TUR_LABELS[p.tur]}</span>
@@ -1416,8 +1471,10 @@ function popupHtml(p) {
     ${webLine}
     <div class="popup-note">${p.not || ''}</div>
     ${directionsBtn}
-    ${favBtn}
+    ${personalBtns}
+    ${reportBtn}
     ${editBtn}
+    ${reviewsBox}
   `;
 }
 
@@ -1447,6 +1504,7 @@ function applyFilters() {
     if (group.length === 1) {
       const marker = L.marker([first.lat, first.lng], { icon: makeIcon(first.tur) });
       marker.bindPopup(() => popupHtml(first));
+      marker.on('popupopen', () => loadReviewsForPopup(first));
       marker.addTo(markersLayer);
     } else {
       const clusterId = 'cl' + (clusterIdx++);
@@ -1807,70 +1865,249 @@ const memberAuthView = document.getElementById('member-auth-view');
 const memberLoggedinView = document.getElementById('member-loggedin-view');
 let currentMember = null; // Giriş yapmış Supabase kullanıcısı, yoksa null
 
-// ---- Favoriler: ayrı bir tablo gerekmez, üyenin kendi Supabase
-// auth "user_metadata" alanına (favoriler: [id, id, ...]) yazılır/okunur.
-// Böylece sadece o üye kendi favorilerini görür/değiştirir, admin tablo
-// kurmak zorunda kalmaz. ----
-function getFavoriteIds() {
-  return (currentMember && currentMember.user_metadata && Array.isArray(currentMember.user_metadata.favoriler))
-    ? currentMember.user_metadata.favoriler
+// ---- Kişisel listeler (favoriler, gidilenler, gidilmek istenenler): ayrı
+// bir tablo gerekmez, üyenin kendi Supabase auth "user_metadata" alanına
+// yazılır/okunur. Böylece sadece o üye kendi listelerini görür/değiştirir,
+// admin tablo kurmak zorunda kalmaz. ----
+function getUserListIds(field) {
+  return (currentMember && currentMember.user_metadata && Array.isArray(currentMember.user_metadata[field]))
+    ? currentMember.user_metadata[field]
     : [];
 }
 
-function isFavorite(id) {
-  return getFavoriteIds().includes(id);
+function isInUserList(field, id) {
+  return getUserListIds(field).includes(id);
 }
 
-async function toggleFavorite(id, btnEl) {
+async function toggleUserListItem(field, id, btnEl, onHtml, offHtml) {
   if (!currentMember) {
-    alert('Favorilere eklemek için üye girişi yapmalısınız.');
+    alert('Bunun için üye girişi yapmalısınız.');
     return;
   }
-  const favs = getFavoriteIds();
-  const idx = favs.indexOf(id);
-  const newFavs = idx === -1 ? [...favs, id] : favs.filter(f => f !== id);
+  const list = getUserListIds(field);
+  const idx = list.indexOf(id);
+  const newList = idx === -1 ? [...list, id] : list.filter(f => f !== id);
 
   if (btnEl) btnEl.disabled = true;
   try {
-    const { data, error } = await sbClient.auth.updateUser({ data: { favoriler: newFavs } });
+    const { data, error } = await sbClient.auth.updateUser({ data: { [field]: newList } });
     if (error) throw error;
     currentMember = data.user;
     if (btnEl) {
-      const nowFav = isFavorite(id);
-      btnEl.classList.toggle('active', nowFav);
-      btnEl.innerHTML = nowFav ? '★ Favorilerimde' : '☆ Favorilere Ekle';
+      const now = isInUserList(field, id);
+      btnEl.classList.toggle('active', now);
+      btnEl.innerHTML = now ? onHtml : offHtml;
+      if (btnEl.hasAttribute('title')) {
+        btnEl.title = now ? 'Favorilerden çıkar' : 'Favorilere ekle';
+      }
     }
-    updateFavOnlyToggleVisibility();
-    if (state.onlyFavorites) applyFilters();
+    updatePersonalFiltersVisibility();
+    if (state.onlyFavorites || state.onlyVisited || state.onlyWishlist) applyFilters();
   } catch (err) {
-    alert('Favori güncellenemedi: ' + err.message);
+    alert('Güncellenemedi: ' + err.message);
   } finally {
     if (btnEl) btnEl.disabled = false;
   }
 }
 
-function updateFavOnlyToggleVisibility() {
+function getFavoriteIds() { return getUserListIds('favoriler'); }
+function isFavorite(id) { return isInUserList('favoriler', id); }
+function toggleFavorite(id, btnEl) {
+  return toggleUserListItem('favoriler', id, btnEl, '★ Çıkar', '☆ Favori');
+}
+function toggleVisited(id, btnEl) {
+  return toggleUserListItem('ziyaretEdildi', id, btnEl, '✅ Gittim', '⬜ Gittim');
+}
+function toggleWishlist(id, btnEl) {
+  return toggleUserListItem('gitmekIstiyorum', id, btnEl, '📍 İstiyorum', '📌 İstiyorum');
+}
+
+// ================= Yorum / Puan Sistemi =================
+// NOT: favorilerin aksine bu özellik herkesin görebileceği ortak veri
+// olduğu için gerçek bir Supabase tablosuna ("reviews") ihtiyaç duyar.
+// Aşağıdaki SQL'i Supabase projenizde bir kez, SQL Editor'den çalıştırın:
+//
+// create table public.reviews (
+//   id uuid primary key default gen_random_uuid(),
+//   place_id text not null,
+//   user_id uuid not null references auth.users(id) on delete cascade,
+//   ad_soyad text,
+//   puan int not null check (puan between 1 and 5),
+//   yorum text,
+//   created_at timestamptz not null default now(),
+//   unique (place_id, user_id)
+// );
+// alter table public.reviews enable row level security;
+// create policy "Herkes okuyabilir" on public.reviews for select using (true);
+// create policy "Uye kendi yorumunu ekler" on public.reviews for insert with check (auth.uid() = user_id);
+// create policy "Uye kendi yorumunu gunceller" on public.reviews for update using (auth.uid() = user_id);
+// create policy "Uye kendi yorumunu siler" on public.reviews for delete using (auth.uid() = user_id);
+
+function starsHtml(n, size) {
+  let out = '';
+  for (let i = 1; i <= 5; i++) out += `<span class="${i <= n ? 'on' : ''}">★</span>`;
+  return out;
+}
+
+async function loadReviewsForPopup(p) {
+  const box = document.getElementById('rv-' + p.id);
+  if (!box) return;
+  box.innerHTML = '<div class="popup-reviews-loading">Değerlendirmeler yükleniyor...</div>';
+  try {
+    const { data, error } = await sbClient
+      .from('reviews')
+      .select('*')
+      .eq('place_id', p.id)
+      .order('created_at', { ascending: false });
+    if (error) throw error;
+    renderReviewsBox(p, data || []);
+  } catch (err) {
+    box.innerHTML = `<div class="popup-reviews-error">Değerlendirmeler yüklenemedi. (Reviews tablosu kurulu mu?)</div>`;
+  }
+}
+
+function renderReviewsBox(p, reviews) {
+  const box = document.getElementById('rv-' + p.id);
+  if (!box) return;
+  const myReview = currentMember ? reviews.find(r => r.user_id === currentMember.id) : null;
+
+  let avgHtml = '<div class="popup-reviews-empty">Henüz değerlendirme yok.</div>';
+  if (reviews.length > 0) {
+    const avg = reviews.reduce((s, r) => s + r.puan, 0) / reviews.length;
+    avgHtml = `<div class="popup-reviews-avg"><span class="popup-review-stars">${starsHtml(Math.round(avg))}</span> ${avg.toFixed(1)} <span class="muted">(${reviews.length} değerlendirme)</span></div>`;
+  }
+
+  const listHtml = reviews.slice(0, 3).map(r => {
+    const isMine = currentMember && r.user_id === currentMember.id;
+    const date = r.created_at ? new Date(r.created_at).toLocaleDateString('tr-TR') : '';
+    const delLink = isMine ? ` <span class="popup-review-del" onclick="deleteMyReview('${p.id}')">Sil</span>` : '';
+    return `
+      <div class="popup-review-item">
+        <span class="popup-review-stars">${starsHtml(r.puan)}</span>
+        <span class="popup-review-name">${r.ad_soyad || 'Üye'}</span>
+        <span class="popup-review-date">· ${date}</span>${delLink}
+        ${r.yorum ? `<div>${r.yorum}</div>` : ''}
+      </div>`;
+  }).join('');
+
+  let formHtml = '';
+  if (currentMember) {
+    const myStars = myReview ? myReview.puan : 0;
+    const myText = myReview ? (myReview.yorum || '') : '';
+    formHtml = `
+      <div class="popup-review-form">
+        <div class="popup-star-picker" id="star-picker-${p.id}" data-value="${myStars}">
+          ${[1,2,3,4,5].map(i => `<span class="${i <= myStars ? 'on' : ''}" data-star="${i}" onclick="setStarPick('${p.id}', ${i})">★</span>`).join('')}
+        </div>
+        <textarea id="review-text-${p.id}" placeholder="Kısa bir not bırakın (opsiyonel)">${myText}</textarea>
+        <button type="button" class="popup-review-submit" onclick="submitReview('${p.id}')">${myReview ? 'Değerlendirmemi Güncelle' : 'Değerlendir'}</button>
+      </div>`;
+  } else {
+    formHtml = '<div class="popup-review-hint">Değerlendirme bırakmak için üye girişi yapın.</div>';
+  }
+
+  box.innerHTML = avgHtml + listHtml + formHtml;
+}
+
+function setStarPick(id, value) {
+  const picker = document.getElementById('star-picker-' + id);
+  if (!picker) return;
+  picker.dataset.value = value;
+  picker.querySelectorAll('span').forEach(el => {
+    el.classList.toggle('on', parseInt(el.dataset.star, 10) <= value);
+  });
+}
+
+async function submitReview(id) {
+  if (!currentMember) { alert('Değerlendirme bırakmak için üye girişi yapmalısınız.'); return; }
+  const picker = document.getElementById('star-picker-' + id);
+  const puan = picker ? parseInt(picker.dataset.value, 10) : 0;
+  if (!puan) { alert('Lütfen bir puan (yıldız) seçin.'); return; }
+  const textEl = document.getElementById('review-text-' + id);
+  const yorum = textEl ? textEl.value.trim() : '';
+  const btn = document.querySelector(`#rv-${id} .popup-review-submit`);
+  if (btn) { btn.disabled = true; btn.textContent = 'Gönderiliyor...'; }
+  try {
+    const { error } = await sbClient.from('reviews').upsert({
+      place_id: id,
+      user_id: currentMember.id,
+      ad_soyad: memberDisplayName(currentMember),
+      puan,
+      yorum
+    }, { onConflict: 'place_id,user_id' });
+    if (error) throw error;
+    const p = PLACES.find(pl => pl.id === id);
+    if (p) loadReviewsForPopup(p);
+  } catch (err) {
+    alert('Değerlendirme kaydedilemedi: ' + (err.message || 'bilinmeyen hata') + '\n\nBu özelliğin çalışması için Supabase projenizde "reviews" tablosunun kurulu olması gerekir.');
+    if (btn) { btn.disabled = false; btn.textContent = 'Değerlendir'; }
+  }
+}
+
+async function deleteMyReview(id) {
+  if (!currentMember) return;
+  if (!confirm('Değerlendirmenizi silmek istediğinize emin misiniz?')) return;
+  try {
+    const { error } = await sbClient.from('reviews').delete()
+      .eq('place_id', id).eq('user_id', currentMember.id);
+    if (error) throw error;
+    const p = PLACES.find(pl => pl.id === id);
+    if (p) loadReviewsForPopup(p);
+  } catch (err) {
+    alert('Değerlendirme silinemedi: ' + (err.message || 'bilinmeyen hata'));
+  }
+}
+
+function reportIssue(id) {
+  if (!currentMember) {
+    alert('Hatalı bilgi bildirmek için üye girişi yapmalısınız.');
+    if (isSupabaseConfigured()) openMemberModal();
+    return;
+  }
+  const p = PLACES.find(pl => pl.id === id);
+  if (!p) return;
+  const note = prompt(`"${p.ad}" ile ilgili hatalı/eksik bilgiyi kısaca açıklayın:`);
+  if (!note || !note.trim()) return;
+  const subject = encodeURIComponent('Hatalı Bilgi Bildirimi: ' + p.ad);
+  const body = encodeURIComponent(
+    `Mekan: ${p.ad} (${p.id})\n` +
+    `İl/İlçe: ${p.il} / ${p.ilce}\n` +
+    `Adres: ${p.adres || ''}\n` +
+    `Bildiren üye: ${memberDisplayName(currentMember)} (${currentMember.email || ''})\n\n` +
+    `Bildirilen sorun:\n${note.trim()}`
+  );
+  window.location.href = `mailto:${SUGGEST_EMAIL}?subject=${subject}&body=${body}`;
+}
+
+function updatePersonalFiltersVisibility() {
   const section = document.getElementById('fav-filter-section');
   if (!section) return;
   if (currentMember) {
     section.style.display = '';
   } else {
     section.style.display = 'none';
-    if (state.onlyFavorites) {
-      state.onlyFavorites = false;
-      const chip = document.getElementById('fav-only-chip');
-      if (chip) chip.classList.remove('active');
-      applyFilters();
-    }
+    let changed = false;
+    if (state.onlyFavorites) { state.onlyFavorites = false; changed = true; }
+    if (state.onlyVisited) { state.onlyVisited = false; changed = true; }
+    if (state.onlyWishlist) { state.onlyWishlist = false; changed = true; }
+    document.getElementById('fav-only-chip').classList.remove('active');
+    document.getElementById('visited-only-chip').classList.remove('active');
+    document.getElementById('wishlist-only-chip').classList.remove('active');
+    if (changed) applyFilters();
   }
 }
 
-document.getElementById('fav-only-chip').addEventListener('click', () => {
-  state.onlyFavorites = !state.onlyFavorites;
-  document.getElementById('fav-only-chip').classList.toggle('active', state.onlyFavorites);
-  if (state.activeIl) renderIlList();
-  applyFilters();
-});
+function setupOnlyToggleChip(chipId, stateKey) {
+  document.getElementById(chipId).addEventListener('click', () => {
+    state[stateKey] = !state[stateKey];
+    document.getElementById(chipId).classList.toggle('active', state[stateKey]);
+    if (state.activeIl) renderIlList();
+    applyFilters();
+  });
+}
+setupOnlyToggleChip('fav-only-chip', 'onlyFavorites');
+setupOnlyToggleChip('visited-only-chip', 'onlyVisited');
+setupOnlyToggleChip('wishlist-only-chip', 'onlyWishlist');
 
 function memberDisplayName(user) {
   return (user && user.user_metadata && user.user_metadata.ad_soyad) || (user ? user.email : '');
@@ -1891,7 +2128,7 @@ function updateMemberModalView() {
 
 function updateMemberBarUI() {
   memberToggleLink.textContent = currentMember ? ('👤 ' + memberDisplayName(currentMember)) : '👤 Üye Ol / Giriş Yap';
-  updateFavOnlyToggleVisibility();
+  updatePersonalFiltersVisibility();
   const hint = document.getElementById('suggest-btn-hint');
   if (hint) hint.style.display = currentMember ? 'none' : 'block';
 }
@@ -2029,6 +2266,56 @@ document.getElementById('member-delete-account-btn').addEventListener('click', a
     btn.disabled = false;
     btn.textContent = 'Üyeliğimi Sil';
   }
+});
+
+function getFavoritePlaces() {
+  const favIds = getFavoriteIds();
+  return PLACES.filter(p => favIds.includes(p.id));
+}
+
+document.getElementById('member-export-json-btn').addEventListener('click', () => {
+  const favs = getFavoritePlaces();
+  if (favs.length === 0) { alert('Henüz favori mekanınız yok.'); return; }
+  downloadJson(favs, 'favori_mekanlarim.json');
+});
+
+document.getElementById('member-export-print-btn').addEventListener('click', () => {
+  const favs = getFavoritePlaces();
+  if (favs.length === 0) { alert('Henüz favori mekanınız yok.'); return; }
+  const rows = favs.map(p => `
+    <tr>
+      <td>${p.ad}</td>
+      <td>${TUR_LABELS[p.tur] || p.tur}</td>
+      <td>${p.ilce ? p.ilce + ' / ' : ''}${p.il}</td>
+      <td>${p.adres || ''}</td>
+      <td>${p.telefon || ''}</td>
+    </tr>`).join('');
+  const win = window.open('', '_blank');
+  if (!win) { alert('Yeni pencere açılamadı. Tarayıcınızın pop-up engelleyicisini kontrol edin.'); return; }
+  win.document.write(`
+    <!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8">
+    <title>Favori Mekanlarım</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 24px; color: #202524; }
+      h1 { font-size: 18px; margin-bottom: 4px; }
+      p.sub { color: #667069; font-size: 12px; margin-top: 0; }
+      table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+      th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #dde3e0; font-size: 12.5px; }
+      th { background: #f4f6f5; }
+      @media print { body { padding: 0; } }
+    </style>
+    </head><body>
+    <h1>🌱 Favori Mekanlarım</h1>
+    <p class="sub">${favs.length} mekan — Vegan Mekanlar</p>
+    <table>
+      <thead><tr><th>Ad</th><th>Tür</th><th>İl/İlçe</th><th>Adres</th><th>Telefon</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    </body></html>
+  `);
+  win.document.close();
+  win.focus();
+  setTimeout(() => win.print(), 300);
 });
 
 if (isSupabaseConfigured()) {
