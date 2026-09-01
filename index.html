@@ -53,6 +53,7 @@
     --dostu: #e65100;
     --market: #8e24aa;
     --urunlu: #00838f;
+    --online: #ad1457;
     --bg: #f4f6f5;
     --panel: #ffffff;
     --border: #dde3e0;
@@ -163,6 +164,7 @@
   .tur-chip.active[data-tur="vegan dostu"] { background: #fdeee0; border-color: var(--dostu); color: #a34b00; }
   .tur-chip.active[data-tur="vegan market"] { background: #f3e5f5; border-color: var(--market); color: #4a148c; }
   .tur-chip.active[data-tur="vegan ürünlü"] { background: #e0f4f6; border-color: var(--urunlu); color: #004d54; }
+  .tur-chip.active[data-tur="online-satis"] { background: #fce4ec; border-color: var(--online); color: #880e4f; }
   .tur-chip:not(.active) { opacity: 0.45; }
 
   #il-list {
@@ -795,6 +797,7 @@
         <div class="tur-chip active" data-tur="vegan dostu"><span class="dot" style="background:#e65100"></span>Vegan Dostu</div>
         <div class="tur-chip active" data-tur="vegan market"><span class="dot" style="background:#8e24aa"></span>Vegan Market</div>
         <div class="tur-chip active" data-tur="vegan ürünlü"><span class="dot" style="background:#00838f"></span>Vegan Ürünlü</div>
+        <div class="tur-chip active" data-tur="online-satis"><span class="dot" style="background:#ad1457"></span>Online Satış</div>
       </div>
     </div>
     <div class="filter-section" style="padding-bottom:0;">
@@ -853,6 +856,7 @@
               <option value="vegan dostu">Vegan Dostu</option>
               <option value="vegan market">Vegan Market</option>
               <option value="vegan ürünlü">Vegan Ürünlü (market/zincir mağaza)</option>
+              <option value="online-satis">Online Satış (fiziksel mekanı yok)</option>
             </select>
             <div class="form-error">Lütfen bir tür seçin.</div>
           </div>
@@ -963,6 +967,7 @@
               <option value="vegan dostu">Vegan Dostu</option>
               <option value="vegan market">Vegan Market</option>
               <option value="vegan ürünlü">Vegan Ürünlü (market/zincir mağaza)</option>
+              <option value="online-satis">Online Satış (fiziksel mekanı yok)</option>
             </select>
             <div class="form-error">Lütfen bir tür seçin.</div>
           </div>
@@ -1248,19 +1253,21 @@ const TUR_COLORS = {
   "vejetaryen": "#1565c0",
   "vegan dostu": "#e65100",
   "vegan market": "#8e24aa",
-  "vegan ürünlü": "#00838f"
+  "vegan ürünlü": "#00838f",
+  "online-satis": "#ad1457"
 };
 const TUR_LABELS = {
   "vegan": "Vegan",
   "vejetaryen": "Vejetaryen",
   "vegan dostu": "Vegan Dostu",
   "vegan market": "Vegan Market",
-  "vegan ürünlü": "Vegan Ürünlü"
+  "vegan ürünlü": "Vegan Ürünlü",
+  "online-satis": "Online Satış"
 };
 
 let PLACES = [];
 let state = {
-  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market", "vegan ürünlü"]),
+  activeTur: new Set(["vegan", "vejetaryen", "vegan dostu", "vegan market", "vegan ürünlü", "online-satis"]),
   activeIl: null,
   query: "",
   onlyFavorites: false,
