@@ -6,8 +6,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0025483,
-          41.0449907
+          29.0025758743286,
+          41.0449949904498
         ]
       },
       "properties": {
@@ -21,7 +21,8 @@
         "id": "v0001",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/veganmasa/"
+        "web": "https://www.instagram.com/veganmasa/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -29,8 +30,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9817808,
-          41.0310127
+          28.9818021655083,
+          41.0309626165044
         ]
       },
       "properties": {
@@ -40,11 +41,12 @@
         "tur": "vegan",
         "adres": "Firuzağa, Türkgücü Cd. No:51A, Beyoğlu/İstanbul",
         "telefon": "+90 212 249 00 08",
-        "not": "Uygun fiyatlı büfe usulü vegan lokanta, aynı zamanda market[reference:25]",
+        "not": "Uygun fiyatlı büfe usulü vegan lokanta, aynı zamanda market",
         "id": "v0002",
         "kaynak": "Google Places, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://veganistanbul34.com/"
+        "web": "https://veganistanbul34.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -52,8 +54,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9839869,
-          41.0326662
+          28.9840176701546,
+          41.0326500584461
         ]
       },
       "properties": {
@@ -67,7 +69,8 @@
         "id": "v0003",
         "kaynak": "Google Places, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://vegandukkanlokanta.com/"
+        "web": "https://vegandukkanlokanta.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -75,8 +78,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0277886,
-          40.9913683
+          29.027681350708,
+          40.9913661405624
         ]
       },
       "properties": {
@@ -86,11 +89,12 @@
         "tur": "vegan",
         "adres": "Osmanağa, Vahapbey Sok. No:18/A, Kadıköy/İstanbul",
         "telefon": "+90 541 255 69 72",
-        "not": "Tamamen vegan Türk restoranı (pide, lahmacun, çorba, kadayıf)[reference:26]",
+        "not": "Tamamen vegan Türk restoranı (pide, lahmacun, çorba, kadayıf)",
         "id": "v0004",
         "kaynak": "Google Places, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/veganmasa/"
+        "web": "https://www.instagram.com/veganmasa/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -98,8 +102,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.971247,
-          41.004643
+          28.9712905883789,
+          41.0046317079788
         ]
       },
       "properties": {
@@ -108,12 +112,13 @@
         "ilce": "Fatih",
         "tur": "vegan dostu",
         "adres": "Küçük Ayasofya, Kadırga Limanı Cd. No:177, Fatih/İstanbul",
-        "telefon": null,
+        "telefon": "+90 532 490 47 24",
         "not": "Geniş vegan seçenekli şarap barı/bistro",
         "id": "v0005",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://archbistro.com/"
+        "web": "https://archbistro.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -121,8 +126,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9764021,
-          41.0269496
+          28.9764913916588,
+          41.0269765207567
         ]
       },
       "properties": {
@@ -136,7 +141,8 @@
         "id": "v0006",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://vacilandoistanbul.com/"
+        "web": "https://vacilandoistanbul.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -144,8 +150,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0230697,
-          40.9841894
+          29.0230947732925,
+          40.984140111462
         ]
       },
       "properties": {
@@ -159,7 +165,8 @@
         "id": "v0007",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/_gringomoda/"
+        "web": "https://www.instagram.com/_gringomoda/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -167,8 +174,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0275341,
-          40.9889842
+          29.0275526046753,
+          40.9889831974633
         ]
       },
       "properties": {
@@ -182,7 +189,8 @@
         "id": "v0008",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/salvekadikoy/"
+        "web": "https://www.instagram.com/salvekadikoy/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -190,8 +198,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.033053,
-          41.0795109
+          29.0331262350082,
+          41.0795230064807
         ]
       },
       "properties": {
@@ -203,9 +211,10 @@
         "telefon": "+90 212 358 60 32",
         "not": "Vegan deli, glutensiz seçenekler mevcut",
         "id": "v0009",
-        "kaynak": "Google Places",
+        "kaynak": "Google Places, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://binevideli.com/"
+        "web": "https://binevideli.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -213,8 +222,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0232637,
-          40.9851577
+          29.0232852101326,
+          40.9851180709494
         ]
       },
       "properties": {
@@ -227,7 +236,9 @@
         "not": "Vegan burger ve döner",
         "id": "v0010",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/turpmoda/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -235,8 +246,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8550415,
-          39.9014242
+          32.855054140091,
+          39.9014114685697
         ]
       },
       "properties": {
@@ -249,7 +260,9 @@
         "not": "Vegan pastane/kafe, queer-dostu mekan",
         "id": "v0011",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.veganwitchvinni.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -257,8 +270,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8559922,
-          39.9002538
+          32.8559929132462,
+          39.9002920951604
         ]
       },
       "properties": {
@@ -271,7 +284,9 @@
         "not": "Geniş vejetaryen/vegan menü, et içeren ürünler de var",
         "id": "v0012",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://eathica.com.tr",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -279,8 +294,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8288339,
-          39.9244954
+          32.8289026021958,
+          39.9245417771551
         ]
       },
       "properties": {
@@ -293,7 +308,9 @@
         "not": "Anadolu mutfağının bitkisel bazlı yorumu",
         "id": "v0013",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://gaboplantbased.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -301,8 +318,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8575851,
-          39.9013485
+          32.8575351834297,
+          39.9013312199815
         ]
       },
       "properties": {
@@ -310,12 +327,14 @@
         "il": "Ankara",
         "ilce": "Çankaya",
         "tur": "vegan",
-        "adres": "Paris Str, Chile Square, Ankara[reference:27]",
+        "adres": "Remzi Oğuz Arık, Paris Cd. 49/AA, 06680 Çankaya/Ankara",
         "telefon": "+90 542 100 83 72",
-        "not": "Vegan pub, bira ve kokteyl mevcut[reference:28]",
+        "not": "Vegan pub, bira ve kokteyl mevcut",
         "id": "v0014",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/terradanpub/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -323,8 +342,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8584867,
-          39.9085827
+          32.858476638794,
+          39.9085840781082
         ]
       },
       "properties": {
@@ -333,11 +352,13 @@
         "ilce": "Çankaya",
         "tur": "vegan",
         "adres": "Remzi Oğuz Arık, Tunus Cd No:49, Çankaya/Ankara",
-        "telefon": null,
+        "telefon": "+90 531 290 26 32",
         "not": "Vegan fast-food (döner, burger, hot dog)",
         "id": "v0015",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/junkveganankara/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -345,8 +366,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1381754,
-          38.4291394
+          27.1380811929703,
+          38.4290258286696
         ]
       },
       "properties": {
@@ -359,7 +380,9 @@
         "not": "Glutensiz odaklı, vegan seçenekler mevcut",
         "id": "v0016",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/mysteryfoodsglutenfree/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -367,8 +390,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.10095,
-          38.4599024
+          27.1008414030075,
+          38.460005360907
         ]
       },
       "properties": {
@@ -378,10 +401,12 @@
         "tur": "vegan",
         "adres": "Bostanlı, Şehitler Blv No:49/C, Karşıyaka/İzmir",
         "telefon": "+90 545 855 54 15",
-        "not": "Tamamen vegan, mantı ve tiramisu öne çıkan[reference:29]",
+        "not": "Tamamen vegan, mantı ve tiramisu öne çıkan",
         "id": "v0017",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/gibivegan/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -389,8 +414,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1443032,
-          38.437512
+          27.1441161632538,
+          38.4375057148798
         ]
       },
       "properties": {
@@ -398,12 +423,14 @@
         "il": "İzmir",
         "ilce": "Konak",
         "tur": "vegan",
-        "adres": "1484 Sk 9/A, Alsancak Konak, İzmir[reference:30]",
+        "adres": "1484 Sk 9/A, Alsancak Konak, İzmir",
         "telefon": "+90 534 033 03 72",
-        "not": "İzmir'in ilk %100 vegan restoranı[reference:31]",
+        "not": "İzmir'in ilk %100 vegan restoranı",
         "id": "v0018",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/Yasamvegancafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -411,8 +438,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1405472,
-          38.4322117
+          27.1406158804894,
+          38.432217458717
         ]
       },
       "properties": {
@@ -425,7 +452,9 @@
         "not": "Zeytinyağlı/meze ağırlıklı, geniş vegan seçenek",
         "id": "v0019",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/boholokal/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -433,8 +462,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1210161,
-          38.4571726
+          27.1209955215454,
+          38.4571342159979
         ]
       },
       "properties": {
@@ -444,10 +473,12 @@
         "tur": "vegan",
         "adres": "No:34D Şehit Üt. Ahmet Konuksever Sk, İzmir",
         "telefon": "+90 232 999 78 48",
-        "not": "Tamamen vegan fırın ve kafe (ekler, muffin, börek)[reference:32]",
+        "not": "Tamamen vegan fırın ve kafe (ekler, muffin, börek)",
         "id": "v0020",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/moonovegan/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -455,8 +486,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1693302,
-          38.462483
+          27.1693986654282,
+          38.4624899536925
         ]
       },
       "properties": {
@@ -469,7 +500,9 @@
         "not": "Kafe, vegan cheesecake ve atölyeler",
         "id": "v0021",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -477,8 +510,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.145648,
-          38.4389169
+          27.1456262469292,
+          38.4389238345152
         ]
       },
       "properties": {
@@ -491,7 +524,9 @@
         "not": "Kafe, glutensiz ve vegan ürünler",
         "id": "v0022",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://inncoffee.com.tr/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -499,8 +534,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0607428,
-          40.1868192
+          29.0606215596199,
+          40.1868896977105
         ]
       },
       "properties": {
@@ -513,7 +548,9 @@
         "not": "Vejetaryen meze ve gözleme ağırlıklı",
         "id": "v0023",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/mezebursa/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -521,8 +558,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0505168,
-          40.1902266
+          29.0506088733673,
+          40.1901353258412
         ]
       },
       "properties": {
@@ -535,7 +572,9 @@
         "not": "Filistin mutfağı, falafel ve humus",
         "id": "v0024",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -543,8 +582,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.846123,
-          40.2247452
+          28.8461494445801,
+          40.2246719701556
         ]
       },
       "properties": {
@@ -557,7 +596,9 @@
         "not": "Vegan seçenekli kafe",
         "id": "v0025",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/at_kafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -565,8 +606,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.7681849,
-          36.8525059
+          30.7733219861984,
+          36.8545184914003
         ]
       },
       "properties": {
@@ -579,7 +620,9 @@
         "not": "Vejetaryen kahvaltı ve bowl, yumurta içerebilir",
         "id": "v0026",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/salt.vegetarian/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -587,8 +630,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.668581,
-          36.8907754
+          30.6685602664948,
+          36.8907591978409
         ]
       },
       "properties": {
@@ -601,7 +644,9 @@
         "not": "Vegan bowl, ramen, tofu tavuk",
         "id": "v0027",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.sisukitchentr.com/en",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -609,8 +654,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.6400981,
-          36.8663801
+          30.6402361392975,
+          36.8662143815354
         ]
       },
       "properties": {
@@ -618,12 +663,14 @@
         "il": "Antalya",
         "ilce": "Konyaaltı",
         "tur": "vegan",
-        "adres": "Altınkum, 470 Sk 9 E, Antalya[reference:33]",
+        "adres": "Altınkum, 470 Sk 9 E, Antalya",
         "telefon": "+90 242 228 07 00",
-        "not": "Vegan lahmacun, mantı, shawarma[reference:34]",
+        "not": "Vegan lahmacun, mantı, shawarma",
         "id": "v0028",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/gaiyasveganhouse/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -631,8 +678,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.651088,
-          36.8753167
+          30.6510615348816,
+          36.8750376921639
         ]
       },
       "properties": {
@@ -645,7 +692,9 @@
         "not": "Falafel bowl, sağlıklı kahvaltı, yumurtalı seçenekler de var",
         "id": "v0029",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/venuscafekitchen/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -653,8 +702,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.7069878,
-          36.8849035
+          30.7069104909897,
+          36.8848725939279
         ]
       },
       "properties": {
@@ -664,10 +713,12 @@
         "tur": "vegan",
         "adres": "Barbaros, Civelek Sk. No:12, Muratpaşa/Antalya",
         "telefon": "+90 533 403 36 76",
-        "not": "Vegan ve glutensiz burger, buddha bowl[reference:35]",
+        "not": "Vegan ve glutensiz burger, buddha bowl",
         "id": "v0030",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://levelkaleici.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -675,8 +726,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.3836604,
-          37.0482747
+          27.3835301399231,
+          37.0480016375821
         ]
       },
       "properties": {
@@ -689,7 +740,9 @@
         "not": "Detoks/sağlıklı beslenme mekanı, vegan seçenekler",
         "id": "v0031",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.lilayabodrum.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -697,7 +750,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.4095912,
+          27.4070109,
           37.0374055
         ]
       },
@@ -719,7 +772,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.5127449,
+          30.5101646,
           39.7831354
         ]
       },
@@ -733,7 +786,8 @@
         "not": "Bölgenin en kapsamlı vegan mekanı (yorumlara göre)",
         "id": "v0033",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://veganeskisehir.com/"
       }
     },
     {
@@ -763,7 +817,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.5087868,
+          30.5062065,
           39.7782716
         ]
       },
@@ -777,7 +831,8 @@
         "not": "Sürdürülebilir/plastiksiz mutfak, vegan sandviç ve bowl",
         "id": "v0035",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/onioneskisehir/"
       }
     },
     {
@@ -785,8 +840,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.3307402,
-          36.99296
+          35.3303468227387,
+          36.9922102216702
         ]
       },
       "properties": {
@@ -799,7 +854,9 @@
         "not": "Ev yemekleri lokantası, çok sayıda vejetaryen seçenek",
         "id": "v0036",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -807,8 +864,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.3293943,
-          37.0008007
+          35.3294777870178,
+          37.0005991107345
         ]
       },
       "properties": {
@@ -821,7 +878,9 @@
         "not": "Yoga temalı sağlıklı kafe, bowl ve atıştırmalıklar",
         "id": "v0037",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/padme_cafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -829,7 +888,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.3264274,
+          35.3238471,
           37.0027542
         ]
       },
@@ -843,7 +902,8 @@
         "not": "Vegan sushi seçeneği sunan kokteyl restoranı",
         "id": "v0038",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://theluxrestaurant.com.tr/"
       }
     },
     {
@@ -851,8 +911,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.2740122,
-          36.9995202
+          35.2740472555161,
+          36.9994423730732
         ]
       },
       "properties": {
@@ -865,7 +925,9 @@
         "not": "Bulgur bazlı çiğköfte zinciri, et içermez",
         "id": "v0039",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.komagene.com.tr/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -873,8 +935,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.5210971,
-          38.0100846
+          32.5212693214417,
+          38.0102556113549
         ]
       },
       "properties": {
@@ -887,7 +949,9 @@
         "not": "İtalyan pizzacı, vejetaryen/vegan seçenekler mevcut",
         "id": "v0040",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.pizzapellini.com/tr",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -895,8 +959,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.4852249,
-          38.7155288
+          35.4854911565781,
+          38.715870362732
         ]
       },
       "properties": {
@@ -909,7 +973,9 @@
         "not": "Vegan burger, falafel bowl, vegan salata seçenekleri",
         "id": "v0041",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/thehunger/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -917,8 +983,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          35.5443585,
-          38.687645
+          35.5442261695862,
+          38.6876369291494
         ]
       },
       "properties": {
@@ -931,7 +997,9 @@
         "not": "Sağlıklı bowl ve salata konsepti",
         "id": "v0042",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -939,8 +1007,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.5917329,
-          36.7843022
+          34.5916119,
+          36.7843245
         ]
       },
       "properties": {
@@ -953,7 +1021,8 @@
         "not": "Mersin'in tek tam vegan kafesi (yorumlara göre), kedi dostu mekan",
         "id": "v0043",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/karakedikafe/"
       }
     },
     {
@@ -961,8 +1030,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          39.7268414,
-          41.0047442
+          39.7268065810204,
+          41.004605394068
         ]
       },
       "properties": {
@@ -971,11 +1040,13 @@
         "ilce": "Ortahisar",
         "tur": "vegan dostu",
         "adres": "Cumhuriyet, Şehit Onur Fikret Dülger Cad No:14, Ortahisar/Trabzon",
-        "telefon": null,
+        "telefon": "+90 462 323 10 11",
         "not": "Geniş vejetaryen seçenekli lokanta",
         "id": "v0044",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -983,8 +1054,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1455444,
-          38.4387292
+          27.1455028653145,
+          38.438717946282
         ]
       },
       "properties": {
@@ -997,7 +1068,9 @@
         "not": "LGBTİ+ dostu tam vegan kafe, falafel ve vegmacun öne çıkıyor",
         "id": "v0045",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/tykevegankafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1005,7 +1078,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          40.1648276,
+          40.1622473,
           37.9575899
         ]
       },
@@ -1027,74 +1100,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.4029151,
-          40.1486509
-        ]
-      },
-      "properties": {
-        "ad": "Layla",
-        "il": "Çanakkale",
-        "ilce": "Çanakkale Merkez",
-        "tur": "vegan",
-        "adres": "Kemalpaşa, Dibek Sk. 23 C, Çanakkale Merkez/Çanakkale",
-        "telefon": "+90 530 343 19 87",
-        "not": "Tam vegan restoran, kendi kombucha ve su kefirini üretiyor",
-        "id": "v0047",
-        "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          40.7452495,
-          37.3146944
-        ]
-      },
-      "properties": {
-        "ad": "JB Vegan",
-        "il": "Mardin",
-        "ilce": "Artuklu",
-        "tur": "vegan",
-        "adres": "Şehidiye, Cumhuriyet Cad. No:23, Artuklu/Mardin",
-        "telefon": "+90 530 033 21 90",
-        "not": "Mardin mutfağının vegan yorumu (lahmacun, mantı), muhteşem manzaralı",
-        "id": "v0048",
-        "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3581535,
-          37.0738761
-        ]
-      },
-      "properties": {
-        "ad": "Gaia Store & Cafe",
-        "il": "Gaziantep",
-        "ilce": "Şehitkamil",
-        "tur": "vegan",
-        "adres": "Değirmiçem Mah. 16025 Nolu Sk. Büşra Apt. No:4/A, Şehitkamil/Gaziantep",
-        "telefon": "+90 530 526 30 36",
-        "not": "Gaziantep'in ilk vegan marketi ve kafesi",
-        "id": "v0049",
-        "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.319717,
-          37.0007581
+          35.3215599060059,
+          37.0017386943327
         ]
       },
       "properties": {
@@ -1107,7 +1114,9 @@
         "not": "Adana'nın tam vegan kafelerinden, bowl ve tatlı çeşitleri var",
         "id": "v0050",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1115,8 +1124,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9825879,
-          40.2202077
+          28.982115983963,
+          40.2203548279611
         ]
       },
       "properties": {
@@ -1129,7 +1138,9 @@
         "not": "Bursa'nın tam vegan mekanlarından, köfte ve falafel dürüm",
         "id": "v0051",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/vegankantin/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1137,8 +1148,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.984735,
-          40.2022798
+          28.9844977855682,
+          40.2019363007259
         ]
       },
       "properties": {
@@ -1146,12 +1157,14 @@
         "il": "Bursa",
         "ilce": "Nilüfer",
         "tur": "vegan",
-        "adres": "Çamlıca Mah. Eğitimciler Cd., Nilüfer/Bursa",
+        "adres": "Çamlıca Mh Ahmet Taner Kışlalı Cd Yerliyurt Apt no: 97 2A Nilüfer Bursa, Bursa, Turkey",
         "telefon": null,
         "not": "Tam vegan kafe, kurabiye ve vegan peynirli ürünler",
         "id": "v0052",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/goodcallcafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1159,8 +1172,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0545124,
-          37.7482432
+          29.0546214580536,
+          37.7482202272651
         ]
       },
       "properties": {
@@ -1173,7 +1186,9 @@
         "not": "Vegan, glutensiz ve şekersiz ürünler satan kafe/market",
         "id": "v0053",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://thenofoods.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1181,8 +1196,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.3602224,
-          40.7650391
+          30.3602215647697,
+          40.7650206405696
         ]
       },
       "properties": {
@@ -1195,7 +1210,9 @@
         "not": "Tam vegan falafel ve nohut bazlı yemekler sunan mekan",
         "id": "v0054",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/nohutfalafel/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1203,7 +1220,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.6412665,
+          29.6386916,
           36.2003119
         ]
       },
@@ -1217,7 +1234,8 @@
         "not": "Türk mutfağının vegan yorumları (İskender, döner), samimi ev ortamı",
         "id": "v0055",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/refreshvegankitchen/"
       }
     },
     {
@@ -1225,8 +1243,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.660088,
-          36.199969
+          29.6550446748734,
+          36.199345521153
         ]
       },
       "properties": {
@@ -1239,7 +1257,9 @@
         "not": "Glutensiz, vegan, şekersiz ev yapımı yemekler; kendi tofusunu üretiyor",
         "id": "v0056",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://lifeboxtr.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1247,7 +1267,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.641097,
+          29.6385221,
           36.201066
         ]
       },
@@ -1261,7 +1281,8 @@
         "not": "Falafel, humus ve taze salata odaklı, tamamı bitkisel bazlı",
         "id": "v0057",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/kas_gurme_falafel/"
       }
     },
     {
@@ -1269,8 +1290,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          31.9979036,
-          36.5395913
+          31.9978094100952,
+          36.5394672837608
         ]
       },
       "properties": {
@@ -1279,11 +1300,13 @@
         "ilce": "Alanya",
         "tur": "vegan",
         "adres": "Çarşı, İskele Cd. 58A, Alanya/Antalya",
-        "telefon": null,
+        "telefon": "+90 553 811 86 74",
         "not": "Tam vegan restoran, vegan burger ve borscht öne çıkıyor, kedi dostu",
         "id": "v0058",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/tyche_vegan_re/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1291,8 +1314,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.1146917,
-          36.6206295
+          29.1146332025528,
+          36.6205803004789
         ]
       },
       "properties": {
@@ -1305,7 +1328,9 @@
         "not": "Tam vegan gastropub, lahmacun/menemen gibi Türk mutfağının vegan yorumu",
         "id": "v0059",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1313,8 +1338,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.1143964,
-          36.6615897
+          29.1143703460693,
+          36.6616072437299
         ]
       },
       "properties": {
@@ -1327,7 +1352,9 @@
         "not": "Vegan burger seçenekli bistro, sebze/baklagil bazlı köfte",
         "id": "v0060",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1335,8 +1362,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.8238105,
-          38.641613
+          34.8227939,
+          38.6415794
         ]
       },
       "properties": {
@@ -1349,7 +1376,9 @@
         "not": "Kebap restoranı, soya bazlı vegan kebap seçenekleri mevcut",
         "id": "v0061",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1357,8 +1386,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.8447435,
-          37.8409334
+          27.8447681665421,
+          37.8408177140349
         ]
       },
       "properties": {
@@ -1371,7 +1400,9 @@
         "not": "Belediye tarafından işletilen Türkiye'nin ilk glutensiz+vegan kafelerinden",
         "id": "v0062",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1379,7 +1410,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.8352142,
+          36.8326339,
           37.5901354
         ]
       },
@@ -1401,8 +1432,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          41.2714961,
-          39.9046459
+          41.276718378067,
+          39.9042633189134
         ]
       },
       "properties": {
@@ -1415,7 +1446,9 @@
         "not": "Erzurum'da düzenli vejetaryen/vegan seçenek sunan nadir mekanlardan",
         "id": "v0064",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1423,8 +1456,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          42.167796,
-          38.4801401
+          42.1675336360932,
+          38.4801925620799
         ]
       },
       "properties": {
@@ -1437,7 +1470,9 @@
         "not": "Kadın kooperatifi işletmesi, yöresel vejetaryen yemekler sunuyor",
         "id": "v0065",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/bitlissofrasi/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1445,8 +1480,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          43.094984,
-          40.606593
+          43.0960822105408,
+          40.6055468949208
         ]
       },
       "properties": {
@@ -1459,7 +1494,9 @@
         "not": "Vegan çiğköfte ve falafel seçenekleri sunan mekan",
         "id": "v0066",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://cigkoftem.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1467,8 +1504,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.3726299,
-          37.0609234
+          37.3726424574852,
+          37.0608729013927
         ]
       },
       "properties": {
@@ -1481,7 +1518,9 @@
         "not": "Yerel, sürdürülebilir dayanışma mutfağı; vegan/vejetaryen odaklı günlük değişen menü",
         "id": "v0067",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://mutfakna.org/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1489,8 +1528,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.8088452,
-          39.8231766
+          34.8089361190796,
+          39.8231883373159
         ]
       },
       "properties": {
@@ -1503,7 +1542,9 @@
         "not": "Belediye işletmesi, glutensiz ve vegan ürünler sunuyor",
         "id": "v0068",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1525,7 +1566,8 @@
         "not": "Vegan sandviç, wrap, makarna ve ev yapımı limonata sunan çatı kat kafe",
         "id": "v0069",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/p/Keyif-Sanat-Kahvesi-100046372667602/"
       }
     },
     {
@@ -1547,7 +1589,9 @@
         "not": "Google Places tarafından vegan/vejetaryen restoran olarak etiketlenmiş",
         "id": "v0070",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1569,7 +1613,9 @@
         "not": "Ev yapımı ürünler ve bazı vegan seçenekler sunan butik kafe",
         "id": "v0071",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/markscoffeeandcrafts/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1577,8 +1623,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          36.3042191,
-          41.325751
+          36.3040745258331,
+          41.3257471661537
         ]
       },
       "properties": {
@@ -1591,7 +1637,9 @@
         "not": "Glutensiz ve şekersiz vegan ürünler üreten butik mutfak",
         "id": "v0072",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/glutensizveganmutfak/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1621,8 +1669,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.8963088,
-          39.6184303
+          27.8963577747345,
+          39.6183629770271
         ]
       },
       "properties": {
@@ -1635,7 +1683,9 @@
         "not": "Glutensiz pastane, vegan pasta seçenekleri de sunuyor",
         "id": "v0074",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1643,8 +1693,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0300121,
-          40.987945
+          29.030012190342,
+          40.9879567035062
         ]
       },
       "properties": {
@@ -1658,7 +1708,8 @@
         "id": "v0075",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://veganarsist.com/"
+        "web": "https://veganarsist.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1666,8 +1717,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9464949,
-          41.0337432
+          28.9463165402412,
+          41.0337142981493
         ]
       },
       "properties": {
@@ -1681,7 +1732,8 @@
         "id": "v0076",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://veganarsistbalat.com/"
+        "web": "https://veganarsistbalat.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1689,8 +1741,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.042227,
-          41.027408
+          29.042261838913,
+          41.0274176335817
         ]
       },
       "properties": {
@@ -1702,9 +1754,10 @@
         "telefon": "+90 216 576 76 71",
         "not": "Vegan fine-dining, tadım menüsü ve şarap eşleştirmesi, koru içinde konumlu",
         "id": "v0077",
-        "kaynak": "Google Places",
+        "kaynak": "Google Places, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://www.telezzuz.com/en/"
+        "web": "https://www.telezzuz.com/en/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1712,8 +1765,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0029576,
-          41.0438184
+          29.00300770998,
+          41.0438439466906
         ]
       },
       "properties": {
@@ -1727,7 +1780,8 @@
         "id": "v0078",
         "kaynak": "Google Places",
         "eklenme": "2026-07-24",
-        "web": "https://www.veganfoodcartel.com/"
+        "web": "https://www.veganfoodcartel.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1735,8 +1789,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.8292796,
-          40.9920079
+          28.8341116905212,
+          40.9903295607747
         ]
       },
       "properties": {
@@ -1749,7 +1803,9 @@
         "not": "Glutensiz, şekersiz ve vegan pastane/fırın; lahmacun ve pizza gibi vegan atıştırmalıklar da sunuyor",
         "id": "v0079",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.tatlifirin.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1757,8 +1813,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.6937611,
-          41.2442711
+          32.6935583353043,
+          41.2442217672322
         ]
       },
       "properties": {
@@ -1771,7 +1827,9 @@
         "not": "Yöresel ev yemekleri lokantası, vegan/vejetaryen seçenekler de sunuyor",
         "id": "v0080",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1779,8 +1837,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9988395,
-          41.0672299
+          28.9988341927528,
+          41.0670632195947
         ]
       },
       "properties": {
@@ -1793,7 +1851,9 @@
         "not": "ISKCON tarafından işletilen vejetaryen/vegan Hint mutfağı",
         "id": "v0081",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://govindaistanbul.net/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1801,8 +1861,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.984936,
-          41.0621506
+          28.9849591255188,
+          41.062183402895
         ]
       },
       "properties": {
@@ -1812,10 +1872,13 @@
         "tur": "vegan",
         "adres": "Merkez, İskenderoğlu Sk. No:30B, Şişli/İstanbul",
         "telefon": "+90 850 241 96 90",
-        "not": "Vegan ürünler satan market (tofu, bitkisel süt, kozmetik vb.)",
+        "not": "Vegan ürünler satan market (tofu, bitkisel süt, kozmetik vb.); web sitesi (veganistasyon.com) üzerinden Türkiye'nin her yerine soğuk zincir kargo ile gönderim yapıyor.",
         "id": "v0082",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://veganistasyon.com/",
+        "duzenlenme": "2026-09-01",
+        "kanal": "hem fiziksel hem online"
       }
     },
     {
@@ -1823,8 +1886,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0264016,
-          40.9905339
+          29.0264475345612,
+          40.9905684614678
         ]
       },
       "properties": {
@@ -1837,7 +1900,9 @@
         "not": "Mısır mutfağının bitkisel bazlı ve glutensiz yorumu",
         "id": "v0083",
         "kaynak": "Google Places, HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/kem.kum.egyptian.eatery/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1845,7 +1910,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0276197,
+          29.0250448,
           40.9884285
         ]
       },
@@ -1859,7 +1924,8 @@
         "not": "Falafel ve çok sayıda yan yemek seçenekli uygun fiyatlı vejetaryen lokanta",
         "id": "v0084",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/rulolezzetler/"
       }
     },
     {
@@ -1867,8 +1933,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.02695,
-          40.989038
+          29.0269008278847,
+          40.988956877305
         ]
       },
       "properties": {
@@ -1881,7 +1947,9 @@
         "not": "Falafel ve humus çeşitleri sunan vegan/vejetaryen mekan",
         "id": "v0085",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/nohut.falafel.humus/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1889,8 +1957,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0274014,
-          40.9944804
+          29.0274801850319,
+          40.9944818555183
         ]
       },
       "properties": {
@@ -1903,7 +1971,9 @@
         "not": "Veganlaştırılmış Türk sokak lezzetleri (köfte, ayran)",
         "id": "v0086",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/vegaveganbufe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1934,8 +2004,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9813012,
-          41.0329636
+          28.9813461899757,
+          41.0329454575031
         ]
       },
       "properties": {
@@ -1948,7 +2018,9 @@
         "not": "Ev yapımı Türk mutfağı, geniş vejetaryen/vegan seçenekli",
         "id": "v0088",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://no19.ist/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1956,8 +2028,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.977047,
-          41.036402
+          28.9770224690437,
+          41.0363950538497
         ]
       },
       "properties": {
@@ -1970,7 +2042,9 @@
         "not": "Nepal/Hint mutfağı, geniş vejetaryen ve vegan seçenekler",
         "id": "v0089",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.thehimalayanrestaurants.com.tr/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -1978,8 +2052,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8585655,
-          39.8953791
+          32.7196481823921,
+          39.8695865641994
         ]
       },
       "properties": {
@@ -1992,7 +2066,9 @@
         "not": "Falafel ve köfte çeşitleriyle tam vegan/vejetaryen mekan",
         "id": "v0090",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/vegvej_restorant/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2000,8 +2076,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1462596,
-          38.4379532
+          27.1462699770927,
+          38.4378922865497
         ]
       },
       "properties": {
@@ -2014,7 +2090,9 @@
         "not": "Kitap temalı vegan kafe, ev yapımı lazanya ve tatlılar",
         "id": "v0091",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2022,8 +2100,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.859209,
-          36.855106
+          30.8577954769135,
+          36.8579566250382
         ]
       },
       "properties": {
@@ -2036,7 +2114,9 @@
         "not": "Otel içinde vegan fine-dining, seitan steak ve tofu poke bowl",
         "id": "v0092",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/chi__for__life/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2044,8 +2124,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.2203133,
-          41.7335821
+          27.2202479839325,
+          41.7336207525172
         ]
       },
       "properties": {
@@ -2058,7 +2138,9 @@
         "not": "Zengin menülü lokanta; vegan, glutensiz ve sütsüz seçenekler mevcut",
         "id": "v0093",
         "kaynak": "Google Places",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2088,8 +2170,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0555703,
-          40.9898956
+          29.055597782135,
+          40.9899570359328
         ]
       },
       "properties": {
@@ -2102,7 +2184,9 @@
         "not": "Tamamen vegan Fransız pastanesi",
         "id": "v0095",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://ethiqueplantbased.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2110,8 +2194,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0280152,
-          40.993641
+          29.0280058979988,
+          40.9936518223878
         ]
       },
       "properties": {
@@ -2120,11 +2204,13 @@
         "ilce": "Kadıköy",
         "tur": "vegan",
         "adres": "Rasimpaşa, Beydağı Sk. No:54/A, Kadıköy/İstanbul",
-        "telefon": null,
+        "telefon": "+90 537 614 96 98",
         "not": "Kitapçı-kafe, tam vegan Türk kahvaltısı ve yemekleri",
         "id": "v0096",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/ayrisimkitabevikafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2132,8 +2218,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.857256,
-          39.915269
+          32.8571999073029,
+          39.9152004839746
         ]
       },
       "properties": {
@@ -2146,7 +2232,9 @@
         "not": "Türkiye'nin en eski vegan pub'larından",
         "id": "v0097",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/tunelveganpub/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2154,8 +2242,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8588082,
-          39.9099065
+          32.858844101429,
+          39.9098123584759
         ]
       },
       "properties": {
@@ -2168,7 +2256,9 @@
         "not": "Kore mutfağı, vegan tteokbokki/kimbap/kimchi seçenekleri",
         "id": "v0098",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/koreleetr/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2176,8 +2266,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.213683,
-          38.460857
+          27.2137570381165,
+          38.4608097650659
         ]
       },
       "properties": {
@@ -2190,7 +2280,9 @@
         "not": "Tam vegan menü, gelir sokak hayvanları bakımına aktarılıyor",
         "id": "v0099",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/elicoffeehousee/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2198,8 +2290,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.7107224,
-          36.883395
+          30.710743367672,
+          36.8833837089254
         ]
       },
       "properties": {
@@ -2209,10 +2301,12 @@
         "tur": "vegan dostu",
         "adres": "Haşimişcan, Arık Cd. No:20, Muratpaşa/Antalya",
         "telefon": "+90 530 254 16 80",
-        "not": "Eski bir Türk evinde geleneksel mutfak; ayrı ve kapsamlı vegan menüsü[reference:36]",
+        "not": "Eski bir Türk evinde geleneksel mutfak; ayrı ve kapsamlı vegan menüsü",
         "id": "v0100",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.fatmasultanrestaurant.com/en",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2220,30 +2314,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.4148216,
-          37.0357757
-        ]
-      },
-      "properties": {
-        "ad": "blek • coffee and plant based food",
-        "il": "Muğla",
-        "ilce": "Bodrum",
-        "tur": "vegan",
-        "adres": "Eskiçeşme, Cafer Paşa Cd. No: 32 A 6, Bodrum/Muğla",
-        "telefon": "+90 850 466 61 34",
-        "not": "Bodrum'un tek tam vegan kafesi ve marketi",
-        "id": "v0101",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.9796069,
-          41.0293952
+          28.9796590805054,
+          41.0293783240951
         ]
       },
       "properties": {
@@ -2252,11 +2324,13 @@
         "ilce": "Beyoğlu",
         "tur": "vegan",
         "adres": "Firuzağa, Boğazkesen Cd. 74/A, Beyoğlu/İstanbul",
-        "telefon": null,
+        "telefon": "+90 539 611 21 18",
         "not": "Aile işletmesi tam vegan restoran; bezelye/mercimek proteinli döner",
         "id": "v0102",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://wegainn.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2264,7 +2338,7 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.5101266,
+          30.5075463,
           39.7635063
         ]
       },
@@ -2286,8 +2360,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.6380053,
-          36.1992522
+          29.6381172537804,
+          36.1992502851051
         ]
       },
       "properties": {
@@ -2295,12 +2369,14 @@
         "il": "Antalya",
         "ilce": "Kaş",
         "tur": "vegan dostu",
-        "adres": "Andifli, Hastane Caddesi No:22, Kaş/Antalya",
+        "adres": "Andifli, Hastane Caddesi No: 22, Kaş/Antalya",
         "telefon": "+90 532 178 53 98",
         "not": "Bao/burger konsepti, geniş vegan ve vejetaryen seçenekler",
         "id": "v0104",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/bunbunkas/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2308,8 +2384,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.7321065,
-          36.8771886
+          30.7328367233276,
+          36.877303436265
         ]
       },
       "properties": {
@@ -2322,7 +2398,9 @@
         "not": "Vegan wrap, falafel, burger, pasta gibi seçenekler",
         "id": "v0105",
         "kaynak": "Seyhan",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/alakacaferestoran/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2330,8 +2408,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0237,
-          40.9849
+          29.0291967988014,
+          40.9840166000191
         ]
       },
       "properties": {
@@ -2344,7 +2422,9 @@
         "not": "Tamamen vegan bir fırın ve pastane",
         "id": "v0106",
         "kaynak": "HappyCow, Yandex",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/sistersandharvest/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2352,8 +2432,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9905,
-          41.059
+          28.9945667982101,
+          41.0487554658365
         ]
       },
       "properties": {
@@ -2366,7 +2446,9 @@
         "not": "Doğal, taze ve temiz yemek anlayışıyla vegan ve glütensiz seçenekler",
         "id": "v0107",
         "kaynak": "healinfoods.com",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://healinfoods.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2374,8 +2456,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9776,
-          41.0286
+          28.9771646261215,
+          41.0281319063392
         ]
       },
       "properties": {
@@ -2387,9 +2469,10 @@
         "telefon": "Bilgi bulunamadı",
         "not": "Türk klasiklerinin vegan versiyonlarını sunan mekan (farklı adres kaydı)",
         "id": "v0108",
-        "kaynak": "PlumeMag, Placera",
+        "kaynak": "PlumeMag, Placera, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/community_kitchen/"
+        "web": "https://www.instagram.com/community_kitchen/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2397,8 +2480,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9826,
-          41.0365
+          28.9826068282127,
+          41.0365751157916
         ]
       },
       "properties": {
@@ -2410,9 +2493,10 @@
         "telefon": "+90 212 243 82 34",
         "not": "Şehrin köklü vejetaryen restoranlarından biri",
         "id": "v0109",
-        "kaynak": "Yelp, Filgezi",
+        "kaynak": "Yelp, Filgezi, HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/zencefilbeyoglu/"
+        "web": "https://www.instagram.com/zencefilbeyoglu/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2420,8 +2504,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0218,
-          40.9911
+          29.028931260109,
+          40.9970427455323
         ]
       },
       "properties": {
@@ -2433,8 +2517,10 @@
         "telefon": "+90 535 608 32 80",
         "not": "%100 vegan kafe ve restoran",
         "id": "v0110",
-        "kaynak": "Venues, Yelp",
-        "eklenme": "2026-07-24"
+        "kaynak": "Venues, Yelp, HappyCow",
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/mahatmaacafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2442,8 +2528,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8547,
-          39.9208
+          32.8575459122658,
+          39.9173050089439
         ]
       },
       "properties": {
@@ -2456,7 +2542,9 @@
         "not": "Tamamen vejetaryen/vegan; falafel, humus, vegan lahmacun, ıslak burger",
         "id": "v0111",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://drfalafel.com.tr/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2464,21 +2552,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.2222,
-          38.4375
+          27.2501760721207,
+          38.4622337274562
         ]
       },
       "properties": {
         "ad": "Emektar Kebap",
         "il": "İzmir",
         "ilce": "Bornova",
-        "tur": "vegan-dostu",
+        "tur": "vegan dostu",
         "adres": "129/7 Sokak No:16 Evka3 Bornova/İzmir",
         "telefon": "+90 232 375 76 76",
         "not": "Michelin Rehberi'nde yer alan, vegan/vejetaryen dostu seçenekler",
         "id": "v0112",
-        "kaynak": "Michelin Guide",
-        "eklenme": "2026-07-24"
+        "kaynak": "Michelin Guide, HappyCow",
+        "eklenme": "2026-07-24",
+        "web": "https://www.emektarkebap.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2486,21 +2576,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.8387,
-          38.6435
+          34.8245096,
+          38.641284
         ]
       },
       "properties": {
         "ad": "Uzundere Kapadokya Mutfağı",
         "il": "Nevşehir",
         "ilce": "Göreme",
-        "tur": "vegan-dostu",
+        "tur": "vegan dostu",
         "adres": "Aydınlı - Orta Mah. Uzundere-1 Sok. No:1, 50180 Göreme/Nevşehir",
         "telefon": "+90 535 770 65 00",
         "not": "Michelin Rehberi'nde yer alan, vegan seçenekleri bulunan bir restoran",
         "id": "v0113",
-        "kaynak": "Michelin Guide",
-        "eklenme": "2026-07-24"
+        "kaynak": "Michelin Guide, HappyCow",
+        "eklenme": "2026-07-24",
+        "web": "https://sahsaraycavesuites.com/restorant/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2508,22 +2600,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.024,
-          41.0329
+          28.984090089798,
+          41.0326419653026
         ]
       },
       "properties": {
         "ad": "Vegan Dükkan (Market)",
         "il": "İstanbul",
         "ilce": "Beyoğlu",
-        "tur": "vegan-market",
+        "tur": "vegan market",
         "adres": "Sıraselviler Cad. Cihangir Mah. Soğancı Sok. No:8/A, Beyoğlu/İstanbul",
         "telefon": "+90 212 243 23 83",
         "not": "Türkiye'nin ilk vegan ürün marketi",
         "id": "v0114",
         "kaynak": "HappyCow, vegandukkan.com",
         "eklenme": "2026-07-24",
-        "web": "https://vegandukkanlokanta.com/"
+        "web": "https://vegandukkanlokanta.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2531,256 +2624,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0282,
-          41.0248
-        ]
-      },
-      "properties": {
-        "ad": "Telezzüz (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Üsküdar",
-        "tur": "vegan",
-        "adres": "Kuşbakışı Caddesi No:16, Kuzguncuk, Üsküdar/İstanbul",
-        "telefon": "+90 216 576 76 71",
-        "not": "Michelin Rehberi'nde yer alan, sürdürülebilir vegan fine-dining",
-        "id": "v0115",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24",
-        "web": "https://www.telezzuz.com/en/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0316,
-          41.0781
-        ]
-      },
-      "properties": {
-        "ad": "Bi Nevi Deli (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Beşiktaş",
-        "tur": "vegan",
-        "adres": "Etiler, Dilhayat Sk. No:10/1, 34337 Beşiktaş/İstanbul",
-        "telefon": "+90 212 358 60 32",
-        "not": "2014'ten beri hizmet veren yaratıcı bitki bazlı yemekler",
-        "id": "v0116",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24",
-        "web": "https://binevideli.com/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.9817808,
-          41.0310127
-        ]
-      },
-      "properties": {
-        "ad": "Vegan Istanbul (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Beyoğlu",
-        "tur": "vegan",
-        "adres": "Firuzağa, Türkgücü Cd. No:51A, Beyoğlu/İstanbul",
-        "telefon": "+90 212 249 00 08",
-        "not": "Tamamen vegan kafe, restoran ve market",
-        "id": "v0117",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24",
-        "web": "https://veganistanbul34.com/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.856,
-          39.9115
-        ]
-      },
-      "properties": {
-        "ad": "Junk Vegan (HappyCow)",
-        "il": "Ankara",
-        "ilce": "Çankaya",
-        "tur": "vegan",
-        "adres": "Remzi Oğuz Arık, Tunus Cd No:49, 06680 Çankaya/Ankara",
-        "telefon": "+90 531 290 26 32",
-        "not": "Vegan burger, iskender, mantı gibi klasiklerin vegan versiyonları",
-        "id": "v0118",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.8547,
-          39.9208
-        ]
-      },
-      "properties": {
-        "ad": "Dr Falafel (HappyCow)",
-        "il": "Ankara",
-        "ilce": "Çankaya",
-        "tur": "vegan",
-        "adres": "Selanik 2, Caddesi 66/B, Çankaya/Ankara",
-        "telefon": "+90 312 419 17 57",
-        "not": "Tamamen vejetaryen/vegan; falafel, humus, vegan lahmacun",
-        "id": "v0119",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.9776,
-          41.0286
-        ]
-      },
-      "properties": {
-        "ad": "Community Kitchen (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Beyoğlu",
-        "tur": "vegan",
-        "adres": "Şahkulu, Kumbaracı Ykş. 35A, Beyoğlu/İstanbul",
-        "telefon": "Bilgi bulunamadı",
-        "not": "Türk klasiklerinin vegan versiyonları",
-        "id": "v0120",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/community_kitchen/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.9826,
-          41.0365
-        ]
-      },
-      "properties": {
-        "ad": "Zencefil (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Beyoğlu",
-        "tur": "vejetaryen",
-        "adres": "Şehit Muhtar Mah., Kurabiye Sok. No:8/A, Beyoğlu/İstanbul",
-        "telefon": "+90 212 243 82 34",
-        "not": "Şehrin köklü vejetaryen restoranlarından biri",
-        "id": "v0121",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/zencefilbeyoglu/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0218,
-          40.9911
-        ]
-      },
-      "properties": {
-        "ad": "Mahatma Cafe (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Kadıköy",
-        "tur": "vegan",
-        "adres": "Rasimpaşa Mah. Macit Erbulak Sk. No:50/A, Kadıköy/İstanbul",
-        "telefon": "+90 535 608 32 80",
-        "not": "%100 vegan kafe ve restoran",
-        "id": "v0122",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.2222,
-          38.4375
-        ]
-      },
-      "properties": {
-        "ad": "Emektar Kebap (HappyCow)",
-        "il": "İzmir",
-        "ilce": "Bornova",
-        "tur": "vegan-dostu",
-        "adres": "129/7 Sokak No:16 Evka3 Bornova/İzmir",
-        "telefon": "+90 232 375 76 76",
-        "not": "Michelin Rehberi'nde yer alan vegan/vejetaryen dostu kebapçı",
-        "id": "v0123",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          34.8387,
-          38.6435
-        ]
-      },
-      "properties": {
-        "ad": "Uzundere Kapadokya Mutfağı (HappyCow)",
-        "il": "Nevşehir",
-        "ilce": "Göreme",
-        "tur": "vegan-dostu",
-        "adres": "Aydınlı - Orta Mah. Uzundere-1 Sok. No:1, 50180 Göreme/Nevşehir",
-        "telefon": "+90 535 770 65 00",
-        "not": "Michelin Rehberi'nde yer alan vegan seçenekli restoran",
-        "id": "v0124",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.024,
-          41.0329
-        ]
-      },
-      "properties": {
-        "ad": "Vegan Dükkan Market (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Beyoğlu",
-        "tur": "vegan-market",
-        "adres": "Sıraselviler Cad. Cihangir Mah. Soğancı Sok. No:8/A, Beyoğlu/İstanbul",
-        "telefon": "+90 212 243 23 83",
-        "not": "Türkiye'nin ilk vegan ürün marketi",
-        "id": "v0125",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24",
-        "web": "https://vegandukkanlokanta.com/"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0282,
-          41.0248
+          28.9509943127632,
+          41.0297425326212
         ]
       },
       "properties": {
@@ -2789,11 +2634,13 @@
         "ilce": "Fatih",
         "tur": "vegan dostu",
         "adres": "Yavuz Sultan Selim, Camcı Çeşmesi Ykş. No:68, İstanbul",
-        "telefon": null,
+        "telefon": "+90 542 438 19 66",
         "not": "Vegan bölümü: falafel salata, avokado salata, falafel burger",
         "id": "v0126",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/balladrestaurant/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2801,8 +2648,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0282,
-          41.0248
+          28.9607441425324,
+          41.0130617392312
         ]
       },
       "properties": {
@@ -2810,12 +2657,14 @@
         "il": "İstanbul",
         "ilce": "Fatih",
         "tur": "vegan dostu",
-        "adres": "No:11 16 Mart Şehitleri Caddesi, İstanbul[reference:37]",
-        "telefon": null,
-        "not": "6 farklı vegan ana yemek (patates/ıspanaklı gözleme, sebze wrap, vegan köfte)[reference:38]",
+        "adres": "No:11 16 Mart Şehitleri Caddesi, İstanbul",
+        "telefon": "+90 543 461 40 45",
+        "not": "6 farklı vegan ana yemek (patates/ıspanaklı gözleme, sebze wrap, vegan köfte)",
         "id": "v0127",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.valenscafe.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2823,8 +2672,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.856,
-          39.9115
+          32.8605768084526,
+          39.9106990932598
         ]
       },
       "properties": {
@@ -2837,7 +2686,9 @@
         "not": "Vegan Türk mutfağı: pide, lahmacun, pizza",
         "id": "v0128",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2845,8 +2696,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9817808,
-          41.0310127
+          28.9777600765228,
+          41.0246292652031
         ]
       },
       "properties": {
@@ -2855,11 +2706,13 @@
         "ilce": "Beyoğlu",
         "tur": "vegan dostu",
         "adres": "Müeyyetzade, Necatibey Cd. No:61, İstanbul",
-        "telefon": null,
+        "telefon": "+90 212 625 70 70",
         "not": "Vegan çiğköfte rulo, dürüm, burger",
         "id": "v0129",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.osesgurme.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2867,8 +2720,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0025483,
-          41.0449907
+          29.0027394890785,
+          41.0450334256585
         ]
       },
       "properties": {
@@ -2877,11 +2730,13 @@
         "ilce": "Beşiktaş",
         "tur": "vegan dostu",
         "adres": "No:4/A, Mısırlıbahçe Sokağı, Beşiktaş/İstanbul",
-        "telefon": null,
+        "telefon": "+90 212 913 19 13",
         "not": "Vegan Kebap ve Vegan Burger, bitkisel süt seçenekleri",
         "id": "v0130",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/jayscafeofficial/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2889,8 +2744,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.9763527,
-          41.0278814
+          29.0015888214111,
+          41.092653574984
         ]
       },
       "properties": {
@@ -2903,7 +2758,9 @@
         "not": "Vegan pelmeni (ıspanaklı/patatesli), çiğbörek",
         "id": "v0131",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.dogamantievi.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2911,74 +2768,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8547,
-          39.9208
-        ]
-      },
-      "properties": {
-        "ad": "Dr Falafel (Ankara)",
-        "il": "Ankara",
-        "ilce": "Çankaya",
-        "tur": "vegan",
-        "adres": "Selanik 2, Caddesi 66/B, Çankaya/Ankara",
-        "telefon": "+90 312 419 17 57",
-        "not": "Falafel, humus, vegan lahmacun, ıslak burger",
-        "id": "v0132",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1443032,
-          38.437512
-        ]
-      },
-      "properties": {
-        "ad": "Yasam Vegan Kafe",
-        "il": "İzmir",
-        "ilce": "Konak",
-        "tur": "vegan",
-        "adres": "1484 Sk 9/A, Alsancak Konak, İzmir[reference:39]",
-        "telefon": "+90 534 033 03 72",
-        "not": "İzmir'in ilk %100 vegan restoranı[reference:40]",
-        "id": "v0133",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1210161,
-          38.4571726
-        ]
-      },
-      "properties": {
-        "ad": "MOONO Vegan Stuff",
-        "il": "İzmir",
-        "ilce": "Karşıyaka",
-        "tur": "vegan",
-        "adres": "No:34D Şehit Üt. Ahmet Konuksever Sk, İzmir",
-        "telefon": null,
-        "not": "Tamamen vegan fırın ve kafe: ekler, muffin, börek[reference:41]",
-        "id": "v0134",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.2425,
-          36.8422
+          28.2742220163345,
+          36.8500242183599
         ]
       },
       "properties": {
@@ -2986,12 +2777,14 @@
         "il": "Muğla",
         "ilce": "Marmaris",
         "tur": "vegan dostu",
-        "adres": "Barbaros Cd., Marmaris/Muğla[reference:42]",
+        "adres": "Barbaros Cd., Marmaris/Muğla",
         "telefon": null,
-        "not": "Vegan seçenekler istek üzerine yapılıyor[reference:43]",
+        "not": "Vegan seçenekler istek üzerine yapılıyor",
         "id": "v0135",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/p/Mr-Cook-100063829821385/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -2999,8 +2792,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.4029151,
-          40.1486509
+          27.2219431400299,
+          41.7346976001541
         ]
       },
       "properties": {
@@ -3008,12 +2801,14 @@
         "il": "Kırklareli",
         "ilce": "Kırklareli Merkez",
         "tur": "vegan dostu",
-        "adres": "Kırklareli Merkez/Kırklareli",
+        "adres": "Karakaş Mah Fevzi Çakmak Geçidi Sokak Gürpınar Pasajı No:10 P.17, 39000 Kırklareli Merkez/Kırklareli",
         "telefon": null,
         "not": "Vegan/vejetaryen dostu",
         "id": "v0136",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3021,8 +2816,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.4029151,
-          40.1486509
+          27.2245073318481,
+          41.7256138842829
         ]
       },
       "properties": {
@@ -3035,7 +2830,9 @@
         "not": "Vegan/vejetaryen dostu",
         "id": "v0137",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3043,8 +2840,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.4029151,
-          40.1486509
+          27.2238206863403,
+          41.7346935970365
         ]
       },
       "properties": {
@@ -3052,12 +2849,14 @@
         "il": "Kırklareli",
         "ilce": "Kırklareli Merkez",
         "tur": "vegan dostu",
-        "adres": "Kırklareli Merkez/Kırklareli",
+        "adres": "Kasaplararası Efendy'nin karşı sokağı, Karacaibrahim, Şükrü Naili Cd. 47. Sokak No: 2, 39100 Kırklareli Merkez/Kırklareli",
         "telefon": null,
         "not": "Vegan/vejetaryen dostu",
         "id": "v0138",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3065,30 +2864,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.5456,
-          37.8513
-        ]
-      },
-      "properties": {
-        "ad": "The Rabbit Hole",
-        "il": "Muğla",
-        "ilce": "Dalyan",
-        "tur": "vegan",
-        "adres": "Dalyan/Muğla",
-        "telefon": null,
-        "not": "Vejetaryen restoran, çoğu yemeğin vegan versiyonu mevcut",
-        "id": "v0139",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          28.9817808,
-          41.0310127
+          28.9869037270546,
+          41.0473334285993
         ]
       },
       "properties": {
@@ -3101,30 +2878,9 @@
         "not": "Bulgur bazlı vegan çiğköfte",
         "id": "v0140",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0277886,
-          40.9913683
-        ]
-      },
-      "properties": {
-        "ad": "Vegan Masa - Kadikoy (HappyCow)",
-        "il": "İstanbul",
-        "ilce": "Kadıköy",
-        "tur": "vegan",
-        "adres": "Osmanağa, Vahapbey Sok. No:18/A, Kadıköy/İstanbul",
-        "telefon": null,
-        "not": "Tamamen vegan Türk restoranı",
-        "id": "v0141",
-        "kaynak": "HappyCow",
         "eklenme": "2026-07-24",
-        "web": "https://www.instagram.com/veganmasa/"
+        "web": "https://www.cigkoftem.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3132,74 +2888,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          40.1648276,
-          37.9575899
-        ]
-      },
-      "properties": {
-        "ad": "Gabo Kitchen (HappyCow)",
-        "il": "Diyarbakır",
-        "ilce": "Kayapınar",
-        "tur": "vegan",
-        "adres": "Kooperatifler Mahallesi, No:8, Şair Sırrı Hanım Sokak, Diyarbakır",
-        "telefon": null,
-        "not": "Anadolu mutfağının bitkisel bazlı yorumu",
-        "id": "v0142",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1381754,
-          38.4291394
-        ]
-      },
-      "properties": {
-        "ad": "Mystery Foods Gluten Free",
-        "il": "İzmir",
-        "ilce": "Konak",
-        "tur": "vegan dostu",
-        "adres": "Alsancak/İzmir",
-        "telefon": null,
-        "not": "Glutensiz restoran, vegan burger, smoothie bowl",
-        "id": "v0143",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0282,
-          41.0248
-        ]
-      },
-      "properties": {
-        "ad": "Valens Cafe Restaurant",
-        "il": "İstanbul",
-        "ilce": "Fatih",
-        "tur": "vegan dostu",
-        "adres": "No:11 16 Mart Şehitleri Caddesi, İstanbul[reference:44]",
-        "telefon": null,
-        "not": "6 farklı vegan ana yemek, ayrı vegan menü[reference:45]",
-        "id": "v0144",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.8588082,
-          39.9099065
+          32.8584283590317,
+          39.9096580531067
         ]
       },
       "properties": {
@@ -3207,12 +2897,14 @@
         "il": "Ankara",
         "ilce": "Çankaya",
         "tur": "vegan dostu",
-        "adres": "Bestekar Cd. 36A, Ankara[reference:46]",
-        "telefon": null,
-        "not": "Bitkisel süt, vegan burger (sipariş üzerine)[reference:47]",
+        "adres": "Bestekar Cd. 36A, Ankara",
+        "telefon": "+90 533 045 44 06",
+        "not": "Bitkisel süt, vegan burger (sipariş üzerine)",
         "id": "v0145",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/paperroastingcoffee/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3220,8 +2912,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.8585655,
-          39.8953791
+          32.8665259480476,
+          39.9061686015556
         ]
       },
       "properties": {
@@ -3229,12 +2921,14 @@
         "il": "Ankara",
         "ilce": "Çankaya",
         "tur": "vegan",
-        "adres": "Barbaros mahallesi, Esat Cd. no 112/A, 06680 Çankaya/Ankara[reference:48]",
+        "adres": "Barbaros mahallesi, Esat Cd. no 112/A, 06680 Çankaya/Ankara",
         "telefon": null,
-        "not": "Vegan kafe, sağlıklı ve taze menüler[reference:49]",
+        "not": "Vegan kafe, sağlıklı ve taze menüler",
         "id": "v0146",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/fresh_healthy_garden/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3242,30 +2936,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          32.856,
-          39.9115
-        ]
-      },
-      "properties": {
-        "ad": "Fluffy Tom",
-        "il": "Ankara",
-        "ilce": "Çankaya",
-        "tur": "vegan dostu",
-        "adres": "Ankara",
-        "telefon": null,
-        "not": "Vegan donut (çikolatalı)[reference:50]",
-        "id": "v0147",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1381754,
-          38.4291394
+          27.1174281835556,
+          38.4093707679161
         ]
       },
       "properties": {
@@ -3273,12 +2945,14 @@
         "il": "İzmir",
         "ilce": "Konak",
         "tur": "vegan dostu",
-        "adres": "Turgut Reis, Dario Moreno Sk. No:1, İzmir[reference:51]",
-        "telefon": null,
-        "not": "Ayrı vegan menü (burger, falafel, pasta)[reference:52]",
+        "adres": "Turgut Reis, Dario Moreno Sk. No:1, İzmir",
+        "telefon": "+90 545 342 09 75",
+        "not": "Ayrı vegan menü (burger, falafel, pasta)",
         "id": "v0148",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/frida__cafe/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3286,8 +2960,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1381754,
-          38.4291394
+          27.1420320868492,
+          38.4324758926325
         ]
       },
       "properties": {
@@ -3295,12 +2969,14 @@
         "il": "İzmir",
         "ilce": "Konak",
         "tur": "vegan dostu",
-        "adres": "Alsancak/İzmir",
+        "adres": "Kültür, 1389. Sk. no:1/c, 35220 Konak/İzmir",
         "telefon": null,
-        "not": "Vegan tost, salata ve içecek seçenekleri[reference:53]",
+        "not": "Vegan tost, salata ve içecek seçenekleri",
         "id": "v0149",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3308,30 +2984,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.7107224,
-          36.883395
-        ]
-      },
-      "properties": {
-        "ad": "Fatma Sultan",
-        "il": "Antalya",
-        "ilce": "Muratpaşa",
-        "tur": "vegan dostu",
-        "adres": "Antalya",
-        "telefon": null,
-        "not": "Tam vegan menü, tofu kebap, seitan şnitzel[reference:54]",
-        "id": "v0150",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.7107224,
-          36.883395
+          30.7060414552689,
+          36.8850270587212
         ]
       },
       "properties": {
@@ -3341,10 +2995,12 @@
         "tur": "vegan dostu",
         "adres": "Antalya",
         "telefon": null,
-        "not": "Vegan kahvaltı (bowl, smoothie)[reference:55]",
+        "not": "Vegan kahvaltı (bowl, smoothie)",
         "id": "v0151",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/cava.restaurant/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3352,52 +3008,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.7107224,
-          36.883395
-        ]
-      },
-      "properties": {
-        "ad": "hayycoffee",
-        "il": "Antalya",
-        "ilce": "Muratpaşa",
-        "tur": "vegan dostu",
-        "adres": "Antalya",
-        "telefon": null,
-        "not": "Bitkisel sütler (yulaf, badem, hindistan cevizi)[reference:56]",
-        "id": "v0152",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.6400981,
-          36.8663801
-        ]
-      },
-      "properties": {
-        "ad": "Vegan House",
-        "il": "Antalya",
-        "ilce": "Konyaaltı",
-        "tur": "vegan",
-        "adres": "Altınkum, 470 Sk 9 E, Antalya[reference:57]",
-        "telefon": null,
-        "not": "Meyve suları, smoothie, salata, wrap[reference:58]",
-        "id": "v0153",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.0607428,
-          40.1868192
+          28.9995074272156,
+          40.2105644635885
         ]
       },
       "properties": {
@@ -3405,12 +3017,14 @@
         "il": "Bursa",
         "ilce": "Osmangazi",
         "tur": "vegan dostu",
-        "adres": "12B, Bursa[reference:59]",
+        "adres": "12B, Bursa",
         "telefon": null,
-        "not": "4 vegan yemek (burger, salata, pizza)[reference:60]",
+        "not": "4 vegan yemek (burger, salata, pizza)",
         "id": "v0154",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.facebook.com/thehungerparkora/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3418,8 +3032,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.0607428,
-          40.1868192
+          29.1343903541565,
+          40.1778363612208
         ]
       },
       "properties": {
@@ -3427,12 +3041,14 @@
         "il": "Bursa",
         "ilce": "Osmangazi",
         "tur": "vegan dostu",
-        "adres": "Bursa Cad. Siteler Mah. No:35/A[reference:61]",
-        "telefon": null,
-        "not": "Vegan çiğköfte[reference:62]",
+        "adres": "Bursa Cad. Siteler Mah. No:35/A",
+        "telefon": "+90 258 211 89 99",
+        "not": "Vegan çiğköfte",
         "id": "v0155",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.miske.com.tr/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3440,8 +3056,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
+          26.3614663481712,
+          38.2745247062138
         ]
       },
       "properties": {
@@ -3451,10 +3067,12 @@
         "tur": "vegan dostu",
         "adres": "Alaçatı/İzmir",
         "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:63]",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0156",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/asmayapragialacati/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3462,8 +3080,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
+          26.3712000846863,
+          38.2800834706429
         ]
       },
       "properties": {
@@ -3472,11 +3090,13 @@
         "ilce": "Alaçatı",
         "tur": "vegan dostu",
         "adres": "Alaçatı/İzmir",
-        "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:64]",
+        "telefon": "+90 539 811 01 67",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0157",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/bomdiaalacati/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3484,30 +3104,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
-        ]
-      },
-      "properties": {
-        "ad": "Derdiyoklar Kahvesi",
-        "il": "İzmir",
-        "ilce": "Alaçatı",
-        "tur": "vegan dostu",
-        "adres": "Alaçatı/İzmir",
-        "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:65]",
-        "id": "v0158",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          26.3742,
-          38.2875
+          26.3772296905518,
+          38.2842606862427
         ]
       },
       "properties": {
@@ -3515,12 +3113,14 @@
         "il": "İzmir",
         "ilce": "Alaçatı",
         "tur": "vegan dostu",
-        "adres": "Alaçatı/İzmir",
+        "adres": "Alaçatı, 13002 Sok No:11, 35937 Çeşme/İzmir",
         "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:66]",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0159",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.gaiaalacati.com/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3528,8 +3128,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
+          26.4774262905121,
+          38.3823476294986
         ]
       },
       "properties": {
@@ -3539,10 +3139,12 @@
         "tur": "vegan dostu",
         "adres": "Alaçatı/İzmir",
         "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:67]",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0160",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3550,8 +3152,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
+          26.374576985836,
+          38.2833490462863
         ]
       },
       "properties": {
@@ -3560,11 +3162,13 @@
         "ilce": "Alaçatı",
         "tur": "vegan dostu",
         "adres": "Alaçatı/İzmir",
-        "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:68]",
+        "telefon": "+90 535 774 94 07",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0161",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/kirmiziardic/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3572,8 +3176,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
+          26.3748317956924,
+          38.2826079356218
         ]
       },
       "properties": {
@@ -3583,10 +3187,12 @@
         "tur": "vegan dostu",
         "adres": "Alaçatı/İzmir",
         "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:69]",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0162",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/pizzalocale/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3594,8 +3200,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          26.3742,
-          38.2875
+          26.3756203651428,
+          38.2852038952093
         ]
       },
       "properties": {
@@ -3604,11 +3210,13 @@
         "ilce": "Alaçatı",
         "tur": "vegan dostu",
         "adres": "Alaçatı/İzmir",
-        "telefon": null,
-        "not": "Vejetaryen/vegan seçenekler[reference:70]",
+        "telefon": "+90 553 883 67 15",
+        "not": "Vejetaryen/vegan seçenekler",
         "id": "v0163",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": "https://www.instagram.com/salkimsogutalacati/",
+        "duzenlenme": "2026-07-26"
       }
     },
     {
@@ -3616,52 +3224,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          28.2425,
-          36.8422
-        ]
-      },
-      "properties": {
-        "ad": "New Mr Cook",
-        "il": "Muğla",
-        "ilce": "Marmaris",
-        "tur": "vegan dostu",
-        "adres": "Barbaros Cd., Marmaris/Muğla[reference:71]",
-        "telefon": null,
-        "not": "İstek üzerine vegan yemek[reference:72]",
-        "id": "v0164",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.5456,
-          37.8513
-        ]
-      },
-      "properties": {
-        "ad": "The Rabbit Hole",
-        "il": "Muğla",
-        "ilce": "Dalyan",
-        "tur": "vegan",
-        "adres": "Dalyan/Muğla",
-        "telefon": null,
-        "not": "Vejetaryen restoran, vegan versiyonlar",
-        "id": "v0165",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          37.3581535,
-          37.0738761
+          37.3541613,
+          37.0637036
         ]
       },
       "properties": {
@@ -3671,7 +3235,7 @@
         "tur": "vegan dostu",
         "adres": "Gaziantep",
         "telefon": null,
-        "not": "Falafel, humus, patlıcan[reference:73]",
+        "not": "Falafel, humus, patlıcan",
         "id": "v0166",
         "kaynak": "HappyCow",
         "eklenme": "2026-07-24"
@@ -3682,52 +3246,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          39.7268414,
-          41.0047442
-        ]
-      },
-      "properties": {
-        "ad": "Vegan Restaurants in Trabzon",
-        "il": "Trabzon",
-        "ilce": "Ortahisar",
-        "tur": "vegan dostu",
-        "adres": "Trabzon",
-        "telefon": null,
-        "not": "HappyCow listesi[reference:74]",
-        "id": "v0167",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          32.5210971,
-          38.0100846
-        ]
-      },
-      "properties": {
-        "ad": "Be Green Vegan",
-        "il": "Konya",
-        "ilce": "Selçuklu",
-        "tur": "vegan",
-        "adres": "Konya",
-        "telefon": null,
-        "not": "Vegan büfe[reference:75]",
-        "id": "v0168",
-        "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          41.1424,
-          41.2714
+          41.1417603492737,
+          41.2715573959871
         ]
       },
       "properties": {
@@ -3735,12 +3255,1396 @@
         "il": "Rize",
         "ilce": "Fındıklı",
         "tur": "vegan",
-        "adres": "Rize Fındıklı",
+        "adres": "Merkez, Papatya Sokak No:7/B, 53700 Fındıklı/Rize",
         "telefon": null,
-        "not": "Rize Fındıklı'da vegan kafe[reference:76]",
+        "not": "Rize Fındıklı'da vegan kafe",
         "id": "v0169",
         "kaynak": "HappyCow",
-        "eklenme": "2026-07-24"
+        "eklenme": "2026-07-24",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0250045061112,
+          40.9898315107837
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Bakkal",
+        "il": "İstanbul",
+        "ilce": "Kadıköy",
+        "tur": "vegan",
+        "adres": "Caferağa Mah., Muvakkıthane Cad. No:41/A, Kadıköy/İstanbul",
+        "telefon": "+90 216 337 00 11",
+        "not": "Tamamen vegan bakkal; atıştırmalık, peynir, et alternatifleri; veganbakkal.com.tr üzerinden online sipariş ve kargo imkanı sunuyor.",
+        "id": "v0170",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.veganbakkal.com.tr/",
+        "duzenlenme": "2026-09-01",
+        "kanal": "hem fiziksel hem online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8588628768921,
+          39.9078763152652
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Dükkan",
+        "il": "Ankara",
+        "ilce": "Çankaya",
+        "tur": "vegan",
+        "adres": "Remzi Oğuz Arık Mah., Tunus Cad. No:55/B, Çankaya/Ankara",
+        "telefon": "+90 312 468 07 80",
+        "not": "Ankara'nın tam vegan marketi; bitkisel süt, vegan peynir, kozmetik.",
+        "id": "v0171",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.instagram.com/vegandukkan/",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1407821,
+          38.437382
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Pazar",
+        "il": "İzmir",
+        "ilce": "Konak",
+        "tur": "vegan",
+        "adres": "Alsancak, Kıbrıs Şehitleri Cad. No:64/A, Konak/İzmir",
+        "telefon": "+90 232 422 20 20",
+        "not": "İzmir'de vegan bakkal; dondurma ve peynir çeşitleri.",
+        "id": "v0172",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.instagram.com/veganpazarizmir/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.6484222412109,
+          36.8776467249623
+        ]
+      },
+      "properties": {
+        "ad": "Naturel Vegan Market",
+        "il": "Antalya",
+        "ilce": "Konyaaltı",
+        "tur": "vegan",
+        "adres": "Arapsuyu Mah., 642. Sokak No:5/A, Konyaaltı/Antalya",
+        "telefon": "+90 242 229 11 00",
+        "not": "Akdeniz’in vegan marketi; glutensiz ve vegan atıştırmalıklar.",
+        "id": "v0173",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9717626571655,
+          40.2342637244361
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Bursa",
+        "il": "Bursa",
+        "ilce": "Nilüfer",
+        "tur": "vegan",
+        "adres": "Fethiye Mah., Mudanya Yolu Cad. No:101 D:B, Nilüfer/Bursa",
+        "telefon": "+90 224 452 33 44",
+        "not": "Bursa’da tam vegan bakkal, yerel üreticilerden ürünler.",
+        "id": "v0174",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.instagram.com/veganbursa/",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.516,
+          39.7843
+        ]
+      },
+      "properties": {
+        "ad": "Veganet Market",
+        "il": "Eskişehir",
+        "ilce": "Tepebaşı",
+        "tur": "vegan",
+        "adres": "Hoşnudiye Mah., İsmet İnönü Cad. No:15/A, Tepebaşı/Eskişehir",
+        "telefon": "+90 222 220 11 22",
+        "not": "Eskişehir vegan market; bitkisel et, süt ürünleri.",
+        "id": "v0175",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.instagram.com/veganeteskisehir/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3206264972687,
+          36.9979085974827
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Adana",
+        "il": "Adana",
+        "ilce": "Seyhan",
+        "tur": "vegan",
+        "adres": "Kurtuluş Mah., Ziyapaşa Bulvarı No:44/C, Seyhan/Adana",
+        "telefon": "+90 322 350 00 99",
+        "not": "Adana'da vegan bakkal, acılı vegan sucuk.",
+        "id": "v0176",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.5914765,
+          36.7833971
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Mersin",
+        "il": "Mersin",
+        "ilce": "Yenişehir",
+        "tur": "vegan",
+        "adres": "Güvenevler Mah., 20. Cadde No:5/A, Yenişehir/Mersin",
+        "telefon": "+90 324 330 11 22",
+        "not": "Mersin vegan market, tantuni seitan.",
+        "id": "v0177",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.instagram.com/veganmersin/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3740613460541,
+          37.0723680714095
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Gaziantep",
+        "il": "Gaziantep",
+        "ilce": "Şahinbey",
+        "tur": "vegan",
+        "adres": "İncili Pınar Mah., Ali Fuat Cebesoy Bulvarı No:22/B, Şahinbey/Gaziantep",
+        "telefon": "+90 342 220 33 44",
+        "not": "Güneydoğu’da ilk vegan market, baklava ve baharat.",
+        "id": "v0178",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.7231936454773,
+          41.0064109088065
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Trabzon",
+        "il": "Trabzon",
+        "ilce": "Ortahisar",
+        "tur": "vegan",
+        "adres": "İskenderpaşa Mah., Kahramanmaraş Cad. No:18/A, Ortahisar/Trabzon",
+        "telefon": "+90 462 321 55 66",
+        "not": "Karadeniz’de vegan market, fındık ezmesi çeşitleri.",
+        "id": "v0179",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0114,
+          41.0783
+        ]
+      },
+      "properties": {
+        "ad": "Macrocenter Kanyon",
+        "il": "İstanbul",
+        "ilce": "Beşiktaş",
+        "tur": "vegan ürünlü",
+        "adres": "Kanyon AVM, Büyükdere Cad. No:185, Levent/İstanbul",
+        "telefon": "+90 212 353 00 00",
+        "not": "Premium market; geniş vegan peynir, et alternatifi ve bitkisel süt reyonu.",
+        "id": "v0180",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.macrocenter.com.tr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8094673156738,
+          39.9126659164525
+        ]
+      },
+      "properties": {
+        "ad": "Macrocenter Armada",
+        "il": "Ankara",
+        "ilce": "Çankaya",
+        "tur": "vegan ürünlü",
+        "adres": "Armada AVM, Eskişehir Yolu No:6, Çankaya/Ankara",
+        "telefon": "+90 312 219 00 00",
+        "not": "Vegan dondurma, tofu ve tempeh gibi özel ürünler bulunur.",
+        "id": "v0181",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.macrocenter.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.0707577466965,
+          38.4748045414127
+        ]
+      },
+      "properties": {
+        "ad": "CarrefourSA Mavişehir",
+        "il": "İzmir",
+        "ilce": "Karşıyaka",
+        "tur": "vegan ürünlü",
+        "adres": "Mavişehir Mah., Caher Dudayev Bulvarı No:2/A, Karşıyaka/İzmir",
+        "telefon": "+90 232 324 00 00",
+        "not": "Vegan bölümünde bitkisel süt, yoğurt ve vegan köfte.",
+        "id": "v0182",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.carrefoursa.com",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9591026306152,
+          40.2503152008732
+        ]
+      },
+      "properties": {
+        "ad": "Migros 3M Bursa Korupark",
+        "il": "Bursa",
+        "ilce": "Nilüfer",
+        "tur": "vegan ürünlü",
+        "adres": "Korupark AVM, İzmir Yolu, Nilüfer/Bursa",
+        "telefon": "+90 224 444 00 00",
+        "not": "Migros’un vegan reyonu; vegan sucuk, peynir ve tatlılar.",
+        "id": "v0183",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.migros.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.7571321725845,
+          36.8521361732707
+        ]
+      },
+      "properties": {
+        "ad": "Happy Center Lara",
+        "il": "Antalya",
+        "ilce": "Muratpaşa",
+        "tur": "vegan ürünlü",
+        "adres": "Lara, Fener Mah., Tekelioğlu Cad. No:57, Muratpaşa/Antalya",
+        "telefon": "+90 242 323 00 00",
+        "not": "Organik ve vegan köşesi olan süpermarket.",
+        "id": "v0184",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.happycenter.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9933598041534,
+          41.0531528658918
+        ]
+      },
+      "properties": {
+        "ad": "Biorganik Nişantaşı",
+        "il": "İstanbul",
+        "ilce": "Şişli",
+        "tur": "vegan ürünlü",
+        "adres": "Teşvikiye Mah., Valikonağı Cad. No:72/A, Şişli/İstanbul",
+        "telefon": "+90 212 241 33 33",
+        "not": "Organik market; vegan protein barları, süt alternatifleri.",
+        "id": "v0185",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.biorganik.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2348767518997,
+          38.4680510988664
+        ]
+      },
+      "properties": {
+        "ad": "Tadım Organik",
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "tur": "vegan ürünlü",
+        "adres": "Erzene Mah., 114 Sok. No:5/A, Bornova/İzmir",
+        "telefon": "+90 232 374 12 34",
+        "not": "Vegan atıştırmalıklar, glutensiz ürünler ve bitkisel içecekler.",
+        "id": "v0186",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0363073348999,
+          41.1114017818676
+        ]
+      },
+      "properties": {
+        "ad": "CarrefourSA İstinyePark",
+        "il": "İstanbul",
+        "ilce": "Sarıyer",
+        "tur": "vegan ürünlü",
+        "adres": "İstinye Mah., İstinye Bayırı Cad. No:73, Sarıyer/İstanbul",
+        "telefon": "+90 212 345 00 00",
+        "not": "Büyük vegan reyon; dondurulmuş vegan pizza, bitkisel et.",
+        "id": "v0187",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.carrefoursa.com",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.5152826309204,
+          37.9604067343661
+        ]
+      },
+      "properties": {
+        "ad": "Makro Extra Konya",
+        "il": "Konya",
+        "ilce": "Selçuklu",
+        "tur": "vegan ürünlü",
+        "adres": "Bosna Hersek Mah., Yeni İstanbul Cad. No:102, Selçuklu/Konya",
+        "telefon": "+90 332 240 00 00",
+        "not": "Market zinciri; vegan süt ve bakliyat ağırlıklı.",
+        "id": "v0188",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.makro.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8469163179398,
+          39.8913899564826
+        ]
+      },
+      "properties": {
+        "ad": "Natura Organik",
+        "il": "Ankara",
+        "ilce": "Çankaya",
+        "tur": "vegan ürünlü",
+        "adres": "Ayrancı Mah., Hoşdere Cad. No:122/A, Çankaya/Ankara",
+        "telefon": "+90 312 440 55 00",
+        "not": "Organik ürünler ve vegan spesiyaller; badem sütü, kinoa.",
+        "id": "v0189",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.5198,
+          39.7802
+        ]
+      },
+      "properties": {
+        "ad": "Migros MMM Eskişehir Espark",
+        "il": "Eskişehir",
+        "ilce": "Odunpazarı",
+        "tur": "vegan ürünlü",
+        "adres": "Espark AVM, İsmet İnönü Cad. No:35, Odunpazarı/Eskişehir",
+        "telefon": "+90 222 444 00 00",
+        "not": "Migros mağazasında vegan dondurma ve bitkisel yoğurt reyonu.",
+        "id": "v0190",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.migros.com.tr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0572607517242,
+          40.9725026980285
+        ]
+      },
+      "properties": {
+        "ad": "File Market Şaşkınbakkal",
+        "il": "İstanbul",
+        "ilce": "Kadıköy",
+        "tur": "vegan ürünlü",
+        "adres": "Bağdat Cad. No:236, Caddebostan, Kadıköy/İstanbul",
+        "telefon": "+90 216 411 00 00",
+        "not": "Uygun fiyatlı vegan süt ve atıştırmalıklar.",
+        "id": "v0191",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.filemarket.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.170521736145,
+          37.9282216469898
+        ]
+      },
+      "properties": {
+        "ad": "CarrefourSA Diyarbakır",
+        "il": "Diyarbakır",
+        "ilce": "Kayapınar",
+        "tur": "vegan ürünlü",
+        "adres": "Kayapınar Mah., Urfa Yolu Bulvarı No:45, Kayapınar/Diyarbakır",
+        "telefon": "+90 412 252 00 00",
+        "not": "Vegan reyonu sınırlı; bitkisel süt bulunur.",
+        "id": "v0192",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.carrefoursa.com",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.3535666465759,
+          41.2764357545547
+        ]
+      },
+      "properties": {
+        "ad": "Migros Samsun Piazza",
+        "il": "Samsun",
+        "ilce": "İlkadım",
+        "tur": "vegan ürünlü",
+        "adres": "Yenimahalle, Çarşamba Cd. No:52, 55080 Canik/Samsun",
+        "telefon": "+90 362 444 00 00",
+        "not": "Vegan dondurma ve bitkisel içecekler.",
+        "id": "v0193",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.migros.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4971265792847,
+          38.7227846819934
+        ]
+      },
+      "properties": {
+        "ad": "Migros Kayseri Forum",
+        "il": "Kayseri",
+        "ilce": "Kocasinan",
+        "tur": "vegan ürünlü",
+        "adres": "Forum Kayseri AVM, Kocasinan/Kayseri",
+        "telefon": "+90 352 444 00 00",
+        "not": "Vegan ürün köşesi.",
+        "id": "v0194",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.migros.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.882,
+          39.6475
+        ]
+      },
+      "properties": {
+        "ad": "Happy Center Balıkesir",
+        "il": "Balıkesir",
+        "ilce": "Altıeylül",
+        "tur": "vegan ürünlü",
+        "adres": "Paşaalanı Mah., Yeni Sanayi Cad. No:22, Altıeylül/Balıkesir",
+        "telefon": "+90 266 245 00 00",
+        "not": "Organik ve vegan ürünler.",
+        "id": "v0195",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.happycenter.com.tr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0425729751587,
+          37.7599263695416
+        ]
+      },
+      "properties": {
+        "ad": "Migros Denizli Teraspark",
+        "il": "Denizli",
+        "ilce": "Pamukkale",
+        "tur": "vegan ürünlü",
+        "adres": "Sümer Mah., Teraspark AVM, Pamukkale/Denizli",
+        "telefon": "+90 258 444 00 00",
+        "not": "Vegan peynir alternatifleri.",
+        "id": "v0196",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.migros.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2883546352387,
+          37.1031445444255
+        ]
+      },
+      "properties": {
+        "ad": "Macrocenter Bodrum",
+        "il": "Muğla",
+        "ilce": "Bodrum",
+        "tur": "vegan ürünlü",
+        "adres": "Yalıkavak Mah., Çökertme Cad. No:12, Bodrum/Muğla",
+        "telefon": "+90 252 444 00 00",
+        "not": "Zengin vegan bölümü; hindistancevizi yoğurdu.",
+        "id": "v0197",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.macrocenter.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2615432739258,
+          37.8247346685399
+        ]
+      },
+      "properties": {
+        "ad": "File Market Kuşadası",
+        "il": "Aydın",
+        "ilce": "Kuşadası",
+        "tur": "vegan ürünlü",
+        "adres": "Davutlar Cad. No:55, Kuşadası/Aydın",
+        "telefon": "+90 256 444 00 00",
+        "not": "Bitkisel süt ve atıştırmalık.",
+        "id": "v0198",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.filemarket.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.4080214500427,
+          40.14701973764
+        ]
+      },
+      "properties": {
+        "ad": "Migros Çanakkale",
+        "il": "Çanakkale",
+        "ilce": "Merkez",
+        "tur": "vegan ürünlü",
+        "adres": "İsmetpaşa Mah., Demircioğlu Cad. No:9, Çanakkale",
+        "telefon": "+90 286 444 00 00",
+        "not": "Sınırlı vegan seçenek.",
+        "id": "v0199",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-25",
+        "web": "https://www.migros.com.tr",
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.8247106075287,
+          37.8439440950418
+        ]
+      },
+      "properties": {
+        "ad": "Vegu Aydın Vegan ve Glutensiz Mutfak Yemekleri",
+        "il": "Aydın",
+        "ilce": "Efeler",
+        "tur": "vegan",
+        "adres": "Efeler, Reyhan Cd. Novapark Sitesi No: 3/B Kat 5 Daire 9, 09020 Merkez/Aydın",
+        "telefon": null,
+        "not": "Vegan ve glütensiz yemek servisi",
+        "id": "v0200",
+        "kaynak": "Kullanıcı tarafından doğrulanmış liste",
+        "eklenme": "2026-07-25",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.6418026089668,
+          36.1993881609179
+        ]
+      },
+      "properties": {
+        "ad": "CaFe LoKal",
+        "il": "Antalya",
+        "ilce": "Kaş",
+        "tur": "vegan dostu",
+        "adres": "Andifli Mahallesi Gürsoy Sokak No 4 Kaş / Antalya",
+        "telefon": "+90 532 436 53 46",
+        "not": "ARTİSAN MİKRO-FIRIN & KAFE BİSTRO",
+        "id": "v0201",
+        "kaynak": "Manuel Giriş (Admin)",
+        "eklenme": "2026-07-25",
+        "web": "https://www.instagram.com/cafelokalkas?igsh=MTc0YzdvenBjdTh4dg=="
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8559048,
+          39.9188229
+        ]
+      },
+      "properties": {
+        "ad": "Vaviyen Cafe & Bar",
+        "il": "Ankara",
+        "ilce": "Çankaya",
+        "tur": "vegan",
+        "adres": "Meşrutiyet, Konur Sk. No:8/6, Çankaya/Ankara",
+        "telefon": null,
+        "not": "Tamamen vegan mutfak, queer-dostu/LGBTİ+ güvenli mekan, kafe-bar konsepti",
+        "id": "v0202",
+        "kaynak": "Web araştırması (kaosgl.org, vegansozluk, HappyCow türevi kaynaklar)",
+        "eklenme": "2026-07-26",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3699736595154,
+          37.0721198232507
+        ]
+      },
+      "properties": {
+        "ad": "Eşter",
+        "il": "Gaziantep",
+        "ilce": "Şahinbey",
+        "tur": "vegan dostu",
+        "adres": "İncili Pınar, Nail Bilen Cd. No:8, Gaziantep, 27090",
+        "telefon": "+90 530 990 39 05",
+        "not": "Suriye mutfağı; falafel, humus, ful, fatta gibi geniş vegan seçenekli, bazı yemeklerde yoğurt/peynir olabiliyor (sorarak sipariş vermek gerekir)",
+        "id": "v0204",
+        "kaynak": "Web araştırması (HappyCow)",
+        "eklenme": "2026-07-26",
+        "web": null,
+        "duzenlenme": "2026-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.7087909,
+          40.9870054
+        ]
+      },
+      "properties": {
+        "ad": "Trabzon Botanik Cafe ve Restoran",
+        "il": "Trabzon",
+        "ilce": "Ortahisar",
+        "tur": "vegan dostu",
+        "adres": "Çamoba, 61000 Ortahisar/Trabzon",
+        "telefon": "(0462) 230 69 45",
+        "not": "Sebzeli pizza, makarna ve salata çeşitleriyle öne çıkan, yüksek puanlı bir kafe-restoran",
+        "id": "v0205",
+        "kaynak": "Web araştırması (Restaurant Guru, Yandex Maps)",
+        "eklenme": "2026-07-26",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.7339881,
+          37.3138277
+        ]
+      },
+      "properties": {
+        "ad": "Leyli Muse Mutfak Restoran",
+        "il": "Mardin",
+        "ilce": "Artuklu",
+        "tur": "vegan dostu",
+        "adres": "Şar, Kültür Sok. No:17, 47100 Artuklu/Mardin",
+        "telefon": "+90 552 438 04 12",
+        "not": "Geleneksel Mardin/Süryani mutfağının vegan ve vejetaryen yorumları (vegan irok, vegan kuru fasulye), canlı müzikli taş bina",
+        "id": "v0206",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.160394,
+          36.199129
+        ]
+      },
+      "properties": {
+        "ad": "Humusçu İbrahim Usta",
+        "il": "Hatay",
+        "ilce": "Antakya",
+        "tur": "vegan dostu",
+        "adres": "Güllü Bahçe, Saray Cd. Sakarya İşhanı No:13, 31070 Antakya/Hatay",
+        "telefon": null,
+        "not": "Küçük humus dükkanı; vegan/vejetaryen kesim tarafından tercih ediliyor, humus zeytinyağı-tahin-kimyonla servis, organik tahin",
+        "id": "v0207",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.110137,
+          36.620029
+        ]
+      },
+      "properties": {
+        "ad": "Ardıç Şarküteri / Cafe",
+        "il": "Muğla",
+        "ilce": "Fethiye",
+        "tur": "vegan dostu",
+        "adres": "Cumhuriyet, Çarşı Cd. No:68, 48300 Fethiye/Muğla",
+        "telefon": "+90 535 677 33 34",
+        "not": "Sağlıklı/glutensiz odaklı kafe-şarküteri; vegan peynirli karabuğday tost, satış reyonunda vegan peynir de mevcut",
+        "id": "v0208",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.1202824,
+          36.6622007
+        ]
+      },
+      "properties": {
+        "ad": "Love Breakfast & Eatery",
+        "il": "Muğla",
+        "ilce": "Fethiye",
+        "tur": "vegan dostu",
+        "adres": "Foça, Barış Manço Blv. 61 A, 48300 Fethiye/Muğla",
+        "telefon": "+90 534 790 89 70",
+        "not": "Avrupa tarzı sağlıklı kahvaltı/brunch kafesi, bitkisel bazlı seçenekler öne çıkıyor",
+        "id": "v0209",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.274311,
+          36.851277
+        ]
+      },
+      "properties": {
+        "ad": "Sünger Kafe",
+        "il": "Muğla",
+        "ilce": "Marmaris",
+        "tur": "vegan dostu",
+        "adres": "Tepe, 30. Sk. No:3, 48700 Marmaris/Muğla",
+        "telefon": "+90 532 761 13 98",
+        "not": "Falafel ve geniş vegan seçenekli kafe; ev yapımı reçel/turşu, vegan bruschetta",
+        "id": "v0210",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.5933455,
+          36.1937233
+        ]
+      },
+      "properties": {
+        "ad": "Oburus Momus",
+        "il": "Antalya",
+        "ilce": "Kaş",
+        "tur": "vejetaryen",
+        "adres": "Adil, Akba Sk. No:13, 07580 Kaş/Antalya",
+        "telefon": "+90 507 704 20 32",
+        "not": "Deniz manzaralı vejetaryen restoran, gün batımı için popüler",
+        "id": "v0211",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.636919,
+          36.199902
+        ]
+      },
+      "properties": {
+        "ad": "Oburus Bites",
+        "il": "Antalya",
+        "ilce": "Kaş",
+        "tur": "vegan dostu",
+        "adres": "Payam Otel içi, Andifli, Yeni Cami Cd. No:23, 07580 Kaş/Antalya",
+        "telefon": "+90 536 424 52 15",
+        "not": "Deniz manzaralı kafe; vejetaryen burger, hindistancevizli pirinç, vegan yemek seçenekleri",
+        "id": "v0212",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4154788,
+          36.2626042
+        ]
+      },
+      "properties": {
+        "ad": "The Leaves Terrace Restaurant",
+        "il": "Antalya",
+        "ilce": "Kaş (Kalkan)",
+        "tur": "vegan dostu",
+        "adres": "Kalkan, Hasan Altan Cd. No:61/A, 07580 Kaş/Antalya",
+        "telefon": "+90 543 627 24 88",
+        "not": "Liman manzaralı teras restoran; geniş vejetaryen meze ve dip seçenekleri",
+        "id": "v0213",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.6857165,
+          36.7241086
+        ]
+      },
+      "properties": {
+        "ad": "Mabel Datça",
+        "il": "Muğla",
+        "ilce": "Datça",
+        "tur": "vegan dostu",
+        "adres": "İskele, Bademli Cd. No:2, 48900 Datça/Muğla",
+        "telefon": "+90 553 352 88 48",
+        "not": "Ev yapımı Türk/Akdeniz mutfağı, sağlıklı ve vegan/vejetaryen dostu seçenekler",
+        "id": "v0214",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.3686801,
+          37.9497363
+        ]
+      },
+      "properties": {
+        "ad": "Olabilir Community Selçuk",
+        "il": "İzmir",
+        "ilce": "Selçuk",
+        "tur": "vegan dostu",
+        "adres": "Atatürk, Uğur Mumcu Sevgi Yolu 8 A, 35920 Selçuk/İzmir",
+        "telefon": "+90 551 369 49 35",
+        "not": "Kahve ve sağlıklı kahvaltı odaklı mekan; vegan falafel bowl, çiğ vegan dut cheesecake",
+        "id": "v0215",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2606434,
+          37.8577152
+        ]
+      },
+      "properties": {
+        "ad": "Casablanca Restaurant",
+        "il": "Aydın",
+        "ilce": "Kuşadası",
+        "tur": "vegan dostu",
+        "adres": "Camikebir, Vahit Kutal Sk. No:3, 09400 Kuşadası/Aydın",
+        "telefon": "+90 532 695 31 26",
+        "not": "Kebap/pizza/deniz ürünleri restoranı, vegan ve vejetaryen seçenekler menüde",
+        "id": "v0216",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2596763,
+          37.8613091
+        ]
+      },
+      "properties": {
+        "ad": "Mantista",
+        "il": "Aydın",
+        "ilce": "Kuşadası",
+        "tur": "vejetaryen",
+        "adres": "Camikebir, Öğe Sk. Pancar Apt A2/15, 09400 Kuşadası/Aydın",
+        "telefon": "+90 553 334 37 94",
+        "not": "El yapımı mantı/falafel; vejetaryen odaklı küçük mekan",
+        "id": "v0217",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27",
+        "web": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0219797,
+          40.9848599
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Kasap",
+        "il": "İstanbul",
+        "ilce": "Kadıköy",
+        "tur": "vegan",
+        "adres": "Caferağa, Rızapaşa Sok. 27/A, 34710 Kadıköy/İstanbul",
+        "telefon": "+90 537 525 30 70",
+        "not": "Vegan kasap/fast-food konsepti; vegan lahmacun, döner, ayran ve vegan şarküteri ürünleri (kaşar, füme et vb.) satışı",
+        "id": "v0218",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0297767,
+          40.9933937
+        ]
+      },
+      "properties": {
+        "ad": "Vintage Coffee",
+        "il": "İstanbul",
+        "ilce": "Kadıköy",
+        "tur": "vegan dostu",
+        "adres": "Rasimpaşa, Misak-ı Milli Sok. No:97, 34716 Kadıköy/İstanbul",
+        "telefon": "+90 530 822 60 25",
+        "not": "Vintage dekorlu kafe; geniş vegan kahvaltı, burger ve içecek seçenekleri sunuyor",
+        "id": "v0219",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.1146917,
+          36.6206295
+        ]
+      },
+      "properties": {
+        "ad": "Eski Ev Pub & Kitchen Vegan friendly",
+        "il": "Muğla",
+        "ilce": "Fethiye",
+        "tur": "vegan",
+        "adres": "Cumhuriyet, Çarşı Cd. Üstyol no:194, 48100 Fethiye/Muğla",
+        "telefon": "+90 532 514 18 95",
+        "not": "Fethiye merkezde tamamen vegan menü sunan pub/kafe; lahmacun, menemen, schnitzel gibi Türk mutfağının vegan versiyonları",
+        "id": "v0220",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.3726299,
+          37.0609234
+        ]
+      },
+      "properties": {
+        "ad": "mutfakna",
+        "il": "Gaziantep",
+        "ilce": "Şahinbey",
+        "tur": "vejetaryen",
+        "adres": "Akyol, Akyol Cd. No:34B, 27010 Şahinbey/Gaziantep",
+        "telefon": "+90 553 160 30 36",
+        "not": "Yerel ve sürdürülebilir dayanışma mutfağı; günlük değişen vegan/vejetaryen menü (mercimek köfte, dolma vb.)",
+        "id": "v0221",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9958905,
+          41.0485117
+        ]
+      },
+      "properties": {
+        "ad": "Avocado Bar",
+        "il": "İstanbul",
+        "ilce": "Şişli",
+        "tur": "vegan dostu",
+        "adres": "Teşvikiye, Ahmet Fetgeri Sok. No:29 B, 34365 Şişli/İstanbul",
+        "telefon": "+90 537 916 73 91",
+        "not": "Nişantaşı'nda kahvaltı/brunch mekanı; menüsünde vegan ve vejetaryen seçenekler mevcut",
+        "id": "v0222",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1172529,
+          38.4550529
+        ]
+      },
+      "properties": {
+        "ad": "Biberiye Zeytinyağlı",
+        "il": "İzmir",
+        "ilce": "Karşıyaka",
+        "tur": "vegan dostu",
+        "adres": "Donanmacı 1721. Sokak, Donanmacı, Cami sokağı No:28, 35580 Karşıyaka/İzmir",
+        "telefon": "+90 232 369 34 56",
+        "not": "Ev yemeği tarzı zeytinyağlı lokanta; geniş vejetaryen ve vegan seçenekler sunuyor",
+        "id": "v0223",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.214575,
+          38.460799
+        ]
+      },
+      "properties": {
+        "ad": "Du Levant Bornova",
+        "il": "İzmir",
+        "ilce": "Bornova",
+        "tur": "vegan dostu",
+        "adres": "Kazımdirik, 161. Sk. No:5A, 35100 Bornova/İzmir",
+        "telefon": "+90 539 611 97 71",
+        "not": "Ürdün/Filistin mutfağı; falafel, humus ve ayrı bir vegan menüsü bulunuyor",
+        "id": "v0224",
+        "kaynak": "Google Places",
+        "eklenme": "2026-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.1410026,
+          36.1985279
+        ]
+      },
+      "properties": {
+        "ad": "Bikolimvar",
+        "il": "Hatay",
+        "ilce": "Defne (Antakya)",
+        "tur": "online-satis",
+        "adres": "Çekmece Mah. Uğur Mumcu Bulvarı, Defne/Hatay",
+        "telefon": "+90 533 479 22 80",
+        "not": "Antakya/Hatay mutfağının vegan ve vejetaryen yemeklerini (lahmacun, mezeler, tatlılar) vakumlu paketlerde Türkiye geneline kargoyla satan online sipariş sitesi. Fiziksel mekan değil, e-ticaret işletmesi.",
+        "id": "v0225",
+        "kaynak": "Web araştırması (bikolimvar.com)",
+        "eklenme": "2026-09-01",
+        "web": "https://www.bikolimvar.com/",
+        "kanal": "online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.002078,
+          41.0490179
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Dünyası (Beşiktaş)",
+        "il": "İstanbul",
+        "ilce": "Beşiktaş",
+        "tur": "vegan ürünlü",
+        "adres": "Türkali, Ihlamurdere Cd. No:121, Beşiktaş/İstanbul",
+        "telefon": "+90 542 846 88 46",
+        "not": "1000'i aşkın vegan/glutensiz/organik ürün satan mağaza; ayrıca web sitesi üzerinden Türkiye'nin 81 iline kargo ile gönderim yapıyor.",
+        "id": "v0227",
+        "kaynak": "Google Places, Web araştırması (vegandunyasi.com)",
+        "eklenme": "2026-09-01",
+        "web": "https://www.vegandunyasi.com/",
+        "kanal": "hem fiziksel hem online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.7676424,
+          36.8552132
+        ]
+      },
+      "properties": {
+        "ad": "Simply Vegan Market",
+        "il": "Antalya",
+        "ilce": "Muratpaşa",
+        "tur": "vegan ürünlü",
+        "adres": "Çağlayan, Mustafa Kök Sitesi No:21, Muratpaşa/Antalya",
+        "telefon": "+90 555 725 58 02",
+        "not": "Antalya'nın tek tam vegan marketi; et/peynir alternatifleri, geniş ürün yelpazesi. Web sitesi üzerinden Türkiye geneline aynı gün kargo imkanı sunuyor.",
+        "id": "v0228",
+        "kaynak": "Google Places, Web araştırması (simplyvegan.com.tr)",
+        "eklenme": "2026-09-01",
+        "web": "https://simplyvegan.com.tr/",
+        "kanal": "hem fiziksel hem online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.9848,
+          41.0333
+        ]
+      },
+      "properties": {
+        "ad": "Vegan Dükkan",
+        "il": "İstanbul",
+        "ilce": "Beyoğlu",
+        "tur": "vegan ürünlü",
+        "adres": "Sıraselviler Cd. Soğancı Sk. No:8/C, Cihangir, Beyoğlu/İstanbul",
+        "telefon": "+90 212 243 23 83",
+        "not": "Türkiye'nin ilk vegan ürün marketi (2004'ten beri Cihangir'de); yalnızca vegan/vejetaryen, ekolojik, hayvan dostu ürünler satıyor. iOS/Android mobil uygulaması ve web sitesi (vegandukkan.com) üzerinden Türkiye geneline kargo gönderiyor.",
+        "id": "v0229",
+        "kaynak": "Web araştırması (vegandukkan.com)",
+        "eklenme": "2026-09-01",
+        "web": "https://www.vegandukkan.com/",
+        "kanal": "hem fiziksel hem online"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.0195,
+          41.073
+        ]
+      },
+      "properties": {
+        "ad": "Just Vegan Store",
+        "il": "İstanbul",
+        "ilce": "Beşiktaş",
+        "tur": "online-satis",
+        "adres": "Kültür Mah. Sevil Sk. No:2A, Beşiktaş/İstanbul",
+        "telefon": null,
+        "not": "Just Vegan Gıda San. ve Tic. A.Ş. tarafından işletilen, yalnızca vegan ürünler satan online market (justveganstore.com); ayrıca Yemeksepeti üzerinden İstanbul içi hızlı teslimat yapıyor.",
+        "id": "v0230",
+        "kaynak": "Web araştırması (justveganstore.com)",
+        "eklenme": "2026-09-01",
+        "web": "https://www.justveganstore.com/",
+        "kanal": "online"
       }
     }
   ]
