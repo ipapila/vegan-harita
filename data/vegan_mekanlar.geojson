@@ -4646,6 +4646,75 @@
         "web": "https://www.justveganstore.com/",
         "kanal": "online"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.03002,
+          40.98766
+        ]
+      },
+      "properties": {
+        "ad": "Veganarsist (Kadıköy)",
+        "il": "İstanbul",
+        "ilce": "Kadıköy",
+        "tur": "vegan",
+        "adres": "Osmanağa Mah. Canan Sk. No:20/A, Kadıköy/İstanbul",
+        "telefon": "+90 216 418 78 53",
+        "not": "Tamamen vegan restoran; lahmacun, mantı, kokoreç, tantuni gibi geleneksel Türk lezzetlerinin bitkisel versiyonlarını sunuyor. Zincirin diğer İstanbul şubesi Balat'ta.",
+        "id": "v0232",
+        "kaynak": "Web araştırması (Instagram @veganarsistt, veganarsist.com)",
+        "eklenme": "2026-09-01",
+        "web": "https://www.instagram.com/veganarsistt/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.946467,
+          41.033737
+        ]
+      },
+      "properties": {
+        "ad": "Veganarsist (Balat)",
+        "il": "İstanbul",
+        "ilce": "Fatih",
+        "tur": "vegan",
+        "adres": "Ayvansaray Mah. Leblebiciler Sk. No:18, Fatih/İstanbul",
+        "telefon": "+90 212 999 26 50",
+        "not": "Veganarsist'in Balat/Ayvansaray şubesi; Haliç manzaralı terasıyla tarihi Çıfıt Çarşısı içinde, tamamen vegan Türk mutfağı sunuyor.",
+        "id": "v0233",
+        "kaynak": "Web araştırması (Instagram @veganarsistt, veganarsistbalat.com)",
+        "eklenme": "2026-09-01",
+        "web": "https://veganarsistbalat.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.8636,
+          39.9046
+        ]
+      },
+      "properties": {
+        "ad": "Veggy Delivery",
+        "il": "Ankara",
+        "ilce": "Çankaya",
+        "tur": "vegan",
+        "adres": "Barbaros Mah. Abay Kunanbay Cd. No:22/C, Çankaya/Ankara",
+        "telefon": null,
+        "not": "Türkiye'nin ilk vegan kahve dükkanı; bitkisel sütlü kahveler, ev yapımı vegan kek/tatlı ve focaccia gibi atıştırmalıklar sunuyor.",
+        "id": "v0234",
+        "kaynak": "Web araştırması (Instagram @veggydelivery)",
+        "eklenme": "2026-09-01",
+        "web": "https://www.instagram.com/veggydelivery/"
+      }
     }
   ]
 }
